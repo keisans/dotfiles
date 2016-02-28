@@ -55,6 +55,7 @@ nnoremap <C-t>  :enew<CR>
 nnoremap <C-t>l :bnext<CR>
 nnoremap <C-t>h :bprev<CR>
 nnoremap <C-t>w :bp <BAR> bd #<CR>
+nnoremap <leader>t :enew<CR>
 
 "****** TERN ******************************************
 "enable keyboard shortcuts
