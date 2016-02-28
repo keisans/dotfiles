@@ -82,6 +82,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+source ./alias
 . `brew --prefix`/etc/profile.d/z.sh
 
 export NVM_DIR="/Users/ryanstruhl/.nvm"
