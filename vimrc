@@ -20,6 +20,10 @@ set number
 set exrc
 set secure
 
+"Prevent swp and undo file clutter
+set backupdir=~/.vim/backups
+set directory=~/.vim/swap
+
 "********* COLORS & THEME *******************************
 "set colors
 colors molokai
