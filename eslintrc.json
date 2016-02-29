@@ -1,0 +1,20 @@
+{
+  "rules": {
+    "indent": [2, 2],
+    "quotes": [1, "single"],
+    "linebreak-style": [2, "unix"],
+    "semi": [2, "always"],
+    "no-console": 1,
+    "keyword-spacing": 2,
+    "space-before-blocks": 2
+  },
+  "extends": "eslint:recommended",
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "ecmaFeatures": {
+    "jsx": true
+  }
+}

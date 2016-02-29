@@ -13,3 +13,6 @@ ln -s ${BASEDIR}/zshrc ~/.zshrc
 #git
 ln -s ${BASEDIR}/gitconfig ~/.gitconfig
 ln -s ${BASEDIR}/gitignore ~/.gitignore
+
+#eslint
+ln -s ${BASEDIR}/eslintrc.json ~/.eslintrc
