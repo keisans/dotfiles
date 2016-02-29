@@ -25,6 +25,9 @@ set title
 "automatically update files
 set autoread
 
+"show trailing spaces and tabs
+set list listchars=tab:»·,trail:·,nbsp:·
+
 "show line numbers
 set relativenumber
 set number
