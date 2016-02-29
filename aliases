@@ -2,3 +2,6 @@
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
+# VIM
+alias vim='mvim -v'
