@@ -1,6 +1,9 @@
 #!/usr/bin/env zsh
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+git pull origin master
+
+git submodule update --init
 
 #vim
 ln -s ${BASEDIR}/vimrc ~/.vimrc
