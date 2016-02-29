@@ -7,6 +7,7 @@ ln -s ${BASEDIR}/vimrc ~/.vimrc
 ln -s ${BASEDIR}/vim/ ~/.vim
 
 #zsh
+ln -s ${BASEDIR}/aliases ~/.aliases.zsh
 ln -s ${BASEDIR}/zshrc ~/.zshrc
 
 #git

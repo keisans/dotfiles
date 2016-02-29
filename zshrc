@@ -96,7 +96,7 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ./alias
+source ~/.aliases.zsh
 
 . `brew --prefix`/etc/profile.d/z.sh
 
