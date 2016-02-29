@@ -7,8 +7,13 @@ git pull origin master
 git submodule update --init
 
 # Create empty swap and backup folders for vim
-mkdir ${BASEDIR}/vim/swap
-mkdir ${BASEDIR}/vim/backups
+if [[ ! -d ${BASEDIR}/vim/swap ]]; then
+    mkdir ${BASEDIR}/vim/swap
+fi
+
+if [[ ! -d ${BASEDIR}/vim/backups ]]; then
+    mkdir ${BASEDIR}/vim/backups
+fi
 
 #vim
 ln -s ${BASEDIR}/vimrc ~/.vimrc
