@@ -1,9 +1,14 @@
 #!/usr/bin/env zsh
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-git pull origin master
 
+# Install all the vim plugins!
+git pull origin master
 git submodule update --init
+
+# Create empty swap and backup folders for vim
+mkdir ${BASEDIR}/vim/swap
+mkdir ${BASEDIR}/vim/backups
 
 #vim
 ln -s ${BASEDIR}/vimrc ~/.vimrc
