@@ -54,6 +54,9 @@ set hlsearch
 "set the font for GUI editors
 set guifont=hack
 
+"always show the status bar
+set laststatus=2
+
 "****** SHORTCUTS AND KEYBOARD ************************
 "set the leader to the , key, since that's way easier than the default
 let mapleader = ","
