@@ -56,6 +56,10 @@ set hlsearch
 
 "set the font for GUI editors
 set guifont=hack
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
 
 "always show the status bar
 set laststatus=2
@@ -89,6 +93,11 @@ cmap WQ wq
 cmap Wq wq
 cmap W w
 cmap Q q
+
+"****** FUNCTIONS *************************************
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 "****** TERN ******************************************
 "enable keyboard shortcuts
@@ -145,3 +154,4 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 
 "****** VIM-JAVASCRIPT *********************************
 let g:javascript_enable_domhtmlcss = 1
+let g:jsx_ext_required = 0
