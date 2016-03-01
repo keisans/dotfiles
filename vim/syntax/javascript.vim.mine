@@ -1,0 +1,90 @@
+if exists("b:current_syntax")
+    finish
+endif
+syn include @XMLSyntax syntax/xml.vim
+
+syn keyword varKeyword var let const 
+syn keyword conditionalKeyword if else switch
+syn keyword loopKeyword for while do
+syn keyword labelKeyword case default
+syn keyword reservedKeyword delete instanceof typeof void new prototype
+syn keyword specialKeyword return import as from export
+syn keyword boolKeyword true false
+syn keyword exceptionKeyword try catch throw
+syn keyword nullKeyword null undefined
+syn keyword branchKeyword break continue
+syn keyword identKeyword this yield arguments 
+syn keyword asyncKeyword async await
+syn keyword classKeyword class extends
+syn keyword globalObjects Array Boolean Date Function Iterator Number Object Symbol Map WeakMap Set RegExp String Proxy Promise ParallelArray ArrayBuffer DataView Float32Array Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array Uint8Array Uint8ClampedArray Intl JSON Math console document window
+
+"simple types
+syn match operatorKeys /[\+\-\*\/\%\=\:\<\>]/
+syn match constantKey /\v<[_A-Z]+>/
+syn match numberKey /\v<[+-]?(0x[0-9A-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)>/
+
+"arrow function support
+syn match arrowFunctionKey "=>"
+
+"simple string matching
+syn match templateVar /\v\$\{.\{-}\}/
+syn region stringS start=/\v\'/ skip=/\v\\(\'|$)/ end=/\v\'|$/
+syn region stringD start=/\v\"/ skip=/\v\\(\"|$)/ end=/\v\"|$/
+syn region tempateString start=/\v\`/ skip=/\v\\(\`|$)/ end=/\v\`|$/ contains=templateVar
+
+"line comments
+syn region lineComment start="\/\/" end="$"
+
+"functions
+syn keyword functionKeyword function contained
+syn match argSeparator /\v\,/ contained
+syn match functionParens /\v\(|\)/
+"syn match arguments /\v\(\s*\zs([_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*,?\s*)*/ contained contains=argSeparator
+syn match functionCall /\v[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*\ze(\()/
+syn match functionName /\vfunction\s*[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*\s*\(.*\)/ contains=functionKeyword,arguments,argSeparator,functionParens 
+syn match anonFunction /\vfunction\s*\(.*\)/ contains=functionKeyword,arguments,argSeparator,functionParens
+
+"objects
+syn match funtionKey /\v[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*\s*\ze:\s*function/
+
+"jsx
+syn region jsxBlock start=/{/ end=// contains=block extend contained
+syn region xmlString start=/{/ end=// contains=block contained
+syn region reactTag start=/\v\<\z([a-zA-Z][a-zA-Z0-9:\-\.]*)/ end=/\v\z1\_\s\{-}\>/ end=/\v\/\>/ keepend extend contains=@XMLSyntax,jsxBlock,block
+
+"blocks
+syn cluster expressions contains=varKeyword,reservedKeyword,boolKeyword,exceptionKeyword,nullKeyword,branchKeyword,identKeyword,asyncKeyword,classKeyword,globalObjects,operatorKeys,constantKey,numberKey,arrowFunctionKey,templateVar,templateString,stringS,stringD,lineComment,functionKeyword,functionCall,anonFunction,arguments,argSeparator
+syn cluster allJs contains=@expressions,conditionalKeyword,loopKeyword,labelKeyword,specialKeyword
+syn region block start=/\v\{/ end=/\v\}/ contains=@allJs
+
+"brackets
+syn region bracket start="{" end="}" transparent fold
+
+let b:current_syntax = "javascript"
+
+hi def link functionKeyword    Typedef
+hi def link arrowFunctionKey   Typedef
+hi def link varKeyword         Type
+hi def link conditionalKeyword Conditional
+hi def link loopKeyword        Loop
+hi def link labelKeyword       Label
+hi def link reservedKeyword    Statement
+hi def link specialKeyword     Keyword
+hi def link boolKeyword        Boolean
+hi def link exceptionKeyword   Exception
+hi def link identKeyword       Identifier
+hi def link asyncKeyword       Keyword
+hi def link classKeyword       Structure
+hi def link globalObjects      Special
+hi def link branchKeyword      Keyword
+hi def link operatorKeys       Operator
+hi def link numberKey          Number
+hi def link constantKey        Constant
+hi def link stringS            String
+hi def link stringD            String
+hi def link templateString     String
+hi def link functionCall       Title
+hi def link functionName       Function
+hi def link lineComment        Comment
+hi def link arguments          Title
+hi def link funtionKey         Function
