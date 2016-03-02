@@ -24,6 +24,7 @@ ln -s ${BASEDIR}/vim/ ~/.vim
 if [[ -d ${BASEDIR}/nvim ]]; then
     rm -rf ${BASEDIR}/nvim
 fi
+cp -R ${BASEDIR}/vim ${BASEDIR}/nvim
 
 #zsh
 ln -s ${BASEDIR}/aliases ~/.aliases.zsh
