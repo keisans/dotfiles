@@ -24,7 +24,7 @@ ln -s ${BASEDIR}/vim/ ~/.vim
 if [[ -d ${BASEDIR}/nvim ]]; then
     rm -rf ${BASEDIR}/nvim
 fi
-rsync -avhW --progress ${BASEDIR}/vim ${BASEDIR}/nvim
+rsync -avhW --progress ${BASEDIR}/vim/ ${BASEDIR}/nvim
 cp ${BASEDIR}/vimrc ${BASEDIR}/nvim/init.vim
 ln -s ${BASEDIR}/nvim/ $XDG_CONFIG_HOME/nvim
 
