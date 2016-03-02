@@ -44,7 +44,9 @@ set directory=~/.vim/swap
 
 "********* COLORS & THEME *******************************
 "set colors
-colors molokai
+colors base16-monokai
+let base16colorspace=256
+set background=dark
 "Turn on syntax hilighting
 syntax on
 "hilihgt current line
