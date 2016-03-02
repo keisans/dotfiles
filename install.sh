@@ -25,6 +25,8 @@ if [[ -d ${BASEDIR}/nvim ]]; then
     rm -rf ${BASEDIR}/nvim
 fi
 cp -R ${BASEDIR}/vim ${BASEDIR}/nvim
+cp ${BASEDIR}/vimrc ${BASEDIR}/nvim/init.vim
+ln -s ${BASEDIR}/nvim/ $XDG_CONFIG_HOME/nvim
 
 #zsh
 ln -s ${BASEDIR}/aliases ~/.aliases.zsh
