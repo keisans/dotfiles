@@ -2,3 +2,4 @@ vim/swap/*
 vim/backups/*
 .DS_Store
 .*.swp%
+nvim/*
