@@ -3,3 +3,4 @@ vim/backups/*
 .DS_Store
 .*.swp%
 nvim/*
+!init.vim
