@@ -21,11 +21,8 @@ ln -s ${BASEDIR}/vimrc ~/.vimrc
 ln -s ${BASEDIR}/vim/ ~/.vim
 
 #nvim
-if [[ -d ${BASEDIR}/nvim ]]; then
-    rm -rf ${BASEDIR}/nvim
-fi
-rsync -avhW --progress ${BASEDIR}/vim/ ${BASEDIR}/nvim
-cp ${BASEDIR}/vimrc ${BASEDIR}/nvim/init.vim
+mkdir -p ${BASEDIR}/nvim
+ln -s ${BASEDIR}/vim/* ${BASEDIR}/nvim
 ln -s ${BASEDIR}/nvim/ $XDG_CONFIG_HOME/nvim
 
 #zsh
