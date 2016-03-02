@@ -141,6 +141,7 @@ nmap <leader>- <Plug>AirlineSelectPrevTab
 nmap <leader>= <Plug>AirlineSelectNextTab
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
+let g:airline_theme = 'luna'
 
 "****** SYNTASTIC **************************************
 let g:syntastic_javascript_checkers = ["eslint"]
