@@ -94,6 +94,8 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.aliases.zsh
 
+source ~/.custom_functions.zsh
+
 export XDG_CONFIG_HOME="${HOME}/.xdg_config"
 
 BASE16_SHELL="$HOME/.xdg_config/base16-shell/base16-monokai.dark.sh"
@@ -102,5 +104,5 @@ BASE16_SHELL="$HOME/.xdg_config/base16-shell/base16-monokai.dark.sh"
 # Load in z
 . `brew --prefix`/etc/profile.d/z.sh
 
-export NVM_DIR="/Users/ryanstruhl/.nvm"
+export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -27,6 +27,7 @@ ln -s ${BASEDIR}/nvim/ $XDG_CONFIG_HOME/nvim
 
 #zsh
 ln -s ${BASEDIR}/aliases ~/.aliases.zsh
+ln -s ${BASEDIR}/custom_functions ~/.custom_functions.zsh
 ln -s ${BASEDIR}/zshrc ~/.zshrc
 
 #git
