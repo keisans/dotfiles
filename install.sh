@@ -21,9 +21,9 @@ ln -s ${BASEDIR}/vimrc ~/.vimrc
 ln -s ${BASEDIR}/vim/ ~/.vim
 
 #nvim
-mkdir -p ${BASEDIR}/nvim
-ln -s ${BASEDIR}/vim/* ${BASEDIR}/nvim
-ln -s ${BASEDIR}/nvim/ $XDG_CONFIG_HOME/nvim
+#mkdir -p ${BASEDIR}/nvim
+#ln -s ${BASEDIR}/vim/* ${BASEDIR}/nvim
+#ln -s ${BASEDIR}/nvim/ $XDG_CONFIG_HOME/nvim
 
 #zsh
 ln -s ${BASEDIR}/aliases ~/.aliases.zsh
