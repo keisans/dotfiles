@@ -33,4 +33,4 @@ ln -snf ${BASEDIR}/gitignore ~/.gitignore
 ln -snf ${BASEDIR}/eslintrc.json ~/.eslintrc
 
 #tmux
-ln -snf ${BASEDIR}/tmux.conf ~/.tumx.conf
+ln -snf ${BASEDIR}/tmux.conf ~/.tmux.conf
