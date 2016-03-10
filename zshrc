@@ -1,3 +1,7 @@
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+ZDOTDIR=$BASEDIR
+
 # Load Prezto and modules
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"  ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -15,7 +19,7 @@ export EDITOR='vim'
 bindkey -v
 
 # Compilation flags
- export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64"
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/dsa_id"
