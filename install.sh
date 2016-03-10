@@ -17,22 +17,20 @@ if [[ ! -d ${BASEDIR}/vim/backups ]]; then
 fi
 
 #vim
-ln -s ${BASEDIR}/vimrc ~/.vimrc
-ln -s ${BASEDIR}/vim/ ~/.vim
-
-#nvim
-#mkdir -p ${BASEDIR}/nvim
-#ln -s ${BASEDIR}/vim/* ${BASEDIR}/nvim
-#ln -s ${BASEDIR}/nvim/ $XDG_CONFIG_HOME/nvim
+ln -snf ${BASEDIR}/vimrc ~/.vimrc
+ln -snf ${BASEDIR}/vim/ ~/.vim
 
 #zsh
-ln -s ${BASEDIR}/aliases ~/.aliases.zsh
-ln -s ${BASEDIR}/custom_functions ~/.custom_functions.zsh
-ln -s ${BASEDIR}/zshrc ~/.zshrc
+ln -snf ${BASEDIR}/aliases ~/.aliases.zsh
+ln -snf ${BASEDIR}/custom_functions ~/.custom_functions.zsh
+ln -snf ${BASEDIR}/zshrc ~/.zshrc
 
 #git
-ln -s ${BASEDIR}/gitconfig ~/.gitconfig
-ln -s ${BASEDIR}/gitignore ~/.gitignore
+ln -snf ${BASEDIR}/gitconfig ~/.gitconfig
+ln -snf ${BASEDIR}/gitignore ~/.gitignore
 
 #eslint
-ln -s ${BASEDIR}/eslintrc.json ~/.eslintrc
+ln -snf ${BASEDIR}/eslintrc.json ~/.eslintrc
+
+#tmux
+ln -snf ${BASEDIR}/tmux.conf ~/.tumx.conf
