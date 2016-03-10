@@ -13,9 +13,9 @@ set backspace=indent,eol,start
 "automatically indent
 set autoindent
 "set up tab widths
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set smarttab
 set expandtab
 
@@ -71,8 +71,8 @@ set laststatus=2
 let mapleader = ","
 let g:mapleader = ","
 
-"End search hilighting when you hit enter in normal mode
-:nnoremap <silent> <CR> :nohlsearch<CR><CR>
+"End search hilighting when you hit esc in normal mode
+:nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
 "do the splits
 nnoremap <C-J> <C-W><C-J>
@@ -112,7 +112,7 @@ map <C-e> :NERDTreeTabsToggle<CR>:NERDTreeMirrorOpen<CR>
 map <leader>e :NERDTreeFind<CR>
 nmap <leader>nt :NERDTreeFind<CR>
 let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git$[[dir]]', '\.hg', '\.svn', '\.bzr']
 let NERDTreeChDirMode=0
 let NERDTreeQuitOnOpen=0
 let NERDTreeMouseMode=2
