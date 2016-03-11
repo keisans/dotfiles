@@ -1,9 +1,8 @@
 #!/usr/bin/env zsh
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-mkdir -p ${XDG_CONFIG_HOME:=$HOME/.xdg_config}
 
-# Install all the vim plugins!
+# Install all the things!
 git pull origin master
 git submodule update --init --recursive
 
