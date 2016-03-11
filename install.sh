@@ -5,7 +5,7 @@ mkdir -p ${XDG_CONFIG_HOME:=$HOME/.xdg_config}
 
 # Install all the vim plugins!
 git pull origin master
-git submodule update --init
+git submodule update --init --recursive
 
 # Create empty swap and backup folders for vim
 if [[ ! -d ${BASEDIR}/vim/swap ]]; then
@@ -21,6 +21,7 @@ ln -snf ${BASEDIR}/vimrc ~/.vimrc
 ln -snf ${BASEDIR}/vim/ ~/.vim
 
 #zsh
+ln -snf ${BASEDIR}/zsh/ ~/.zsh
 ln -snf ${BASEDIR}/aliases ~/.aliases.zsh
 ln -snf ${BASEDIR}/custom_functions ~/.custom_functions.zsh
 ln -snf ${BASEDIR}/zshrc ~/.zshrc

@@ -37,7 +37,7 @@ source ~/.custom_functions.zsh
 
 export XDG_CONFIG_HOME="${HOME}/.xdg_config"
 
-BASE16_SHELL="$HOME/.xdg_config/base16-shell/base16-monokai.dark.sh"
+BASE16_SHELL="$HOME/.zsh/base16-shell/base16-monokai.dark.sh"
 [[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL
 
 # Load in z
@@ -45,3 +45,11 @@ BASE16_SHELL="$HOME/.xdg_config/base16-shell/base16-monokai.dark.sh"
 
 export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+autoload -U add-zsh-hook
+load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use
+  fi
+}
+add-zsh-hook chpwd load-nvmrc

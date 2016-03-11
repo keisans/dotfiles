@@ -24,3 +24,9 @@
 	email= rwstruhl@gmail.com
 [github]
 	user = keisans
+[alias]
+	up = "!git remote update -p; git merge --ff-only @{u}"
+  la = "!git config -l | grep alias | cut -c 7-"
+  co = checkout
+  cob = checkout -b
+  s = status -s
