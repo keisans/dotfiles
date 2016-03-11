@@ -24,6 +24,8 @@ ln -snf ${BASEDIR}/vim/ ~/.vim
 ln -snf ${BASEDIR}/aliases ~/.aliases.zsh
 ln -snf ${BASEDIR}/custom_functions ~/.custom_functions.zsh
 ln -snf ${BASEDIR}/zshrc ~/.zshrc
+ln -snf ${BASEDIR}/zprezto ~/.zprezto
+ln -snf ${BASEDIR}/zpreztorc ~/.zpreztorc
 
 #git
 ln -snf ${BASEDIR}/gitconfig ~/.gitconfig
