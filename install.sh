@@ -3,7 +3,7 @@
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Install all the things!
-git pull origin master
+git checkout master && git up
 git submodule update --init --recursive
 
 # Create empty swap and backup folders for vim
