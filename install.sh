@@ -21,6 +21,7 @@ ln -snf ${BASEDIR}/vimrc ~/.vimrc
 ln -snf ${BASEDIR}/vim/ ~/.vim
 
 #zsh
+ln -snf ${BASEDIR}/zsh/ ~/.zsh
 ln -snf ${BASEDIR}/aliases ~/.aliases.zsh
 ln -snf ${BASEDIR}/custom_functions ~/.custom_functions.zsh
 ln -snf ${BASEDIR}/zshrc ~/.zshrc
