@@ -5,3 +5,7 @@ alias ....='cd ../../..'
 
 # VIM
 alias vim='mvim -v'
+
+# Config editing
+alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.vimrc"

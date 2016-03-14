@@ -7,21 +7,11 @@ fi
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
-# POWERLEVEL9K CONFIG
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vi_mode)
-POWERLEVEL9K_STATUS_VERBOSE=false
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
-
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
-
-# Set vi-style prompt editing
-bindkey -v
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
@@ -30,7 +20,6 @@ export ARCHFLAGS="-arch x86_64"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 
-alias zshconfig="vim ~/.zshrc"
 source ~/.aliases.zsh
 
 source ~/.custom_functions.zsh
