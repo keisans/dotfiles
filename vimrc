@@ -155,7 +155,7 @@ let delimitMate_expand_cr = 1
 "******* CTRLP *****************************************
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-nnoremap <Leader>p :CtrlPMRU
+nnoremap <Leader>p :CtrlPMRU<CR>
 
 "****** VIM-JAVASCRIPT *********************************
 let g:javascript_enable_domhtmlcss = 1
