@@ -5,6 +5,8 @@ set nocompatible
 execute pathogen#infect()
 "turn on filetype plugin
 filetype plugin indent on
+"enabe omni-completion
+set omnifunc=syntaxcomplete#Complete
 
 "*********** GENERAL ******************************
 "let backspace delete line endings and indents, etc

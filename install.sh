@@ -1,10 +1,9 @@
 #!/usr/bin/env zsh
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-mkdir -p ${XDG_CONFIG_HOME:=$HOME/.xdg_config}
 
-# Install all the vim plugins!
-git pull origin master
+# Install all the things!
+git checkout master && git up
 git submodule update --init --recursive
 
 # Create empty swap and backup folders for vim
@@ -25,6 +24,8 @@ ln -snf ${BASEDIR}/zsh/ ~/.zsh
 ln -snf ${BASEDIR}/aliases ~/.aliases.zsh
 ln -snf ${BASEDIR}/custom_functions ~/.custom_functions.zsh
 ln -snf ${BASEDIR}/zshrc ~/.zshrc
+ln -snf ${BASEDIR}/zprezto ~/.zprezto
+ln -snf ${BASEDIR}/zpreztorc ~/.zpreztorc
 
 #git
 ln -snf ${BASEDIR}/gitconfig ~/.gitconfig
