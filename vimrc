@@ -5,8 +5,6 @@ set nocompatible
 execute pathogen#infect()
 "turn on filetype plugin
 filetype plugin indent on
-"enabe omni-completion
-set omnifunc=syntaxcomplete#Complete
 
 "*********** GENERAL ******************************
 "let backspace delete line endings and indents, etc
@@ -74,7 +72,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 "End search hilighting when you hit esc in normal mode
-:nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
 "do the splits
 nnoremap <C-J> <C-W><C-J>
@@ -93,10 +91,23 @@ nnoremap <C-T>h :bprev<CR>
 nnoremap <C-T>w :bp <BAR> bd #<CR>
 
 " Because I'm bad with the shift key
-cmap WQ wq
-cmap Wq wq
-cmap W w
-cmap Q q
+cnoremap WQ wq
+cnoremap Wq wq
+cnoremap W w
+cnoremap Q q
+
+" Manage vim like a boss
+nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <Leader>sv :source $MYVIMRC<CR>
+
+" Get me out of insert mode using jk!
+inoremap jk <Esc>
+
+" Always use more magic
+nnoremap / /\v
+nnoremap ? ?\v
+
+"****** ABBREVIATIONS *********************************
 
 "****** FUNCTIONS *************************************
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
