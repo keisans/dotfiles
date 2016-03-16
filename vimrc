@@ -38,6 +38,10 @@ set number
 "show command
 set showcmd
 
+"case match intelligently
+set ignorecase
+set smartcase
+
 "allow safe per-directory vimrc
 set exrc
 set secure
@@ -76,7 +80,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 "End search hilighting when you hit esc in normal mode
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> \ :nohlsearch<CR>
 
 "do the splits
 nnoremap <C-J> <C-W><C-J>
@@ -108,8 +112,8 @@ nnoremap <Leader>sv :source $MYVIMRC<CR>
 inoremap jk <Esc>
 
 " Always use more magic
-"nnoremap / /\v
-"nnoremap ? ?\v
+nnoremap / /\v
+nnoremap ? ?\v
 
 
 "****** ABBREVIATIONS *********************************
