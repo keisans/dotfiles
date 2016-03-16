@@ -120,6 +120,8 @@ nnoremap ? ?\v
 
 "****** FUNCTIONS *************************************
 
+nnoremap <Leader>y :call VC_vim_card()<CR>
+
 "****** TERN ******************************************
 "enable keyboard shortcuts
 let g:tern_map_keys=1
