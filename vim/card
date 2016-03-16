@@ -1,0 +1,22 @@
+# Top
+<Leader><Leader> - Opens easymotion plugin
+  + w - all words after
+  + jk - lines above / below
+  + fF - char before after
+
+<C-o> - opens completion
+  + <C-[pn]> - find matches prev / next
+  + <C-x> - Global (only works with some syntax)
+  + <C-f> - filename (kinda hit or miss)
+
+<C-f> - page down
+<C-b> - page up
+
+<Leader>cc - comment line
+<Leader>cu - uncomment line
+
+%s/{search}/{replace}/g - replace {search} with {replace} in entire file
+
+<Leader>ig - toggle indentation guides
+
+

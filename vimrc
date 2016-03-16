@@ -34,6 +34,14 @@ set list listchars=tab:»·,trail:·,nbsp:·
 "show line numbers
 set relativenumber
 set number
+
+"show command
+set showcmd
+
+"case match intelligently
+set ignorecase
+set smartcase
+
 "allow safe per-directory vimrc
 set exrc
 set secure
@@ -72,7 +80,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 "End search hilighting when you hit esc in normal mode
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> \ :nohlsearch<CR>
 
 "do the splits
 nnoremap <C-J> <C-W><C-J>
@@ -107,12 +115,10 @@ inoremap jk <Esc>
 nnoremap / /\v
 nnoremap ? ?\v
 
+
 "****** ABBREVIATIONS *********************************
 
 "****** FUNCTIONS *************************************
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 "****** TERN ******************************************
 "enable keyboard shortcuts
@@ -168,7 +174,7 @@ let delimitMate_expand_cr = 1
 "******* CTRLP *****************************************
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-nnoremap <Leader>p :CtrlPMRU
+nnoremap <Leader>p :CtrlPMRU<CR>
 
 "****** VIM-JAVASCRIPT *********************************
 let g:javascript_enable_domhtmlcss = 1
