@@ -34,6 +34,10 @@ set list listchars=tab:»·,trail:·,nbsp:·
 "show line numbers
 set relativenumber
 set number
+
+"show command
+set showcmd
+
 "allow safe per-directory vimrc
 set exrc
 set secure
@@ -104,8 +108,8 @@ nnoremap <Leader>sv :source $MYVIMRC<CR>
 inoremap jk <Esc>
 
 " Always use more magic
-nnoremap / /\v
-nnoremap ? ?\v
+"nnoremap / /\v
+"nnoremap ? ?\v
 
 
 "****** ABBREVIATIONS *********************************
@@ -166,7 +170,7 @@ let delimitMate_expand_cr = 1
 "******* CTRLP *****************************************
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-nnoremap <Leader>p :CtrlPMRU
+nnoremap <Leader>p :CtrlPMRU<CR>
 
 "****** VIM-JAVASCRIPT *********************************
 let g:javascript_enable_domhtmlcss = 1
