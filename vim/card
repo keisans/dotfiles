@@ -1,13 +1,16 @@
 # Top
 <Leader><Leader> - Opens easymotion plugin
-  + w - all words after
+  + wb - all words after / before
   + jk - lines above / below
   + fF - char before after
+  + s - search for char in document
 
 <C-o> - opens completion
   + <C-[pn]> - find matches prev / next
   + <C-x> - Global (only works with some syntax)
   + <C-f> - filename (kinda hit or miss)
+
+viwp - paste register over word under the cursor
 
 <C-f> - page down
 <C-b> - page up

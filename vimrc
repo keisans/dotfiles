@@ -52,8 +52,10 @@ set directory=~/.vim/swap
 
 "********* COLORS & THEME *******************************
 "set colors
-colors base16-monokai
+set t_Co=256
 let base16colorspace=256
+colors base16-monokai
+"let g:base16_shell_path="~/.zsh/base16-shell"
 set background=dark
 "Turn on syntax hilighting
 syntax on
