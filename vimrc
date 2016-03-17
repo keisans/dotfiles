@@ -90,11 +90,19 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Resize the splits
+" Maximize width (window-width)
+nnoremap <Leader>ww <C-W>|
+" Equalize splits (window-equal)
+nnoremap <Leader>we <C-W>=
+" Maximize height (window...it's just in line with the others)
+nnoremap <Leader>wr <C-W>_
+" Close current window (window-quit) safer than :q
+nnoremap <Leader>wq :clo<CR>
+
 "buffer traversal shortcuts
 " New buffer
 nnoremap <C-T>  :enew<CR>
-"Close buffer
-nnoremap <C-W> :bp <BAR> bd #<CR>
 "Traversing buffers
 nnoremap <C-T>l :bnext<CR>
 nnoremap <C-T>h :bprev<CR>
@@ -109,6 +117,9 @@ cnoremap Q q
 " Manage vim like a boss
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
+
+" Close all other splits for distraction-free!
+nnoremap <Leader>df :only<CR>
 
 " Get me out of insert mode using jk!
 inoremap jk <Esc>
