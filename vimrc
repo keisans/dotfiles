@@ -124,6 +124,19 @@ nnoremap ? ?\v
 
 nnoremap <Leader>y :call VC_vim_card()<CR>
 
+" Damian Conway's Die Blinkënmatchen: highlight matches
+nnoremap <silent> n n:call HLNext(0.1)<cr>
+nnoremap <silent> N N:call HLNext(0.1)<cr>
+
+function! HLNext (blinktime)
+  let target_pat = '\c\%#'.@/
+  let ring = matchadd('ErrorMsg', target_pat, 101)
+  redraw
+  exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+  call matchdelete(ring)
+  redraw
+endfunction
+
 "****** TERN ******************************************
 "enable keyboard shortcuts
 let g:tern_map_keys=1
