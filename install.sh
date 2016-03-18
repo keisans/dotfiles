@@ -36,3 +36,6 @@ ln -snf ${BASEDIR}/eslintrc.json ~/.eslintrc
 
 #tmux
 ln -snf ${BASEDIR}/tmux.conf ~/.tmux.conf
+
+#cards
+ln -snf ${BASEDIR}/cards ~/.cards

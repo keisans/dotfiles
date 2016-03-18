@@ -1,1 +1,12 @@
 pman() { man -t "$@" | open -f -a /Applications/Preview.app  }
+
+card() {
+  if [ -e "${HOME}/.cards/${1}" ]
+  then
+    cat ${HOME}/.cards/${1}
+  else
+    cat "$(grep -ilrE "$1" ~/.cards)" | grep -iE "${1}|$"
+  fi
+}
+
+
