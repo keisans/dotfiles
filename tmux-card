@@ -1,0 +1,20 @@
+## `tmux new -s [session-name]`
++ Starts a new session with [session-name]
+
+## `tmux list-sessions`
++ Shows a list of currently active sessions
+
+## `tmux attach -t [session-name]`
+## `tmux switch -t [session-name]`
+## `tmux detach -t [session-name]`
++ Attach, switch to or detach session with the name of [session-name]
+
+## `tmux list-commands`
++ Shows a list of tmux commands and their params
+
+## `tmux list-keys`
++ Shows the current key mappings for tmux
+
+## `tmux info`
++ Shows info on the current session
+
