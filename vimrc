@@ -134,6 +134,7 @@ nnoremap ? ?\v
 "****** FUNCTIONS *************************************
 
 nnoremap <Leader>y :call VC_vim_card()<CR>
+command -nargs=? Card :call VC_vim_card(<f-args>)
 
 " Damian Conway's Die Blinkënmatchen: highlight matches
 nnoremap <silent> n n:call HLNext(0.1)<cr>

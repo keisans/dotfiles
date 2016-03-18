@@ -3,12 +3,21 @@ if exists("loaded_vim_card")
 endif
 let loaded_vim_card = 1
 
-function! VC_vim_card()
-  let code = system("card vim")
-  split __vim_card__
+function! VC_vim_card(...)
+  if a:0 > 0
+    let query = a:1
+  else
+    let query = "vim"
+  end
+  let code = system("card ". query)
+  let window = bufwinnr("__vim_card__")
+  if window < 0
+    split __vim_card__
+  else
+    exe window . "wincmd w"
+  end
   normal! ggdG
-  setlocal filetype=markdown
   setlocal buftype=nofile
-  call append(0, split(code, "\v\n"))
+  call append(0, split(code, '\v\n'))
 endfunction
 
