@@ -24,6 +24,7 @@ ln -snf ${BASEDIR}/zsh/ ~/.zsh
 ln -snf ${BASEDIR}/aliases ~/.aliases.zsh
 ln -snf ${BASEDIR}/custom_functions ~/.custom_functions.zsh
 ln -snf ${BASEDIR}/zshrc ~/.zshrc
+ln -snf ${BASEDIR}/zshenv ~/.zshenv
 ln -snf ${BASEDIR}/zprezto ~/.zprezto
 ln -snf ${BASEDIR}/zpreztorc ~/.zpreztorc
 

@@ -18,9 +18,6 @@ export ARCHFLAGS="-arch x86_64"
 # ssh
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-source ~/.aliases.zsh
-
-source ~/.custom_functions.zsh
 
 BASE16_SHELL="$HOME/.zsh/base16-shell/base16-monokai.dark.sh"
 [[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL
