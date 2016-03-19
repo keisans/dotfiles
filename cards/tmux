@@ -19,3 +19,13 @@
 ## `tmux info`
 + Shows info on the current session
 
+## <Prefix> (C-a)
+  + hjkl - move arround (vim-like)
+  + n - next mwindow
+  + () - switch session
+  + r - reload tmux.conf
+  + I - install plugins
+  + kill:
+    + x - kill session
+    + k - kill pane
+    + K - kill window
