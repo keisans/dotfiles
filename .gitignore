@@ -3,4 +3,5 @@ vim/backups/*
 .DS_Store
 .*.swp%
 tmux/plugins
+tmux/resurrect
 !tpm

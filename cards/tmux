@@ -1,5 +1,6 @@
 #**** TMUX ****
 ## `tmux new -s [session-name]`
+## `tmux new -d -s [session-name] (from within a tmux session)`
 + Starts a new session with [session-name]
 
 ## `tmux list-sessions`
@@ -19,13 +20,29 @@
 ## `tmux info`
 + Shows info on the current session
 
-## <Prefix> (C-a)
-  + hjkl - move arround (vim-like)
-  + n - next mwindow
-  + () - switch session
-  + r - reload tmux.conf
-  + I - install plugins
-  + kill:
-    + x - kill session
-    + k - kill pane
-    + K - kill window
+## `tmux new-window` or `<Prefix>c`
++ Creates new tmux window
+
+# <Prefix> (C-a)
+
+## Panes
++ hjkl - move arround (vim-like)
++ % - vertical split
++ " - horizontal split
++ q - kill pane
+
+## Windows
++ n - next window
++ , - rename window
++ Q - kill window
++ w - choose window
+
+## Sessions
++ $ - rename session
++ () - switch session
++ x - kill session
++ e - choose session
+
+## Util
++ r - reload tmux.conf
++ I - install plugins
