@@ -5,7 +5,7 @@ card() {
   then
     cat ${HOME}/.cards/${1}
   else
-    cat "$(grep -ilrE "$1" ~/.cards)" | grep -iE "${1}|$"
+    cat $(grep -ilrE "$1" ${HOME}/.cards | sed 's/^(.*)$/"&"/g') | grep --color -Ei "${1}|$"
   fi
 }
 

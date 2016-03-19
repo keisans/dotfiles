@@ -1,3 +1,4 @@
+#**** TMUX ****
 ## `tmux new -s [session-name]`
 + Starts a new session with [session-name]
 

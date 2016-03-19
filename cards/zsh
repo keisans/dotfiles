@@ -1,0 +1,3 @@
+#**** ZSH ****
++ wc - word count
+  + -l - get length of document
