@@ -22,4 +22,7 @@ viwp - paste register over word under the cursor
 
 <Leader>ig - toggle indentation guides
 
-
+<Leader>w - window stuff
+  + w - maximize width of split
+  + e - make splits equal
+  + r - maximize height of split

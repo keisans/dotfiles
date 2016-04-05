@@ -1,5 +1,6 @@
 vim/swap/*
 vim/backups/*
+vim/.netrwhist
 .DS_Store
 .*.swp%
 tmux/plugins
