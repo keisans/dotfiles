@@ -108,6 +108,9 @@ nnoremap <C-T>l :bnext<CR>
 nnoremap <C-T>h :bprev<CR>
 nnoremap <C-T>w :bp <BAR> bd #<CR>
 
+" Remap U to <C-R> because U is dumb
+nnoremap U <C-R>
+
 " Because I'm bad with the shift key
 cnoremap WQ wq
 cnoremap Wq wq
@@ -134,7 +137,7 @@ nnoremap ? ?\v
 "****** FUNCTIONS *************************************
 
 nnoremap <Leader>y :call VC_vim_card()<CR>
-command -nargs=? Card :call VC_vim_card(<f-args>)
+command! -nargs=? Card :call VC_vim_card(<f-args>)
 
 " Damian Conway's Die Blinkënmatchen: highlight matches
 nnoremap <silent> n n:call HLNext(0.1)<cr>
