@@ -14,9 +14,8 @@ viwp - paste register over word under the cursor
 
 <C-f> - page down
 <C-b> - page up
-
-<Leader>cc - comment line
-<Leader>cu - uncomment line
+<C-d> - scroll down
+<C-u> - scroll up
 
 %s/{search}/{replace}/g - replace {search} with {replace} in entire file
 
@@ -26,3 +25,8 @@ viwp - paste register over word under the cursor
   + w - maximize width of split
   + e - make splits equal
   + r - maximize height of split
+
+## Fuzzy Find (FZF)
+<C-p> - Fuzzy find files in current folder
+<Leader>p - Fuzzy find buffer
+<Leader>l - Fuzzy find line in all open buffers

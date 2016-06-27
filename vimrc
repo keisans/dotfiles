@@ -1,8 +1,36 @@
 "******** INIT *******************************
 "kill vi compatability and make vim useful
 set nocompatible
-"Turn on all mah plugins
-execute pathogen#infect()
+silent! if plug#begin('~/.vim/bundle')
+"style plugins
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'nathanaelkane/vim-indent-guides'
+
+"nav plugins
+Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
+
+"edit plugins
+Plug 'tpope/vim-repeat'
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-surround'
+
+" syntax plugins
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'pangloss/vim-javascript'
+Plug 'kchmck/vim-coffee-script'
+Plug 'mxw/vim-jsx'
+
+"linting
+Plug 'scrooloose/syntastic'
+
+"git
+Plug 'tpope/vim-fugitive'
+call plug#end()
+endif
+
 "turn on filetype plugin
 filetype plugin indent on
 
@@ -102,11 +130,7 @@ nnoremap <Leader>wq :clo<CR>
 
 "buffer traversal shortcuts
 " New buffer
-nnoremap <C-T>  :enew<CR>
 "Traversing buffers
-nnoremap <C-T>l :bnext<CR>
-nnoremap <C-T>h :bprev<CR>
-nnoremap <C-T>w :bp <BAR> bd #<CR>
 
 " Remap U to <C-R> because U is dumb
 nnoremap U <C-R>
@@ -131,6 +155,8 @@ inoremap jk <Esc>
 nnoremap / /\v
 nnoremap ? ?\v
 
+" File explorer
+nnoremap <Leader>f :Explore<CR>
 
 "****** ABBREVIATIONS *********************************
 
@@ -159,23 +185,23 @@ let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
 
 "****** NERDTree *************************************
-map <C-e> :NERDTreeTabsToggle<CR>:NERDTreeMirrorOpen<CR>
-map <leader>e :NERDTreeFind<CR>
-nmap <leader>nt :NERDTreeFind<CR>
-let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git$[[dir]]', '\.hg', '\.svn', '\.bzr']
-let NERDTreeChDirMode=0
-let NERDTreeQuitOnOpen=0
-let NERDTreeMouseMode=2
-let NERDTreeShowHidden=1
-let NERDTreeKeepTreeInNewTab=1
-let g:nerdtree_tabs_open_on_gui_startup=1
-let g:nerdtree_tabs_open_on_console_startup=1
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
-"locate current file in NERDTree
-map <leader>l :NERDTreeFind<cr>
-"close vim if only nerdtree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"map <C-e> :NERDTreeTabsToggle<CR>:NERDTreeMirrorOpen<CR>
+"map <leader>e :NERDTreeFind<CR>
+"nmap <leader>nt :NERDTreeFind<CR>
+"let NERDTreeShowBookmarks=1
+"let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git$[[dir]]', '\.hg', '\.svn', '\.bzr']
+"let NERDTreeChDirMode=0
+"let NERDTreeQuitOnOpen=0
+"let NERDTreeMouseMode=2
+"let NERDTreeShowHidden=1
+"let NERDTreeKeepTreeInNewTab=1
+"let g:nerdtree_tabs_open_on_gui_startup=1
+"let g:nerdtree_tabs_open_on_console_startup=1
+"map <Leader>n <plug>NERDTreeTabsToggle<CR>
+""locate current file in NERDTree
+"map <leader>l :NERDTreeFind<cr>
+""close vim if only nerdtree
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "***** AIRLINE *****************************************
 "enable airline tab bar
@@ -204,10 +230,29 @@ let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 1
 
 "******* CTRLP *****************************************
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-nnoremap <Leader>p :CtrlPMRU<CR>
+"nnoremap <Leader>p :CtrlPMRU<CR>
 
 "****** VIM-JAVASCRIPT *********************************
 let g:javascript_enable_domhtmlcss = 1
 let g:jsx_ext_required = 0
+
+"****** FZF ********************************************
+nnoremap <C-p> :Files<CR>
+nnoremap <Leader>p :Buffer<CR>
+nnoremap <Leader>l :Lines<CR>
+
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+"**** ACK **********************************************
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif

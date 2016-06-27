@@ -25,6 +25,9 @@ BASE16_SHELL="$HOME/.zsh/base16-shell/base16-monokai.dark.sh"
 # Load in z
 . `brew --prefix`/etc/profile.d/z.sh
 
+# Activate fuzzy find
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
