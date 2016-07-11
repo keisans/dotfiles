@@ -9,4 +9,6 @@ card() {
   fi
 }
 
-
+temp() {
+  vim +"set buftype=nofile bufhidden=wipe nobuflisted noswapfile tw=${1:-0}"
+}

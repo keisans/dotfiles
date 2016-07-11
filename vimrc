@@ -23,6 +23,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mxw/vim-jsx'
 
+"color schemes
+Plug 'GGalizzi/cake-vim'
+
 "linting
 Plug 'scrooloose/syntastic'
 
@@ -81,10 +84,7 @@ set directory=~/.vim/swap
 "********* COLORS & THEME *******************************
 "set colors
 set t_Co=256
-let base16colorspace=256
-colors base16-monokai
-"let g:base16_shell_path="~/.zsh/base16-shell"
-set background=dark
+set background=light
 "Turn on syntax hilighting
 syntax on
 "hilihgt current line
@@ -93,13 +93,6 @@ set cursorline
 "Hilight search resluts
 set incsearch
 set hlsearch
-
-"set the font for GUI editors
-set guifont=hack
-set guioptions-=r
-set guioptions-=R
-set guioptions-=l
-set guioptions-=L
 
 "always show the status bar
 set laststatus=2
@@ -156,7 +149,11 @@ nnoremap / /\v
 nnoremap ? ?\v
 
 " File explorer
-nnoremap <Leader>f :Explore<CR>
+nnoremap <Leader>t :Explore<CR>
+
+" Buffer nav
+nnoremap <Leader>j :bnext<CR>
+nnoremap <Leader>k :bprev<CR>
 
 "****** ABBREVIATIONS *********************************
 
@@ -239,8 +236,10 @@ let g:javascript_enable_domhtmlcss = 1
 let g:jsx_ext_required = 0
 
 "****** FZF ********************************************
-nnoremap <C-p> :Files<CR>
-nnoremap <Leader>p :Buffer<CR>
+nnoremap <C-p> :GFiles<CR>
+nnoremap <Leader>P :Files<CR>
+nnoremap <Leader>p :History<CR>
+nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>l :Lines<CR>
 
 nmap <leader><tab> <plug>(fzf-maps-n)
