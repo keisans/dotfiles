@@ -85,6 +85,7 @@ set directory=~/.vim/swap
 "set colors
 set t_Co=256
 set background=light
+colorscheme luna-term
 "Turn on syntax hilighting
 syntax on
 "hilihgt current line
