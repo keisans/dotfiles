@@ -6,7 +6,7 @@ alias cd..='cd ..'
 alias l='ls -al'
 
 # VIM
-alias vim='mvim -v'
+alias vim='nvim'
 
 # Config editing
 alias zshconfig="vim ~/.zshrc"
