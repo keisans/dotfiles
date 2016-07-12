@@ -11,6 +11,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-vinegar'
 
 "edit plugins
 Plug 'tpope/vim-repeat'
@@ -101,9 +102,9 @@ set laststatus=2
 "set truecolor if available
 if exists("termguicolors")
   set termguicolors
-  colorscheme luna
+  colorscheme base16-monokai
 elseif has("nvim")
-  colorscheme luna
+  colorscheme base16-monokai
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
@@ -184,6 +185,13 @@ function! HLNext (blinktime)
   call matchdelete(ring)
   redraw
 endfunction
+
+function! Present ()
+  colorscheme cake
+  AirlineTheme papercolor
+endfunction
+
+command! Present :call Present()<CR>
 
 "****** TERN ******************************************
 "enable keyboard shortcuts
