@@ -98,6 +98,12 @@ set hlsearch
 "always show the status bar
 set laststatus=2
 
+"nvim color options
+if has("nvim")
+  colorscheme luna
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
 "****** SHORTCUTS AND KEYBOARD ************************
 "set the leader to the , key, since that's way easier than the default
 let mapleader = ","
@@ -242,6 +248,7 @@ nnoremap <Leader>P :Files<CR>
 nnoremap <Leader>p :History<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>l :Lines<CR>
+nnoremap <Leader>c :Colors<CR>
 
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
