@@ -98,8 +98,11 @@ set hlsearch
 "always show the status bar
 set laststatus=2
 
-"nvim color options
-if has("nvim")
+"set truecolor if available
+if exists("termguicolors")
+  set termguicolors
+  colorscheme luna
+elseif has("nvim")
   colorscheme luna
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
