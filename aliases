@@ -11,3 +11,8 @@ alias vim='nvim'
 # Config editing
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
+
+# projects
+alias conn='npm run connect:watch'
+alias style='npm run style:watch'
+alias jstest='npm run test:watch'

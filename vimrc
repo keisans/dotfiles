@@ -1,11 +1,13 @@
 "******** INIT *******************************
 "kill vi compatability and make vim useful
 set nocompatible
+
 silent! if plug#begin('~/.vim/bundle')
 "style plugins
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'haya14busa/incsearch.vim'
 
 "nav plugins
 Plug 'junegunn/fzf', { 'do': './install --all' }
@@ -17,15 +19,28 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
+Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
+
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 " syntax plugins
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
 Plug 'kchmck/vim-coffee-script'
-Plug 'mxw/vim-jsx'
 
 "color schemes
 Plug 'GGalizzi/cake-vim'
+Plug 'lifepillar/vim-solarized8'
+Plug 'Lokaltog/vim-distinguished'
+Plug 'tomasr/molokai'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'jnurmine/Zenburn'
+Plug 'jonathanfilip/vim-lucius'
+Plug 'altercation/vim-colors-solarized'
+Plug 'rakr/vim-one'
 
 "linting
 Plug 'scrooloose/syntastic'
@@ -85,7 +100,7 @@ set directory=~/.vim/swap
 "********* COLORS & THEME *******************************
 "set colors
 set t_Co=256
-set background=light
+set background=dark
 colorscheme luna-term
 "Turn on syntax hilighting
 syntax on
@@ -102,9 +117,11 @@ set laststatus=2
 "set truecolor if available
 if exists("termguicolors")
   set termguicolors
-  colorscheme base16-monokai
+  set background=dark
+  colorscheme one
 elseif has("nvim")
-  colorscheme base16-monokai
+  colorscheme one
+  set background=dark
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
@@ -156,8 +173,8 @@ nnoremap <Leader>df :only<CR>
 inoremap jk <Esc>
 
 " Always use more magic
-nnoremap / /\v
-nnoremap ? ?\v
+"nnoremap / /\v
+"nnoremap ? ?\v
 
 " File explorer
 nnoremap <Leader>t :Explore<CR>
@@ -167,6 +184,16 @@ nnoremap <Leader>j :bnext<CR>
 nnoremap <Leader>k :bprev<CR>
 
 "****** ABBREVIATIONS *********************************
+
+"****** OMNIFUNCS *************************************
+augroup omnifuncs
+  autocmd!
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup end
 
 "****** FUNCTIONS *************************************
 
@@ -194,29 +221,14 @@ endfunction
 command! Present :call Present()<CR>
 
 "****** TERN ******************************************
-"enable keyboard shortcuts
-let g:tern_map_keys=1
-"show arg hints
-let g:tern_show_argument_hints='on_hold'
-
-"****** NERDTree *************************************
-"map <C-e> :NERDTreeTabsToggle<CR>:NERDTreeMirrorOpen<CR>
-"map <leader>e :NERDTreeFind<CR>
-"nmap <leader>nt :NERDTreeFind<CR>
-"let NERDTreeShowBookmarks=1
-"let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git$[[dir]]', '\.hg', '\.svn', '\.bzr']
-"let NERDTreeChDirMode=0
-"let NERDTreeQuitOnOpen=0
-"let NERDTreeMouseMode=2
-"let NERDTreeShowHidden=1
-"let NERDTreeKeepTreeInNewTab=1
-"let g:nerdtree_tabs_open_on_gui_startup=1
-"let g:nerdtree_tabs_open_on_console_startup=1
-"map <Leader>n <plug>NERDTreeTabsToggle<CR>
-""locate current file in NERDTree
-"map <leader>l :NERDTreeFind<cr>
-""close vim if only nerdtree
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+if exists('g:plugs["tern_for_vim"]')
+  "keyboard shotcuts
+  let g:tern_map_keys=1
+  let g:tern_show_argument_hints = 'on_hold'
+  let g:tern_show_signature_in_pum = 1
+  "use term for autocomplete if it's on
+  autocmd FileType javascript setlocal omnifunc=tern#Complete
+endif
 
 "***** AIRLINE *****************************************
 "enable airline tab bar
@@ -235,22 +247,16 @@ nmap <leader>- <Plug>AirlineSelectPrevTab
 nmap <leader>= <Plug>AirlineSelectNextTab
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
-let g:airline_theme = 'luna'
+let g:airline_theme = 'one'
 
 "****** SYNTASTIC **************************************
-let g:syntastic_javascript_checkers = ["eslint"]
+let g:syntastic_javascript_checkers = ['eslint']
 
 ""******* DELIMITMATE *********************************
 let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 1
 
-"******* CTRLP *****************************************
-"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-"nnoremap <Leader>p :CtrlPMRU<CR>
-
 "****** VIM-JAVASCRIPT *********************************
-let g:javascript_enable_domhtmlcss = 1
 let g:jsx_ext_required = 0
 
 "****** FZF ********************************************
@@ -260,6 +266,7 @@ nnoremap <Leader>p :History<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>l :Lines<CR>
 nnoremap <Leader>c :Colors<CR>
+nnoremap <Leader>u :Snippets<CR>
 
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
@@ -274,3 +281,21 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+"**** INCSEARCH ********************************************
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+"**** DEOPLETE ******************************************
+if has("nvim")
+  let g:deoplete#enable_at_startup = 1
+  inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<TAB>"
+  inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<TAB>"
+endif
+
+"***** ULTISNIPS ***************************************
+let g:UltiSnipsListSnippets = '<c-u>'
+let g:UltiSnipsExpandTrigger='<c-e>'
+let g:UltiSnipsJumpForwardTrigger='<c-r>'
+let g:UltiSnipsJumpBackwardTrigger='<c-w>'

@@ -1,20 +1,69 @@
 {
   "rules": {
-    "indent": [2, 2],
-    "quotes": [1, "single"],
-    "linebreak-style": [2, "unix"],
-    "semi": [2, "always"],
-    "no-console": 1,
-    "space-before-blocks": 2
+    "indent": [
+      2,
+      2,
+      {"SwitchCase": 1}
+    ],
+    "quotes": [
+      2,
+      "single"
+    ],
+    "linebreak-style": [
+      2,
+      "unix"
+    ],
+    "no-console": [
+      0
+    ],
+    "no-multiple-empty-lines": [
+      2,
+      {"max": 1}
+    ],
+    "semi": [
+      2,
+      "always"
+    ],
+    "semi-spacing": [
+      1,
+      {"before": false, "after": true}
+    ],
+    "keyword-spacing": 2,
+    "space-before-function-paren": 2,
+    "space-before-blocks": 2,
+    "no-undef-init": 2,
+    "no-undefined": 2,
+    "no-duplicate-imports": 2,
+    "yoda": 2,
+    "no-useless-constructor": 2,
+    "react/no-direct-mutation-state": "off",
+    "react/jsx-pascal-case": 2,
+    "react/jsx-no-duplicate-props": 2,
+    "react/no-danger": "off"
   },
-  "extends": "eslint:recommended",
+  "globals": {
+    "ddescribe": false,
+    "iit": false
+  },
   "env": {
     "es6": true,
-    "node": true,
-    "browser": true
+    "browser": true,
+    "jasmine": true,
+    "commonjs": true,
+    "node": true
   },
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
-  }
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true,
+      "arrowFunctions": true,
+      "modules": true
+    }
+  },
+  "plugins": [
+    "react"
+  ]
 }
