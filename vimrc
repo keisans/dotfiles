@@ -214,7 +214,8 @@ function! HLNext (blinktime)
 endfunction
 
 function! Present ()
-  colorscheme cake
+  colorscheme lucius
+  set background=light
   AirlineTheme papercolor
 endfunction
 
