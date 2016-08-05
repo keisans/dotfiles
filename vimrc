@@ -82,6 +82,10 @@ set list listchars=tab:»·,trail:·,nbsp:·
 set relativenumber
 set number
 
+"more natural splits
+set splitbelow
+set splitright
+
 "show command
 set showcmd
 
@@ -254,6 +258,7 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 1
 let g:airline_theme = 'one'
 
 "****** SYNTASTIC **************************************
+let g:syntastic_check_on_open=1
 let g:syntastic_javascript_checkers = ['eslint']
 
 ""******* DELIMITMATE *********************************
