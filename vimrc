@@ -227,7 +227,10 @@ if exists('g:plugs["tern_for_vim"]')
   let g:tern_show_argument_hints = 'on_hold'
   let g:tern_show_signature_in_pum = 1
   "use term for autocomplete if it's on
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
+  augroup tern_completion
+    autocmd!
+    autocmd FileType javascript setlocal omnifunc=tern#Complete
+  augroup end
 endif
 
 "***** AIRLINE *****************************************
@@ -255,6 +258,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 ""******* DELIMITMATE *********************************
 let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 1
+imap <C-L> <Plug>delimitMateS-Tab
 
 "****** VIM-JAVASCRIPT *********************************
 let g:jsx_ext_required = 0
