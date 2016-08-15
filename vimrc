@@ -19,6 +19,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
 
 function! DoRemote(arg)
@@ -34,7 +35,6 @@ Plug 'kchmck/vim-coffee-script'
 "color schemes
 Plug 'GGalizzi/cake-vim'
 Plug 'lifepillar/vim-solarized8'
-Plug 'Lokaltog/vim-distinguished'
 Plug 'tomasr/molokai'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'jnurmine/Zenburn'
@@ -217,13 +217,20 @@ function! HLNext (blinktime)
   redraw
 endfunction
 
-function! Present ()
+function! LightTheme ()
   colorscheme lucius
   set background=light
   AirlineTheme papercolor
 endfunction
 
-command! Present :call Present()<CR>
+function! DarkTheme ()
+  colorscheme one
+  set background=dark
+  AirlineTheme luna
+endfunction
+
+command! Light :call LightTheme()<CR>
+command! Dark :call DarkTheme()<CR>
 
 "****** TERN ******************************************
 if exists('g:plugs["tern_for_vim"]')
@@ -234,7 +241,7 @@ if exists('g:plugs["tern_for_vim"]')
   "use term for autocomplete if it's on
   augroup tern_completion
     autocmd!
-    autocmd FileType javascript setlocal omnifunc=tern#Complete
+    autocmd FileType javascript,jsx,javascript.jsx setlocal omnifunc=tern#Complete
   augroup end
 endif
 
@@ -277,6 +284,7 @@ nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>l :Lines<CR>
 nnoremap <Leader>c :Colors<CR>
 nnoremap <Leader>u :Snippets<CR>
+nnoremap <Leader>g :Ag<CR>
 
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
