@@ -13,14 +13,14 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
-Plug 'tpope/vim-vinegar'
 
 "edit plugins
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
+Plug 'easymotion/vim-easymotion'
 
 function! DoRemote(arg)
   UpdateRemotePlugins
@@ -119,11 +119,8 @@ set hlsearch
 set laststatus=2
 
 "set truecolor if available
-if exists("termguicolors")
+if has("nvim")
   set termguicolors
-  set background=dark
-  colorscheme one
-elseif has("nvim")
   colorscheme one
   set background=dark
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -183,10 +180,6 @@ inoremap jk <Esc>
 " File explorer
 nnoremap <Leader>t :Explore<CR>
 
-" Buffer nav
-nnoremap <Leader>j :bnext<CR>
-nnoremap <Leader>k :bprev<CR>
-
 "****** ABBREVIATIONS *********************************
 
 "****** OMNIFUNCS *************************************
@@ -226,7 +219,7 @@ endfunction
 function! DarkTheme ()
   colorscheme one
   set background=dark
-  AirlineTheme luna
+  AirlineTheme one
 endfunction
 
 command! Light :call LightTheme()<CR>
@@ -267,6 +260,7 @@ let g:airline_theme = 'one'
 "****** SYNTASTIC **************************************
 let g:syntastic_check_on_open=1
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss', 'coffee'] }
 
 ""******* DELIMITMATE *********************************
 let delimitMate_expand_space = 1
@@ -308,12 +302,24 @@ map g/ <Plug>(incsearch-stay)
 "**** DEOPLETE ******************************************
 if has("nvim")
   let g:deoplete#enable_at_startup = 1
+  if !exists('g:deoplete#omni#input_patterns')
+    let g:deoplete#omni#input_patterns = {}
+  endif
+  autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
   inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<TAB>"
-  inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<TAB>"
+  inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 endif
 
-"***** ULTISNIPS ***************************************
-let g:UltiSnipsListSnippets = '<c-u>'
-let g:UltiSnipsExpandTrigger='<c-e>'
-let g:UltiSnipsJumpForwardTrigger='<c-r>'
-let g:UltiSnipsJumpBackwardTrigger='<c-w>'
+"**** NEOSNIPPETS *******************************************
+imap <C-k>  <Plug>(neosnippet_expand_or_jump)
+
+"**** EASYMOTION *******************************************
+let g:EasyMotion_do_mapping = 0
+
+nmap s <Plug>(easymotion-overwin-f2)
+
+nmap <Leader>n <Plug>(easymotion-bd-n)
+
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
