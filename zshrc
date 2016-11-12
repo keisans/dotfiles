@@ -8,6 +8,9 @@ fi
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
+# Add completions to the fpath
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin"
 
 # Preferred editor for local and remote sessions
