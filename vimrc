@@ -21,6 +21,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
 Plug 'easymotion/vim-easymotion'
+Plug 'jamessan/vim-gnupg'
 
 function! DoRemote(arg)
   UpdateRemotePlugins
