@@ -114,7 +114,7 @@ set cursorline
 
 "Hilight search resluts
 set incsearch
-set hlsearch
+"set hlsearch
 
 "always show the status bar
 set laststatus=2
@@ -317,10 +317,10 @@ imap <C-k>  <Plug>(neosnippet_expand_or_jump)
 "**** EASYMOTION *******************************************
 let g:EasyMotion_do_mapping = 0
 
-nmap s <Plug>(easymotion-overwin-f2)
+nmap s <Plug>(easymotion-bd-f2)
 
 nmap <Leader>n <Plug>(easymotion-bd-n)
 
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+nmap <Leader>j <Plug>(easymotion-j)
+nmap <Leader>k <Plug>(easymotion-k)
 
