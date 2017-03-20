@@ -12,3 +12,13 @@ card() {
 temp() {
   vim +"set buftype=nofile bufhidden=wipe nobuflisted noswapfile tw=${1:-0}"
 }
+
+switchHosts() {
+  if [ "${1}" == "kong" ]; then
+    cat /etc/hosts.kong | sudo tee /etc/hosts
+  elif [ "${1}" == "prod" ]; then
+    cat /etc/hosts.prod | sudo tee /etc/hosts
+  else
+    echo "enter kong or prod to switch environments"
+  fi
+}

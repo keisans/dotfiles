@@ -13,6 +13,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-vinegar'
 
 "edit plugins
 Plug 'tpope/vim-repeat'
@@ -32,6 +33,10 @@ Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
 Plug 'kchmck/vim-coffee-script'
+Plug 'leafgarland/typescript-vim'
+Plug 'mhartington/nvim-typescript'
+Plug 'carlitux/deoplete-ternjs'
+
 
 "color schemes
 Plug 'GGalizzi/cake-vim'
@@ -42,9 +47,12 @@ Plug 'jnurmine/Zenburn'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'altercation/vim-colors-solarized'
 Plug 'rakr/vim-one'
+Plug 'danilo-augusto/vim-afterglow'
+Plug 'mhartington/oceanic-next'
 
 "linting
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 
 "git
 Plug 'tpope/vim-fugitive'
@@ -125,6 +133,8 @@ if has("nvim")
   colorscheme one
   set background=dark
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  let g:python_host_prog = '/usr/bin/python'
+  let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.5/bin/python3'
 endif
 
 "****** SHORTCUTS AND KEYBOARD ************************
@@ -227,11 +237,14 @@ command! Light :call LightTheme()<CR>
 command! Dark :call DarkTheme()<CR>
 
 "****** TERN ******************************************
+" Use tern_for_vim.
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+
+let g:tern_request_timeout = 1
+let g:tern_show_signature_in_pum = 1
+
 if exists('g:plugs["tern_for_vim"]')
-  "keyboard shotcuts
-  let g:tern_map_keys=1
-  let g:tern_show_argument_hints = 'on_hold'
-  let g:tern_show_signature_in_pum = 1
   "use term for autocomplete if it's on
   augroup tern_completion
     autocmd!
@@ -257,11 +270,25 @@ nmap <leader>= <Plug>AirlineSelectNextTab
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
 let g:airline_theme = 'one'
+"let g:airline#extensions#syntastic#enabled = 1
 
 "****** SYNTASTIC **************************************
-let g:syntastic_check_on_open=1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss', 'coffee'] }
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss', 'coffee'] }
+
+"******** ALE ********************************************
+let g:airline#extensions#ale#enabled = 1
+let g:ale_javascript_eslint_executable = 'eslint_d'
+let g:ale_javascript_eslint_use_global = 1
+let g:ale_set_quickfix = 0
+
+let g:ale_linter_aliases = {'javascript.jsx': 'javascript'}
+
+let g:ale_linters = { 'javascript': [ 'eslint' ] }
 
 ""******* DELIMITMATE *********************************
 let delimitMate_expand_space = 1
@@ -278,17 +305,16 @@ nnoremap <Leader>p :History<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>l :Lines<CR>
 nnoremap <Leader>c :Colors<CR>
-nnoremap <Leader>u :Snippets<CR>
 nnoremap <Leader>g :Ag<CR>
 
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
+nmap <leader><tab> <Plug>(fzf-maps-n)
+xmap <leader><tab> <Plug>(fzf-maps-x)
+omap <leader><tab> <Plug>(fzf-maps-o)
 
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
+imap <c-x><c-k> <Plug>(fzf-complete-word)
+imap <c-x><c-f> <Plug>(fzf-complete-path)
+imap <c-x><c-j> <Plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <Plug>(fzf-complete-line)
 
 "**** ACK **********************************************
 if executable('ag')
