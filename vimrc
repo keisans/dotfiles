@@ -33,7 +33,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
 Plug 'kchmck/vim-coffee-script'
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript'
 Plug 'carlitux/deoplete-ternjs'
 
@@ -190,6 +190,9 @@ inoremap jk <Esc>
 
 " File explorer
 nnoremap <Leader>t :Explore<CR>
+
+" Set the dictionary to the std dict
+set dictionary=/usr/share/dict/words
 
 "****** ABBREVIATIONS *********************************
 
