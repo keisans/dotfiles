@@ -110,6 +110,9 @@ set secure
 set backupdir=~/.vim/backups
 set directory=~/.vim/swap
 
+" Set the dictionary to the std dict
+set dictionary=/usr/share/dict/words
+
 "********* COLORS & THEME *******************************
 "set colors
 set t_Co=256
@@ -190,9 +193,6 @@ inoremap jk <Esc>
 
 " File explorer
 nnoremap <Leader>t :Explore<CR>
-
-" Set the dictionary to the std dict
-set dictionary=/usr/share/dict/words
 
 "****** ABBREVIATIONS *********************************
 
@@ -352,4 +352,9 @@ nmap <Leader>n <Plug>(easymotion-bd-n)
 
 nmap <Leader>j <Plug>(easymotion-j)
 nmap <Leader>k <Plug>(easymotion-k)
+
+
+"**** TYPESCRIPT *********************************************
+let g:nvim_typescript#type_info_on_hold=1
+
 
