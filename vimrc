@@ -1,6 +1,8 @@
 "******** INIT *******************************
 "kill vi compatability and make vim useful
-set nocompatible
+if &compatible
+  set nocompatible
+endif
 
 silent! if plug#begin('~/.vim/bundle')
 "style plugins
@@ -24,7 +26,7 @@ Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
 Plug 'easymotion/vim-easymotion'
 Plug 'jamessan/vim-gnupg'
 
-function! DoRemote(arg)
+function! DoRemote(arg) abort
   UpdateRemotePlugins
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
@@ -32,23 +34,26 @@ Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 " syntax plugins
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
-Plug 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript'
 Plug 'carlitux/deoplete-ternjs'
 
 
+" Format plugin
+Plug 'sbdchd/neoformat'
+
 "color schemes
 Plug 'GGalizzi/cake-vim'
-Plug 'lifepillar/vim-solarized8'
-Plug 'tomasr/molokai'
-Plug 'chriskempson/vim-tomorrow-theme'
-Plug 'jnurmine/Zenburn'
-Plug 'jonathanfilip/vim-lucius'
-Plug 'altercation/vim-colors-solarized'
 Plug 'rakr/vim-one'
-Plug 'danilo-augusto/vim-afterglow'
-Plug 'mhartington/oceanic-next'
+"Plug 'lifepillar/vim-solarized8'
+"Plug 'tomasr/molokai'
+"Plug 'chriskempson/vim-tomorrow-theme'
+"Plug 'jnurmine/Zenburn'
+"Plug 'jonathanfilip/vim-lucius'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'danilo-augusto/vim-afterglow'
+"Plug 'mhartington/oceanic-next'
 
 "linting
 "Plug 'scrooloose/syntastic'
@@ -63,6 +68,9 @@ endif
 filetype plugin indent on
 
 "*********** GENERAL ******************************
+" set encoding for everything
+set encoding=utf-8
+
 "let backspace delete line endings and indents, etc
 set backspace=indent,eol,start
 
@@ -119,7 +127,9 @@ set t_Co=256
 set background=dark
 colorscheme luna-term
 "Turn on syntax hilighting
-syntax on
+if !exists("g:syntax_on")
+  syntax enable
+endif
 "hilihgt current line
 set cursorline
 
@@ -131,8 +141,12 @@ set incsearch
 set laststatus=2
 
 "set truecolor if available
-if has("nvim")
+if has("termguicolors")
   set termguicolors
+endif
+
+"nvim specific options
+if has("nvim")
   colorscheme one
   set background=dark
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -146,7 +160,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 "End search hilighting when you hit esc in normal mode
-nnoremap <silent> \ :nohlsearch<CR>
+nnoremap <silent> \ :<C-u>nohlsearch<CR>
 
 "do the splits
 nnoremap <C-J> <C-W><C-J>
@@ -177,12 +191,12 @@ cnoremap Wq wq
 cnoremap W w
 cnoremap Q q
 
-" Manage vim like a boss
-nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
-nnoremap <Leader>sv :source $MYVIMRC<CR>
+" Manage vim
+nnoremap <Leader>ev :<C-u>vsplit $MYVIMRC<CR>
+nnoremap <Leader>sv :<C-u>source $MYVIMRC<CR>
 
 " Close all other splits for distraction-free!
-nnoremap <Leader>df :only<CR>
+nnoremap <Leader>df :<C-u>only<CR>
 
 " Get me out of insert mode using jk!
 inoremap jk <Esc>
@@ -191,8 +205,8 @@ inoremap jk <Esc>
 "nnoremap / /\v
 "nnoremap ? ?\v
 
-" File explorer
-nnoremap <Leader>t :Explore<CR>
+" Swap to previous buffer
+nnoremap <Leader>; :<C-u>b#<CR>
 
 "****** ABBREVIATIONS *********************************
 
@@ -208,14 +222,14 @@ augroup end
 
 "****** FUNCTIONS *************************************
 
-nnoremap <Leader>y :call VC_vim_card()<CR>
+nnoremap <Leader>y :<C-u>call VC_vim_card()<CR>
 command! -nargs=? Card :call VC_vim_card(<f-args>)
 
 " Damian Conway's Die Blinkënmatchen: highlight matches
 nnoremap <silent> n n:call HLNext(0.1)<cr>
 nnoremap <silent> N N:call HLNext(0.1)<cr>
 
-function! HLNext (blinktime)
+function! HLNext (blinktime) abort
   let target_pat = '\c\%#'.@/
   let ring = matchadd('ErrorMsg', target_pat, 101)
   redraw
@@ -224,13 +238,13 @@ function! HLNext (blinktime)
   redraw
 endfunction
 
-function! LightTheme ()
+function! LightTheme () abort
   colorscheme lucius
   set background=light
   AirlineTheme papercolor
 endfunction
 
-function! DarkTheme ()
+function! DarkTheme () abort
   colorscheme one
   set background=dark
   AirlineTheme one
@@ -302,13 +316,16 @@ imap <C-L> <Plug>delimitMateS-Tab
 let g:jsx_ext_required = 0
 
 "****** FZF ********************************************
-nnoremap <C-p> :GFiles<CR>
-nnoremap <Leader>P :Files<CR>
-nnoremap <Leader>p :History<CR>
-nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>l :Lines<CR>
-nnoremap <Leader>c :Colors<CR>
-nnoremap <Leader>g :Ag<CR>
+nnoremap <C-p> :<C-u>GFiles<CR>
+nnoremap <Leader>P :<C-u>Files<CR>
+nnoremap <Leader>p :<C-u>History<CR>
+nnoremap <Leader>b :<C-u>Buffers<CR>
+nnoremap <Leader>l :<C-u>Lines<CR>
+nnoremap <Leader>c :<C-u>Colors<CR>
+nnoremap <Leader>g :<C-u>Ag<CR>
+nnoremap <Leader>m :<C-u>Tags<CR>
+
+nnoremap <Leader><Space> :silent execute "Ag " . expand("<cword>")<CR>
 
 nmap <leader><tab> <Plug>(fzf-maps-n)
 xmap <leader><tab> <Plug>(fzf-maps-x)
@@ -357,4 +374,11 @@ nmap <Leader>k <Plug>(easymotion-k)
 "**** TYPESCRIPT *********************************************
 let g:nvim_typescript#type_info_on_hold=1
 
-
+"**** NEOFORMAT ***********************************************
+let g:neoformat_enabled_javascript = ['prettier']
+let g:neoformat_try_formatprg = 1
+augroup format
+  autocmd!
+  autocmd FileType javascript,javascript.jsx setlocal formatprg=prettier\ --stdin\ --single-quote
+  autocmd BufWrite *.js Neoformat
+augroup END
