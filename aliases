@@ -16,3 +16,6 @@ alias vimconfig="vim ~/.vimrc"
 alias conn='npm run connect:watch'
 alias style='npm run style:watch'
 alias jstest='npm run test:watch'
+
+# love
+alias love="/Applications/love.app/Contents/MacOS/love"
