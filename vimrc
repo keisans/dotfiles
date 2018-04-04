@@ -15,6 +15,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-vinegar'
 
+"tags plugin
+Plug 'ludovicchabant/vim-gutentags'
+
 "edit plugins
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
@@ -24,10 +27,7 @@ Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
 Plug 'easymotion/vim-easymotion'
 Plug 'jamessan/vim-gnupg'
 
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " syntax plugins
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
