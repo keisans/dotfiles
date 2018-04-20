@@ -17,6 +17,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-vinegar'
 
+"tags
+Plug 'ludovicchabant/vim-gutentags'
+
 "edit plugins
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
@@ -26,16 +29,13 @@ Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
 Plug 'easymotion/vim-easymotion'
 Plug 'jamessan/vim-gnupg'
 
-function! DoRemote(arg) abort
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " syntax plugins
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'HerringtonDarkholme/yats.vim' | Plug 'ianks/vim-tsx'
 Plug 'mhartington/nvim-typescript'
 Plug 'carlitux/deoplete-ternjs'
 
@@ -210,15 +210,20 @@ nnoremap <Leader>; :<C-u>b#<CR>
 
 "****** ABBREVIATIONS *********************************
 
+"****** FUGITIVE **************************************
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+
+
 "****** OMNIFUNCS *************************************
-augroup omnifuncs
-  autocmd!
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-augroup end
+" augroup omnifuncs
+"   autocmd!
+"   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" augroup end
 
 "****** FUNCTIONS *************************************
 
@@ -261,13 +266,13 @@ let g:tern#arguments = ['--persistent']
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = 1
 
-if exists('g:plugs["tern_for_vim"]')
+"if exists('g:plugs["tern_for_vim"]')
   "use term for autocomplete if it's on
-  augroup tern_completion
-    autocmd!
-    autocmd FileType javascript,jsx,javascript.jsx setlocal omnifunc=tern#Complete
-  augroup end
-endif
+  " augroup tern_completion
+  "   autocmd!
+  "   autocmd FileType javascript,jsx,javascript.jsx setlocal omnifunc=tern#Complete
+  " augroup end
+"endif
 
 "***** AIRLINE *****************************************
 "enable airline tab bar
@@ -287,6 +292,11 @@ nmap <leader>= <Plug>AirlineSelectNextTab
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
 let g:airline_theme = 'one'
+let g:airilne#extensions#gutentags#enabled = 1
+function! AirlineInit()
+  let g:airline_section_y = airline#section#create(['gutentags'])
+endfunction
+autocmd User AirlineAfterInit call AirlineInit()
 "let g:airline#extensions#syntastic#enabled = 1
 
 "****** SYNTASTIC **************************************
@@ -349,9 +359,6 @@ map g/ <Plug>(incsearch-stay)
 "**** DEOPLETE ******************************************
 if has("nvim")
   let g:deoplete#enable_at_startup = 1
-  if !exists('g:deoplete#omni#input_patterns')
-    let g:deoplete#omni#input_patterns = {}
-  endif
   autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
   inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<TAB>"
   inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
@@ -372,13 +379,13 @@ nmap <Leader>k <Plug>(easymotion-k)
 
 
 "**** TYPESCRIPT *********************************************
-let g:nvim_typescript#type_info_on_hold=1
+"let g:nvim_typescript#type_info_on_hold=1
 
 "**** NEOFORMAT ***********************************************
-let g:neoformat_enabled_javascript = ['prettier']
-let g:neoformat_try_formatprg = 1
-augroup format
-  autocmd!
-  autocmd FileType javascript,javascript.jsx setlocal formatprg=prettier\ --stdin\ --single-quote
-  autocmd BufWrite *.js Neoformat
-augroup END
+"let g:neoformat_enabled_javascript = ['prettier']
+" let g:neoformat_try_formatprg = 1
+" augroup format
+"   autocmd!
+"   autocmd FileType javascript,javascript.jsx setlocal formatprg=prettier\ --stdin\ --single-quote
+"   autocmd BufWrite *.js Neoformat
+" augroup END
