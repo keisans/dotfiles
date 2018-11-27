@@ -10,6 +10,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'haya14busa/incsearch.vim'
+Plug 'ryanoasis/vim-devicons'
 
 "nav plugins
 Plug 'junegunn/fzf', { 'do': './install --all' }
@@ -26,19 +27,22 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
-Plug 'easymotion/vim-easymotion'
 Plug 'jamessan/vim-gnupg'
+Plug 'wellle/targets.vim'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " syntax plugins
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
+Plug 'kchmck/vim-coffee-script', { 'for': ['coffeescript', 'coffee'] }
 Plug 'HerringtonDarkholme/yats.vim' | Plug 'ianks/vim-tsx'
-Plug 'mhartington/nvim-typescript'
-Plug 'carlitux/deoplete-ternjs'
+"Plug 'mhartington/nvim-typescript'
 
+" LSP
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 " Format plugin
 Plug 'sbdchd/neoformat'
@@ -50,13 +54,12 @@ Plug 'rakr/vim-one'
 "Plug 'tomasr/molokai'
 "Plug 'chriskempson/vim-tomorrow-theme'
 "Plug 'jnurmine/Zenburn'
-"Plug 'jonathanfilip/vim-lucius'
+Plug 'jonathanfilip/vim-lucius'
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'danilo-augusto/vim-afterglow'
 "Plug 'mhartington/oceanic-next'
 
 "linting
-"Plug 'scrooloose/syntastic'
 Plug 'w0rp/ale'
 
 "git
@@ -168,6 +171,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" dismiss preview
+nnoremap <C-x> <C-W>z
+
 " Resize the splits
 " Maximize width (window-width)
 nnoremap <Leader>ww <C-W>|
@@ -205,25 +211,24 @@ inoremap jk <Esc>
 "nnoremap / /\v
 "nnoremap ? ?\v
 
-" Swap to previous buffer
-nnoremap <Leader>; :<C-u>b#<CR>
+" indent in the current block (c-style)
+nnoremap ga =i{
+
+if has('nvim')
+  tnoremap <C-J> <C-\><C-N><C-W><C-J>
+  tnoremap <C-K> <C-\><C-N><C-W><C-K>
+  tnoremap <C-L> <C-\><C-N><C-W><C-L>
+  tnoremap <C-H> <C-\><C-N><C-W><C-H>
+endif
+
+"****** AUTOCMDS *** *********************************
+augroup spellcheck
+  autocmd!
+  autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+  autocmd FileType gitcommit setlocal spell spelllang=en_us
+augroup END
 
 "****** ABBREVIATIONS *********************************
-
-"****** FUGITIVE **************************************
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gc :Gcommit<CR>
-
-
-"****** OMNIFUNCS *************************************
-" augroup omnifuncs
-"   autocmd!
-"   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-"   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-"   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-"   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-" augroup end
 
 "****** FUNCTIONS *************************************
 
@@ -258,21 +263,21 @@ endfunction
 command! Light :call LightTheme()<CR>
 command! Dark :call DarkTheme()<CR>
 
-"****** TERN ******************************************
-" Use tern_for_vim.
-let g:tern#command = ['tern']
-let g:tern#arguments = ['--persistent']
+function! FzfSpellSink(word)
+  exe 'normal! "_ciw'.a:word
+endfunction
 
-let g:tern_request_timeout = 1
-let g:tern_show_signature_in_pum = 1
+function! FzfSpell()
+  let suggestions = spellsuggest(expand("<cword>"))
+  return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
+endfunction
 
-"if exists('g:plugs["tern_for_vim"]')
-  "use term for autocomplete if it's on
-  " augroup tern_completion
-  "   autocmd!
-  "   autocmd FileType javascript,jsx,javascript.jsx setlocal omnifunc=tern#Complete
-  " augroup end
-"endif
+nnoremap z= :call FzfSpell()<CR>
+
+
+"****** FUGITIVE **************************************
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gc :Gcommit<CR>
 
 "***** AIRLINE *****************************************
 "enable airline tab bar
@@ -293,19 +298,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
 let g:airline_theme = 'one'
 let g:airilne#extensions#gutentags#enabled = 1
-function! AirlineInit()
-  let g:airline_section_y = airline#section#create(['gutentags'])
-endfunction
-autocmd User AirlineAfterInit call AirlineInit()
-"let g:airline#extensions#syntastic#enabled = 1
-
-"****** SYNTASTIC **************************************
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_javascript_checkers = ['eslint']
-"let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss', 'coffee'] }
 
 "******** ALE ********************************************
 let g:airline#extensions#ale#enabled = 1
@@ -330,9 +322,8 @@ nnoremap <C-p> :<C-u>GFiles<CR>
 nnoremap <Leader>P :<C-u>Files<CR>
 nnoremap <Leader>p :<C-u>History<CR>
 nnoremap <Leader>b :<C-u>Buffers<CR>
-nnoremap <Leader>l :<C-u>Lines<CR>
 nnoremap <Leader>c :<C-u>Colors<CR>
-nnoremap <Leader>g :<C-u>Ag<CR>
+nnoremap <Leader>f :<C-u>Ag<CR>
 nnoremap <Leader>m :<C-u>Tags<CR>
 
 nnoremap <Leader><Space> :silent execute "Ag " . expand("<cword>")<CR>
@@ -346,10 +337,24 @@ imap <c-x><c-f> <Plug>(fzf-complete-path)
 imap <c-x><c-j> <Plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <Plug>(fzf-complete-line)
 
+let g:fzf_layout = {'window': '15split enew'}
+let g:fzf_buffers_jump = 1
+
 "**** ACK **********************************************
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+
+"**** GUTENTAGS ********************************************
+let g:gutentags_file_list_command = {
+  \ 'markers' : {
+    \ '.git': 'git ls-files',
+    \ '.hg': 'hg files'
+  \ },
+\ }
+
+let g:gutentags_ctags_exclude = ['package-lock.json']
 
 "**** INCSEARCH ********************************************
 map /  <Plug>(incsearch-forward)
@@ -367,25 +372,17 @@ endif
 "**** NEOSNIPPETS *******************************************
 imap <C-k>  <Plug>(neosnippet_expand_or_jump)
 
-"**** EASYMOTION *******************************************
-let g:EasyMotion_do_mapping = 0
-
-nmap s <Plug>(easymotion-bd-f2)
-
-nmap <Leader>n <Plug>(easymotion-bd-n)
-
-nmap <Leader>j <Plug>(easymotion-j)
-nmap <Leader>k <Plug>(easymotion-k)
-
-
 "**** TYPESCRIPT *********************************************
 "let g:nvim_typescript#type_info_on_hold=1
 
-"**** NEOFORMAT ***********************************************
-"let g:neoformat_enabled_javascript = ['prettier']
-" let g:neoformat_try_formatprg = 1
-" augroup format
-"   autocmd!
-"   autocmd FileType javascript,javascript.jsx setlocal formatprg=prettier\ --stdin\ --single-quote
-"   autocmd BufWrite *.js Neoformat
-" augroup END
+"**** LANGUAGE-SERVER *****************************************
+let g:LanguageClient_serverCommands = {
+      \ 'javascript': ['javascript-typescript-stdio'],
+      \ 'javascript.jsx': ['javascript-typescript-stdio'],
+      \ 'typescript': ['javascript-typescript-stdio'],
+      \ 'typescript.tsx': ['javascript-typescript-stdio'],
+      \ }
+nnoremap <leader>j :call LanguageClient_contextMenu()<CR>
+nnoremap gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <leader>x :call LanguageClient_textDocument_hover()<CR>
+nnoremap <leader>lf :call LanguageClient_textDocument_documentSymbol()<CR>

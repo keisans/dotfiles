@@ -1,0 +1,616 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/9d90f51/
+$NVIM_TUI_ENABLE_TRUE_COLOR	vimrc	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$/;"	v
+/	vimrc	/^map \/  <Plug>(incsearch-forward)$/;"	m
+0	eslintrc.json	/^      0$/;"	n	array:rules.no-console
+0	eslintrc.json	/^      1,$/;"	n	array:rules.semi-spacing
+0	eslintrc.json	/^      2,$/;"	n	array:rules.indent
+0	eslintrc.json	/^      2,$/;"	n	array:rules.linebreak-style
+0	eslintrc.json	/^      2,$/;"	n	array:rules.no-multiple-empty-lines
+0	eslintrc.json	/^      2,$/;"	n	array:rules.quotes
+0	eslintrc.json	/^      2,$/;"	n	array:rules.semi
+0	eslintrc.json	/^    "react"$/;"	s	array:plugins
+0	eslintrc.json	/^  "extends": ["eslint:recommended", "plugin:react\/recommended"],$/;"	s	array:extends
+1	eslintrc.json	/^      "always"$/;"	s	array:rules.semi
+1	eslintrc.json	/^      "single"$/;"	s	array:rules.quotes
+1	eslintrc.json	/^      "unix"$/;"	s	array:rules.linebreak-style
+1	eslintrc.json	/^      2,$/;"	n	array:rules.indent
+1	eslintrc.json	/^      {"before": false, "after": true}$/;"	o	array:rules.semi-spacing
+1	eslintrc.json	/^      {"max": 1}$/;"	o	array:rules.no-multiple-empty-lines
+1	eslintrc.json	/^  "extends": ["eslint:recommended", "plugin:react\/recommended"],$/;"	s	array:extends
+2	eslintrc.json	/^      {"SwitchCase": 1}$/;"	o	array:rules.indent
+<C-H>	vimrc	/^nnoremap <C-H> <C-W><C-H>$/;"	m
+<C-J>	vimrc	/^nnoremap <C-J> <C-W><C-J>$/;"	m
+<C-K>	vimrc	/^nnoremap <C-K> <C-W><C-K>$/;"	m
+<C-L>	vimrc	/^imap <C-L> <Plug>delimitMateS-Tab$/;"	m
+<C-L>	vimrc	/^nnoremap <C-L> <C-W><C-L>$/;"	m
+<C-k>	vimrc	/^imap <C-k>  <Plug>(neosnippet_expand_or_jump)$/;"	m
+<C-p>	vimrc	/^nnoremap <C-p> :<C-u>GFiles<CR>$/;"	m
+<C-x>	vimrc	/^nnoremap <C-x> <C-W>z$/;"	m
+<Leader><Space>	vimrc	/^nnoremap <Leader><Space> :silent execute "Ag " . expand("<cword>")<CR>$/;"	m
+<Leader>P	vimrc	/^nnoremap <Leader>P :<C-u>Files<CR>$/;"	m
+<Leader>b	vimrc	/^nnoremap <Leader>b :<C-u>Buffers<CR>$/;"	m
+<Leader>c	vimrc	/^nnoremap <Leader>c :<C-u>Colors<CR>$/;"	m
+<Leader>df	vimrc	/^nnoremap <Leader>df :<C-u>only<CR>$/;"	m
+<Leader>ev	vimrc	/^nnoremap <Leader>ev :<C-u>vsplit $MYVIMRC<CR>$/;"	m
+<Leader>f	vimrc	/^nnoremap <Leader>f :<C-u>Ag<CR>$/;"	m
+<Leader>gc	vimrc	/^nnoremap <Leader>gc :Gcommit<CR>$/;"	m
+<Leader>gs	vimrc	/^nnoremap <Leader>gs :Gstatus<CR>$/;"	m
+<Leader>m	vimrc	/^nnoremap <Leader>m :<C-u>Tags<CR>$/;"	m
+<Leader>p	vimrc	/^nnoremap <Leader>p :<C-u>History<CR>$/;"	m
+<Leader>sv	vimrc	/^nnoremap <Leader>sv :<C-u>source $MYVIMRC<CR>$/;"	m
+<Leader>we	vimrc	/^nnoremap <Leader>we <C-W>=$/;"	m
+<Leader>wq	vimrc	/^nnoremap <Leader>wq :clo<CR>$/;"	m
+<Leader>wr	vimrc	/^nnoremap <Leader>wr <C-W>_$/;"	m
+<Leader>ww	vimrc	/^nnoremap <Leader>ww <C-W>|$/;"	m
+<Leader>y	vimrc	/^nnoremap <Leader>y :<C-u>call VC_vim_card()<CR>$/;"	m
+<c-x><c-f>	vimrc	/^imap <c-x><c-f> <Plug>(fzf-complete-path)$/;"	m
+<c-x><c-j>	vimrc	/^imap <c-x><c-j> <Plug>(fzf-complete-file-ag)$/;"	m
+<c-x><c-k>	vimrc	/^imap <c-x><c-k> <Plug>(fzf-complete-word)$/;"	m
+<c-x><c-l>	vimrc	/^imap <c-x><c-l> <Plug>(fzf-complete-line)$/;"	m
+<cr>	vim/autoload/plug.vim	/^    nnoremap <silent> <buffer> <cr> :silent! call <SID>preview_commit()<cr>$/;"	m
+<leader>-	vimrc	/^nmap <leader>- <Plug>AirlineSelectPrevTab$/;"	m
+<leader>1	vimrc	/^nmap <leader>1 <Plug>AirlineSelectTab1$/;"	m
+<leader>2	vimrc	/^nmap <leader>2 <Plug>AirlineSelectTab2$/;"	m
+<leader>3	vimrc	/^nmap <leader>3 <Plug>AirlineSelectTab3$/;"	m
+<leader>4	vimrc	/^nmap <leader>4 <Plug>AirlineSelectTab4$/;"	m
+<leader>5	vimrc	/^nmap <leader>5 <Plug>AirlineSelectTab5$/;"	m
+<leader>6	vimrc	/^nmap <leader>6 <Plug>AirlineSelectTab6$/;"	m
+<leader>7	vimrc	/^nmap <leader>7 <Plug>AirlineSelectTab7$/;"	m
+<leader>8	vimrc	/^nmap <leader>8 <Plug>AirlineSelectTab8$/;"	m
+<leader>9	vimrc	/^nmap <leader>9 <Plug>AirlineSelectTab9$/;"	m
+<leader><tab>	vimrc	/^nmap <leader><tab> <Plug>(fzf-maps-n)$/;"	m
+<leader><tab>	vimrc	/^omap <leader><tab> <Plug>(fzf-maps-o)$/;"	m
+<leader><tab>	vimrc	/^xmap <leader><tab> <Plug>(fzf-maps-x)$/;"	m
+<leader>=	vimrc	/^nmap <leader>= <Plug>AirlineSelectNextTab$/;"	m
+<leader>j	vimrc	/^nnoremap <leader>j :call LanguageClient_contextMenu()<CR>$/;"	m
+<leader>lf	vimrc	/^nnoremap <leader>lf :call LanguageClient_textDocument_documentSymbol()<CR>$/;"	m
+<leader>x	vimrc	/^nnoremap <leader>x :call LanguageClient_textDocument_hover()<CR>$/;"	m
+<s-tab>	vimrc	/^  inoremap <expr><s-tab> pumvisible() ? "\\<C-p>" : "\\<S-TAB>"$/;"	m
+<tab>	vimrc	/^  inoremap <expr><tab> pumvisible() ? "\\<C-n>" : "\\<TAB>"$/;"	m
+?	vimrc	/^map ?  <Plug>(incsearch-backward)$/;"	m
+Card	vimrc	/^command! -nargs=? Card :call VC_vim_card(<f-args>)$/;"	c
+D	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> D  :PlugDiff<cr>$/;"	m
+Dark	vimrc	/^command! Dark :call DarkTheme()<CR>$/;"	c
+DarkTheme	vimrc	/^function! DarkTheme () abort$/;"	f
+FzfSpell	vimrc	/^function! FzfSpell()$/;"	f
+FzfSpellSink	vimrc	/^function! FzfSpellSink(word)$/;"	f
+HLNext	vimrc	/^function! HLNext (blinktime) abort$/;"	f
+L	vim/autoload/plug.vim	/^    nnoremap <silent> <buffer> L :call <SID>status_load(line('.'))<cr>$/;"	m
+L	vim/autoload/plug.vim	/^    xnoremap <silent> <buffer> L :call <SID>status_load(line('.'))<cr>$/;"	m
+Light	vimrc	/^command! Light :call LightTheme()<CR>$/;"	c
+LightTheme	vimrc	/^function! LightTheme () abort$/;"	f
+N	vimrc	/^nnoremap <silent> N N:call HLNext(0.1)<cr>$/;"	m
+Plug	vim/autoload/plug.vim	/^  command! -nargs=+ -bar Plug call plug#(<args>)$/;"	c
+PlugClean	vim/autoload/plug.vim	/^  command! -nargs=0 -bar -bang PlugClean call s:clean(<bang>0)$/;"	c
+PlugDiff	vim/autoload/plug.vim	/^  command! -nargs=0 -bar PlugDiff    call s:diff()$/;"	c
+PlugInstall	vim/autoload/plug.vim	/^  command! -nargs=* -bar -bang -complete=customlist,s:names PlugInstall call s:install(<bang>0, /;"	c
+PlugLOD	vim/autoload/plug.vim	/^    augroup PlugLOD$/;"	a
+PlugSnapshot	vim/autoload/plug.vim	/^  command! -nargs=? -bar -bang -complete=file PlugSnapshot call s:snapshot(<bang>0, <f-args>)$/;"	c
+PlugStatus	vim/autoload/plug.vim	/^  command! -nargs=0 -bar PlugStatus  call s:status()$/;"	c
+PlugUpdate	vim/autoload/plug.vim	/^  command! -nargs=* -bar -bang -complete=customlist,s:names PlugUpdate  call s:update(<bang>0, [/;"	c
+PlugUpgrade	vim/autoload/plug.vim	/^  command! -nargs=0 -bar PlugUpgrade if s:upgrade() | execute 'source' s:esc(s:me) | endif$/;"	c
+Q	vimrc	/^cnoremap Q q$/;"	m
+R	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> R  :call <SID>retry()<cr>$/;"	m
+S	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> S  :PlugStatus<cr>$/;"	m
+SwitchCase	eslintrc.json	/^      {"SwitchCase": 1}$/;"	n	object:rules.indent.2
+U	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> U  :call <SID>status_update()<cr>$/;"	m
+U	vim/autoload/plug.vim	/^  xnoremap <silent> <buffer> U  :call <SID>status_update()<cr>$/;"	m
+U	vimrc	/^nnoremap U <C-R>$/;"	m
+VC_vim_card	vim/plugin/vimcard.vim	/^function! VC_vim_card(...)$/;"	f
+W	vimrc	/^cnoremap W w$/;"	m
+WQ	vimrc	/^cnoremap WQ wq$/;"	m
+Wq	vimrc	/^cnoremap Wq wq$/;"	m
+X	vim/autoload/plug.vim	/^    nnoremap <silent> <buffer> X :call <SID>revert()<cr>$/;"	m
+X	vim/colors/two-firewatch.vim	/^  fun <SID>X(group, fg, bg, attr)$/;"	f
+[[	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> [[ :silent! call <SID>section('b')<cr>$/;"	m
+\\	vimrc	/^nnoremap <silent> \\ :<C-u>nohlsearch<CR>$/;"	m
+]]	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> ]] :silent! call <SID>section('')<cr>$/;"	m
+after	eslintrc.json	/^      {"before": false, "after": true}$/;"	b	object:rules.semi-spacing.1
+arrowFunctions	eslintrc.json	/^      "arrowFunctions": true,$/;"	b	object:parserOptions.ecmaFeatures
+before	eslintrc.json	/^      {"before": false, "after": true}$/;"	b	object:rules.semi-spacing.1
+browser	eslintrc.json	/^    "browser": true,$/;"	b	object:env
+color	vim/colors/two-firewatch.vim	/^  fun <SID>color(r, g, b)$/;"	f
+colors_name	vim/colors/wwdc16.vim	/^let colors_name = 'wwdc16'$/;"	v
+commonjs	eslintrc.json	/^    "commonjs": true,$/;"	b	object:env
+d	vim/autoload/plug.vim	/^      nnoremap <silent> <buffer> d :set opfunc=<sid>delete_op<cr>g@$/;"	m
+d	vim/autoload/plug.vim	/^      xnoremap <silent> <buffer> d :<c-u>call <sid>delete_op(visualmode(), 1)<cr>$/;"	m
+dd	vim/autoload/plug.vim	/^      nmap     <silent> <buffer> dd d_$/;"	m
+ddescribe	eslintrc.json	/^    "ddescribe": false,$/;"	b	object:globals
+delimitMate_expand_cr	vimrc	/^let delimitMate_expand_cr = 1$/;"	v
+delimitMate_expand_space	vimrc	/^let delimitMate_expand_space = 1$/;"	v
+ecmaFeatures	eslintrc.json	/^    "ecmaFeatures": {$/;"	o	object:parserOptions
+ecmaVersion	eslintrc.json	/^    "ecmaVersion": 6,$/;"	n	object:parserOptions
+env	eslintrc.json	/^  "env": {$/;"	o
+es6	eslintrc.json	/^    "es6": true,$/;"	b	object:env
+experimentalObjectRestSpread	eslintrc.json	/^      "experimentalObjectRestSpread": true,$/;"	b	object:parserOptions.ecmaFeatures
+extends	eslintrc.json	/^  "extends": ["eslint:recommended", "plugin:react\/recommended"],$/;"	a
+filetypedetect	vim/autoload/plug.vim	/^        augroup filetypedetect$/;"	a
+g/	vimrc	/^map g\/ <Plug>(incsearch-stay)$/;"	m
+g:LanguageClient_serverCommands	vimrc	/^let g:LanguageClient_serverCommands = {$/;"	v
+g:_plug_bang	vim/autoload/plug.vim	/^    let g:_plug_bang = (s:is_win && has('gui_running') ? 'silent ' : '').'!'.escape(cmd, '#!%')$/;"	v
+g:ackprg	vimrc	/^  let g:ackprg = 'ag --vimgrep'$/;"	v
+g:airilne#extensions#gutentags#enabled	vimrc	/^let g:airilne#extensions#gutentags#enabled = 1$/;"	v
+g:airline#extensions#ale#enabled	vimrc	/^let g:airline#extensions#ale#enabled = 1$/;"	v
+g:airline#extensions#tabline#buffer_idx_mode	vimrc	/^let g:airline#extensions#tabline#buffer_idx_mode = 1$/;"	v
+g:airline#extensions#tabline#enabled	vimrc	/^let g:airline#extensions#tabline#enabled = 1$/;"	v
+g:airline#extensions#whitespace#mixed_indent_algo	vimrc	/^let g:airline#extensions#whitespace#mixed_indent_algo = 1$/;"	v
+g:airline_powerline_fonts	vimrc	/^let g:airline_powerline_fonts = 1$/;"	v
+g:airline_theme	vimrc	/^let g:airline_theme = 'one'$/;"	v
+g:ale_javascript_eslint_executable	vimrc	/^let g:ale_javascript_eslint_executable = 'eslint_d'$/;"	v
+g:ale_javascript_eslint_use_global	vimrc	/^let g:ale_javascript_eslint_use_global = 1$/;"	v
+g:ale_linter_aliases	vimrc	/^let g:ale_linter_aliases = {'javascript.jsx': 'javascript'}$/;"	v
+g:ale_linters	vimrc	/^let g:ale_linters = { 'javascript': [ 'eslint' ] }$/;"	v
+g:ale_set_quickfix	vimrc	/^let g:ale_set_quickfix = 0$/;"	v
+g:colors_name	vim/colors/base16-materia.vim	/^let g:colors_name = "base16-materia"$/;"	v
+g:colors_name	vim/colors/base16-monokai.vim	/^let g:colors_name = "base16-monokai"$/;"	v
+g:colors_name	vim/colors/hybrid.vim	/^let g:colors_name = "hybrid"$/;"	v
+g:colors_name	vim/colors/luna-term.vim	/^let g:colors_name = "luna-term"$/;"	v
+g:colors_name	vim/colors/luna.vim	/^let g:colors_name = "luna"$/;"	v
+g:colors_name	vim/colors/material.vim	/^let g:colors_name = "material-theme"$/;"	v
+g:colors_name	vim/colors/molokai.vim	/^let g:colors_name="molokai"$/;"	v
+g:colors_name	vim/colors/two-firewatch.vim	/^let g:colors_name = 'two-firewatch'$/;"	v
+g:deoplete#enable_at_startup	vimrc	/^  let g:deoplete#enable_at_startup = 1$/;"	v
+g:fzf_buffers_jump	vimrc	/^let g:fzf_buffers_jump = 1$/;"	v
+g:fzf_layout	vimrc	/^let g:fzf_layout = {'window': '15split enew'}$/;"	v
+g:gutentags_ctags_exclude	vimrc	/^let g:gutentags_ctags_exclude = ['package-lock.json']$/;"	v
+g:gutentags_file_list_command	vimrc	/^let g:gutentags_file_list_command = {$/;"	v
+g:jsx_ext_required	vimrc	/^let g:jsx_ext_required = 0$/;"	v
+g:loaded_plug	vim/autoload/plug.vim	/^let g:loaded_plug = 1$/;"	v
+g:mapleader	vimrc	/^let g:mapleader = ","$/;"	v
+g:plug_home	vim/autoload/plug.vim	/^  let g:plug_home = home$/;"	v
+g:plugs	vim/autoload/plug.vim	/^    let g:plugs[name] = spec$/;"	v
+g:plugs	vim/autoload/plug.vim	/^  let g:plugs = {}$/;"	v
+g:plugs_order	vim/autoload/plug.vim	/^  let g:plugs_order = []$/;"	v
+g:plugs_order	vim/autoload/plug.vim	/^  let g:plugs_order = get(g:, 'plugs_order', keys(g:plugs))$/;"	v
+g:python3_host_prog	vimrc	/^  let g:python3_host_prog = '\/Library\/Frameworks\/Python.framework\/Versions\/3.5\/bin\/python/;"	v
+g:python_host_prog	vimrc	/^  let g:python_host_prog = '\/usr\/bin\/python'$/;"	v
+g:two_firewatch_italics	vim/colors/two-firewatch.vim	/^  let g:two_firewatch_italics = 0$/;"	v
+ga	vimrc	/^nnoremap ga =i{$/;"	m
+gd	vimrc	/^nnoremap gd :call LanguageClient#textDocument_definition()<CR>$/;"	m
+globals	eslintrc.json	/^  "globals": {$/;"	o
+grey_color	vim/colors/two-firewatch.vim	/^  fun <SID>grey_color(n)$/;"	f
+grey_level	vim/colors/two-firewatch.vim	/^  fun <SID>grey_level(n)$/;"	f
+grey_number	vim/colors/two-firewatch.vim	/^  fun <SID>grey_number(x)$/;"	f
+hi	vim/colors/base16-materia.vim	/^fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)$/;"	f
+hi	vim/colors/base16-monokai.vim	/^fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)$/;"	f
+hi	vim/colors/material.vim	/^fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr)$/;"	f
+iit	eslintrc.json	/^    "iit": false$/;"	b	object:globals
+indent	eslintrc.json	/^    "indent": [$/;"	a	object:rules
+jasmine	eslintrc.json	/^    "jasmine": true,$/;"	b	object:env
+jk	vimrc	/^inoremap jk <Esc>$/;"	m
+jsx	eslintrc.json	/^      "jsx": true,$/;"	b	object:parserOptions.ecmaFeatures
+keyword-spacing	eslintrc.json	/^    "keyword-spacing": 2,$/;"	n	object:rules
+linebreak-style	eslintrc.json	/^    "linebreak-style": [$/;"	a	object:rules
+loaded_vim_card	vim/plugin/vimcard.vim	/^let loaded_vim_card = 1$/;"	v
+mapleader	vimrc	/^let mapleader = ","$/;"	v
+max	eslintrc.json	/^      {"max": 1}$/;"	n	object:rules.no-multiple-empty-lines.1
+modules	eslintrc.json	/^      "modules": true$/;"	b	object:parserOptions.ecmaFeatures
+n	vimrc	/^nnoremap <silent> n n:call HLNext(0.1)<cr>$/;"	m
+no-console	eslintrc.json	/^    "no-console": [$/;"	a	object:rules
+no-duplicate-imports	eslintrc.json	/^    "no-duplicate-imports": 2,$/;"	n	object:rules
+no-multiple-empty-lines	eslintrc.json	/^    "no-multiple-empty-lines": [$/;"	a	object:rules
+no-undef-init	eslintrc.json	/^    "no-undef-init": 2,$/;"	n	object:rules
+no-undefined	eslintrc.json	/^    "no-undefined": 2,$/;"	n	object:rules
+no-useless-constructor	eslintrc.json	/^    "no-useless-constructor": 2,$/;"	n	object:rules
+node	eslintrc.json	/^    "node": true$/;"	b	object:env
+o	vim/autoload/plug.vim	/^    nnoremap <silent> <buffer> o    :silent! call <SID>preview_commit()<cr>$/;"	m
+parserOptions	eslintrc.json	/^  "parserOptions": {$/;"	o
+plug#	vim/autoload/plug.vim	/^function! plug#(repo, ...)$/;"	f
+plug#begin	vim/autoload/plug.vim	/^function! plug#begin(...)$/;"	f
+plug#end	vim/autoload/plug.vim	/^function! plug#end()$/;"	f
+plug#helptags	vim/autoload/plug.vim	/^function! plug#helptags()$/;"	f
+plug#load	vim/autoload/plug.vim	/^function! plug#load(...)$/;"	f
+plugins	eslintrc.json	/^  "plugins": [$/;"	a
+q	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> q  :if b:plug_preview==1<bar>pc<bar>endif<bar>bd<cr>$/;"	m
+q	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> q :q<cr>$/;"	m
+quotes	eslintrc.json	/^    "quotes": [$/;"	a	object:rules
+react/jsx-no-duplicate-props	eslintrc.json	/^    "react\/jsx-no-duplicate-props": 2,$/;"	n	object:rules
+react/jsx-pascal-case	eslintrc.json	/^    "react\/jsx-pascal-case": 2,$/;"	n	object:rules
+react/no-danger	eslintrc.json	/^    "react\/no-danger": "off"$/;"	s	object:rules
+react/no-direct-mutation-state	eslintrc.json	/^    "react\/no-direct-mutation-state": "off",$/;"	s	object:rules
+rgb	vim/colors/two-firewatch.vim	/^  fun <SID>rgb(rgb)$/;"	f
+rgb_color	vim/colors/two-firewatch.vim	/^  fun <SID>rgb_color(x, y, z)$/;"	f
+rgb_level	vim/colors/two-firewatch.vim	/^  fun <SID>rgb_level(n)$/;"	f
+rgb_number	vim/colors/two-firewatch.vim	/^  fun <SID>rgb_number(x)$/;"	f
+rules	eslintrc.json	/^  "rules": {$/;"	o
+s:HL	vim/colors/wwdc16.vim	/^fun! s:HL(group, fg, bg, ...) " ... optional dictionary of attributes$/;"	f
+s:TYPE	vim/autoload/plug.vim	/^let s:TYPE = {$/;"	v
+s:append_ul	vim/autoload/plug.vim	/^function! s:append_ul(lnum, text)$/;"	f
+s:ask	vim/autoload/plug.vim	/^function! s:ask(message, ...)$/;"	f
+s:ask_no_interrupt	vim/autoload/plug.vim	/^function! s:ask_no_interrupt(...)$/;"	f
+s:assign_name	vim/autoload/plug.vim	/^function! s:assign_name()$/;"	f
+s:assoc	vim/autoload/plug.vim	/^function! s:assoc(dict, key, val)$/;"	f
+s:b	vim/colors/hybrid.vim	/^let s:b      = ",bold"$/;"	v
+s:bang	vim/autoload/plug.vim	/^function! s:bang(cmd, ...)$/;"	f
+s:bar	vim/autoload/plug.vim	/^function! s:bar()$/;"	f
+s:base_spec	vim/autoload/plug.vim	/^let s:base_spec = { 'branch': 'master', 'frozen': 0 }$/;"	v
+s:bg	vim/colors/wwdc16.vim	/^let s:bg           = ["bg", "bg"]$/;"	v
+s:bg_none	vim/colors/hybrid.vim	/^let s:bg_none = ' guibg=NONE ctermbg=NONE'$/;"	v
+s:bg_normal	vim/colors/hybrid.vim	/^  let s:bg_normal = s:bg_background$/;"	v
+s:bg_normal	vim/colors/hybrid.vim	/^  let s:bg_normal = s:bg_none$/;"	v
+s:black	vim/colors/wwdc16.vim	/^let s:black       = ["#292c36", 0]$/;"	v
+s:blue	vim/colors/wwdc16.vim	/^let s:blue        = ["#4670d8", 4]$/;"	v
+s:bluegreen	vim/colors/wwdc16.vim	/^let s:bluegreen   = ["#00aba5", 6]$/;"	v
+s:build_prim	vim/colors/hybrid.vim	/^function! s:build_prim(hi_elem, field)$/;"	f
+s:c	vim/colors/hybrid.vim	/^let s:c      = ",undercurl"$/;"	v
+s:check_ruby	vim/autoload/plug.vim	/^function! s:check_ruby()$/;"	f
+s:checkout	vim/autoload/plug.vim	/^function! s:checkout(spec)$/;"	f
+s:chsh	vim/autoload/plug.vim	/^function! s:chsh(swap)$/;"	f
+s:clean	vim/autoload/plug.vim	/^function! s:clean(force)$/;"	f
+s:compare_git_uri	vim/autoload/plug.vim	/^function! s:compare_git_uri(a, b)$/;"	f
+s:cpo_save	vim/autoload/plug.vim	/^let s:cpo_save = &cpo$/;"	v
+s:cterm	vim/colors/material.vim	/^fun s:cterm(color)$/;"	f
+s:cterm00	vim/colors/base16-materia.vim	/^let s:cterm00 = "00"$/;"	v
+s:cterm00	vim/colors/base16-monokai.vim	/^let s:cterm00 = "00"$/;"	v
+s:cterm00	vim/colors/material.vim	/^let s:cterm00 = "00"$/;"	v
+s:cterm01	vim/colors/base16-materia.vim	/^  let s:cterm01 = "10"$/;"	v
+s:cterm01	vim/colors/base16-materia.vim	/^  let s:cterm01 = "18"$/;"	v
+s:cterm01	vim/colors/base16-monokai.vim	/^  let s:cterm01 = "10"$/;"	v
+s:cterm01	vim/colors/base16-monokai.vim	/^  let s:cterm01 = "18"$/;"	v
+s:cterm01	vim/colors/material.vim	/^  let s:cterm01 = "10"$/;"	v
+s:cterm01	vim/colors/material.vim	/^  let s:cterm01 = "18"$/;"	v
+s:cterm02	vim/colors/base16-materia.vim	/^  let s:cterm02 = "11"$/;"	v
+s:cterm02	vim/colors/base16-materia.vim	/^  let s:cterm02 = "19"$/;"	v
+s:cterm02	vim/colors/base16-monokai.vim	/^  let s:cterm02 = "11"$/;"	v
+s:cterm02	vim/colors/base16-monokai.vim	/^  let s:cterm02 = "19"$/;"	v
+s:cterm02	vim/colors/material.vim	/^  let s:cterm02 = "11"$/;"	v
+s:cterm02	vim/colors/material.vim	/^  let s:cterm02 = "19"$/;"	v
+s:cterm03	vim/colors/base16-materia.vim	/^let s:cterm03 = "08"$/;"	v
+s:cterm03	vim/colors/base16-monokai.vim	/^let s:cterm03 = "08"$/;"	v
+s:cterm03	vim/colors/material.vim	/^let s:cterm03 = "08"$/;"	v
+s:cterm04	vim/colors/base16-materia.vim	/^  let s:cterm04 = "12"$/;"	v
+s:cterm04	vim/colors/base16-materia.vim	/^  let s:cterm04 = "20"$/;"	v
+s:cterm04	vim/colors/base16-monokai.vim	/^  let s:cterm04 = "12"$/;"	v
+s:cterm04	vim/colors/base16-monokai.vim	/^  let s:cterm04 = "20"$/;"	v
+s:cterm04	vim/colors/material.vim	/^  let s:cterm04 = "12"$/;"	v
+s:cterm04	vim/colors/material.vim	/^  let s:cterm04 = "20"$/;"	v
+s:cterm05	vim/colors/base16-materia.vim	/^let s:cterm05 = "07"$/;"	v
+s:cterm05	vim/colors/base16-monokai.vim	/^let s:cterm05 = "07"$/;"	v
+s:cterm05	vim/colors/material.vim	/^let s:cterm05 = "07"$/;"	v
+s:cterm06	vim/colors/base16-materia.vim	/^  let s:cterm06 = "13"$/;"	v
+s:cterm06	vim/colors/base16-materia.vim	/^  let s:cterm06 = "21"$/;"	v
+s:cterm06	vim/colors/base16-monokai.vim	/^  let s:cterm06 = "13"$/;"	v
+s:cterm06	vim/colors/base16-monokai.vim	/^  let s:cterm06 = "21"$/;"	v
+s:cterm06	vim/colors/material.vim	/^  let s:cterm06 = "13"$/;"	v
+s:cterm06	vim/colors/material.vim	/^  let s:cterm06 = "21"$/;"	v
+s:cterm07	vim/colors/base16-materia.vim	/^let s:cterm07 = "15"$/;"	v
+s:cterm07	vim/colors/base16-monokai.vim	/^let s:cterm07 = "15"$/;"	v
+s:cterm07	vim/colors/material.vim	/^let s:cterm07 = "15"$/;"	v
+s:cterm08	vim/colors/base16-materia.vim	/^let s:cterm08 = "01"$/;"	v
+s:cterm08	vim/colors/base16-monokai.vim	/^let s:cterm08 = "01"$/;"	v
+s:cterm08	vim/colors/material.vim	/^let s:cterm08 = "01"$/;"	v
+s:cterm09	vim/colors/base16-materia.vim	/^  let s:cterm09 = "09"$/;"	v
+s:cterm09	vim/colors/base16-materia.vim	/^  let s:cterm09 = "16"$/;"	v
+s:cterm09	vim/colors/base16-monokai.vim	/^  let s:cterm09 = "09"$/;"	v
+s:cterm09	vim/colors/base16-monokai.vim	/^  let s:cterm09 = "16"$/;"	v
+s:cterm09	vim/colors/material.vim	/^  let s:cterm09 = "09"$/;"	v
+s:cterm09	vim/colors/material.vim	/^  let s:cterm09 = "16"$/;"	v
+s:cterm0A	vim/colors/base16-materia.vim	/^let s:cterm0A = "03"$/;"	v
+s:cterm0A	vim/colors/base16-monokai.vim	/^let s:cterm0A = "03"$/;"	v
+s:cterm0A	vim/colors/material.vim	/^let s:cterm0A = "03"$/;"	v
+s:cterm0B	vim/colors/base16-materia.vim	/^let s:cterm0B = "02"$/;"	v
+s:cterm0B	vim/colors/base16-monokai.vim	/^let s:cterm0B = "02"$/;"	v
+s:cterm0B	vim/colors/material.vim	/^let s:cterm0B = "02"$/;"	v
+s:cterm0C	vim/colors/base16-materia.vim	/^let s:cterm0C = "06"$/;"	v
+s:cterm0C	vim/colors/base16-monokai.vim	/^let s:cterm0C = "06"$/;"	v
+s:cterm0C	vim/colors/material.vim	/^let s:cterm0C = "06"$/;"	v
+s:cterm0D	vim/colors/base16-materia.vim	/^let s:cterm0D = "04"$/;"	v
+s:cterm0D	vim/colors/base16-monokai.vim	/^let s:cterm0D = "04"$/;"	v
+s:cterm0D	vim/colors/material.vim	/^let s:cterm0D = "04"$/;"	v
+s:cterm0E	vim/colors/base16-materia.vim	/^let s:cterm0E = "05"$/;"	v
+s:cterm0E	vim/colors/base16-monokai.vim	/^let s:cterm0E = "05"$/;"	v
+s:cterm0E	vim/colors/material.vim	/^let s:cterm0E = "05"$/;"	v
+s:cterm0F	vim/colors/base16-materia.vim	/^  let s:cterm0F = "14"$/;"	v
+s:cterm0F	vim/colors/base16-materia.vim	/^  let s:cterm0F = "17"$/;"	v
+s:cterm0F	vim/colors/base16-monokai.vim	/^  let s:cterm0F = "14"$/;"	v
+s:cterm0F	vim/colors/base16-monokai.vim	/^  let s:cterm0F = "17"$/;"	v
+s:cterm0F	vim/colors/material.vim	/^  let s:cterm0F = "14"$/;"	v
+s:cterm0F	vim/colors/material.vim	/^  let s:cterm0F = "17"$/;"	v
+s:cterm_aqua	vim/colors/hybrid.vim	/^  let s:cterm_aqua       = "109"$/;"	v
+s:cterm_aqua	vim/colors/hybrid.vim	/^  let s:cterm_aqua       = "14"  " LightCyan$/;"	v
+s:cterm_blue	vim/colors/hybrid.vim	/^  let s:cterm_blue       = "110"$/;"	v
+s:cterm_blue	vim/colors/hybrid.vim	/^  let s:cterm_blue       = "12"  " LightBlue$/;"	v
+s:cterm_comment	vim/colors/hybrid.vim	/^  let s:cterm_comment    = "243"$/;"	v
+s:cterm_comment	vim/colors/hybrid.vim	/^  let s:cterm_comment    = "7"   " LightGrey$/;"	v
+s:cterm_delbg	vim/colors/hybrid.vim	/^  let s:cterm_delbg      = "167"$/;"	v
+s:cterm_delbg	vim/colors/hybrid.vim	/^  let s:cterm_delbg      = "9"   " LightRed$/;"	v
+s:cterm_foreground	vim/colors/hybrid.vim	/^  let s:cterm_foreground = "15"  " White$/;"	v
+s:cterm_foreground	vim/colors/hybrid.vim	/^  let s:cterm_foreground = "250"$/;"	v
+s:cterm_green	vim/colors/hybrid.vim	/^  let s:cterm_green      = "10"  " LightGreen$/;"	v
+s:cterm_green	vim/colors/hybrid.vim	/^  let s:cterm_green      = "143"$/;"	v
+s:cterm_line	vim/colors/hybrid.vim	/^  let s:cterm_line       = "0"   " Black$/;"	v
+s:cterm_line	vim/colors/hybrid.vim	/^  let s:cterm_line       = "235"$/;"	v
+s:cterm_orange	vim/colors/hybrid.vim	/^  let s:cterm_orange     = "173"$/;"	v
+s:cterm_orange	vim/colors/hybrid.vim	/^  let s:cterm_orange     = "3"   " DarkYellow$/;"	v
+s:cterm_purple	vim/colors/hybrid.vim	/^  let s:cterm_purple     = "13"  " LightMagenta$/;"	v
+s:cterm_purple	vim/colors/hybrid.vim	/^  let s:cterm_purple     = "139"$/;"	v
+s:cterm_red	vim/colors/hybrid.vim	/^  let s:cterm_red        = "167"$/;"	v
+s:cterm_red	vim/colors/hybrid.vim	/^  let s:cterm_red        = "9"   " LightRed$/;"	v
+s:cterm_selection	vim/colors/hybrid.vim	/^  let s:cterm_selection  = "237"$/;"	v
+s:cterm_selection	vim/colors/hybrid.vim	/^  let s:cterm_selection  = "8"   " DarkGrey$/;"	v
+s:cterm_yellow	vim/colors/hybrid.vim	/^  let s:cterm_yellow     = "11"  " LightYellow$/;"	v
+s:cterm_yellow	vim/colors/hybrid.vim	/^  let s:cterm_yellow     = "221"$/;"	v
+s:define_commands	vim/autoload/plug.vim	/^function! s:define_commands()$/;"	f
+s:delete	vim/autoload/plug.vim	/^function! s:delete(range, force)$/;"	f
+s:delete_op	vim/autoload/plug.vim	/^function! s:delete_op(type, ...)$/;"	f
+s:diff	vim/autoload/plug.vim	/^function! s:diff()$/;"	f
+s:dirpath	vim/autoload/plug.vim	/^  function! s:dirpath(path)$/;"	f
+s:do	vim/autoload/plug.vim	/^function! s:do(pull, force, todo)$/;"	f
+s:doautocmd	vim/autoload/plug.vim	/^function! s:doautocmd(...)$/;"	f
+s:dobufread	vim/autoload/plug.vim	/^function! s:dobufread(names)$/;"	f
+s:duo_1	vim/colors/two-firewatch.vim	/^    let s:duo_1 = '065289'$/;"	v
+s:duo_1	vim/colors/two-firewatch.vim	/^    let s:duo_1 = 'c8ae9d'$/;"	v
+s:duo_1	vim/colors/two-firewatch.vim	/^    let s:duo_1 = 'fe8c52'$/;"	v
+s:duo_2	vim/colors/two-firewatch.vim	/^    let s:duo_2 = '718ecd'$/;"	v
+s:duo_2	vim/colors/two-firewatch.vim	/^    let s:duo_2 = 'df671f'$/;"	v
+s:duo_2	vim/colors/two-firewatch.vim	/^    let s:duo_2 = 'e06c75'$/;"	v
+s:duo_3	vim/colors/two-firewatch.vim	/^    let s:duo_3 = '6a574d'$/;"	v
+s:duo_3	vim/colors/two-firewatch.vim	/^    let s:duo_3 = 'aeb3b7'$/;"	v
+s:duo_3	vim/colors/two-firewatch.vim	/^    let s:duo_3 = 'dd672c'$/;"	v
+s:err	vim/autoload/plug.vim	/^function! s:err(msg)$/;"	f
+s:esc	vim/autoload/plug.vim	/^function! s:esc(path)$/;"	f
+s:escrtp	vim/autoload/plug.vim	/^function! s:escrtp(path)$/;"	f
+s:extract_name	vim/autoload/plug.vim	/^function! s:extract_name(str, prefix, suffix)$/;"	f
+s:fg	vim/colors/wwdc16.vim	/^let s:fg           = ["fg", "fg"]$/;"	v
+s:fg_none	vim/colors/hybrid.vim	/^let s:fg_none = ' guifg=NONE ctermfg=NONE'$/;"	v
+s:find_name	vim/autoload/plug.vim	/^function! s:find_name(lnum)$/;"	f
+s:finish	vim/autoload/plug.vim	/^function! s:finish(pull)$/;"	f
+s:finish_bindings	vim/autoload/plug.vim	/^function! s:finish_bindings()$/;"	f
+s:first_rtp	vim/autoload/plug.vim	/^let s:first_rtp = s:escrtp(get(s:split_rtp(), 0, ''))$/;"	v
+s:forestgreen	vim/colors/wwdc16.vim	/^let s:forestgreen = ["#64878f", 2]$/;"	v
+s:format_git_log	vim/autoload/plug.vim	/^function! s:format_git_log(line)$/;"	f
+s:format_message	vim/autoload/plug.vim	/^function! s:format_message(bullet, name, message)$/;"	f
+s:fusia	vim/colors/wwdc16.vim	/^let s:fusia       = ["#b73999", 5]$/;"	v
+s:git_validate	vim/autoload/plug.vim	/^function! s:git_validate(spec, check_branch)$/;"	f
+s:git_version_requirement	vim/autoload/plug.vim	/^function! s:git_version_requirement(...)$/;"	f
+s:glob	vim/autoload/plug.vim	/^function! s:glob(from, pattern)$/;"	f
+s:glob_dir	vim/autoload/plug.vim	/^function! s:glob_dir(path)$/;"	f
+s:green	vim/colors/wwdc16.vim	/^let s:green       = ["#52bd58", 10]$/;"	v
+s:grey1	vim/colors/wwdc16.vim	/^let s:grey1       = ["#333333", 8]$/;"	v
+s:grey2	vim/colors/wwdc16.vim	/^let s:grey2       = ["#666666", 9]$/;"	v
+s:grey3	vim/colors/wwdc16.vim	/^let s:grey3       = ["#999999", 7]$/;"	v
+s:gui	vim/colors/material.vim	/^fun s:gui(color)$/;"	f
+s:gui00	vim/colors/base16-materia.vim	/^let s:gui00 = "263238"$/;"	v
+s:gui00	vim/colors/base16-monokai.vim	/^let s:gui00 = "272822"$/;"	v
+s:gui00	vim/colors/material.vim	/^let s:gui00 = "263238"$/;"	v
+s:gui01	vim/colors/base16-materia.vim	/^let s:gui01 = "2C393F"$/;"	v
+s:gui01	vim/colors/base16-monokai.vim	/^let s:gui01 = "383830"$/;"	v
+s:gui01	vim/colors/material.vim	/^let s:gui01 = "37474F"$/;"	v
+s:gui02	vim/colors/base16-materia.vim	/^let s:gui02 = "37474F"$/;"	v
+s:gui02	vim/colors/base16-monokai.vim	/^let s:gui02 = "49483e"$/;"	v
+s:gui02	vim/colors/material.vim	/^let s:gui02 = "546E7A"$/;"	v
+s:gui03	vim/colors/base16-materia.vim	/^let s:gui03 = "707880"$/;"	v
+s:gui03	vim/colors/base16-monokai.vim	/^let s:gui03 = "75715e"$/;"	v
+s:gui03	vim/colors/material.vim	/^let s:gui03 = "5C7E8C"$/;"	v
+s:gui04	vim/colors/base16-materia.vim	/^let s:gui04 = "C9CCD3"$/;"	v
+s:gui04	vim/colors/base16-monokai.vim	/^let s:gui04 = "a59f85"$/;"	v
+s:gui04	vim/colors/material.vim	/^let s:gui04 = "80CBC4"$/;"	v
+s:gui05	vim/colors/base16-materia.vim	/^let s:gui05 = "CDD3DE"$/;"	v
+s:gui05	vim/colors/base16-monokai.vim	/^let s:gui05 = "f8f8f2"$/;"	v
+s:gui05	vim/colors/material.vim	/^let s:gui05 = "C792EA"$/;"	v
+s:gui06	vim/colors/base16-materia.vim	/^let s:gui06 = "D5DBE5"$/;"	v
+s:gui06	vim/colors/base16-monokai.vim	/^let s:gui06 = "f5f4f1"$/;"	v
+s:gui06	vim/colors/material.vim	/^let s:gui06 = "7986CB"$/;"	v
+s:gui07	vim/colors/base16-materia.vim	/^let s:gui07 = "FFFFFF"$/;"	v
+s:gui07	vim/colors/base16-monokai.vim	/^let s:gui07 = "f9f8f5"$/;"	v
+s:gui07	vim/colors/material.vim	/^let s:gui07 = "82B1FF"$/;"	v
+s:gui08	vim/colors/base16-materia.vim	/^let s:gui08 = "EC5F67"$/;"	v
+s:gui08	vim/colors/base16-monokai.vim	/^let s:gui08 = "f92672"$/;"	v
+s:gui08	vim/colors/material.vim	/^let s:gui08 = "8BD649"$/;"	v
+s:gui09	vim/colors/base16-materia.vim	/^let s:gui09 = "EA9560"$/;"	v
+s:gui09	vim/colors/base16-monokai.vim	/^let s:gui09 = "fd971f"$/;"	v
+s:gui09	vim/colors/material.vim	/^let s:gui09 = "C3E88D"$/;"	v
+s:gui0A	vim/colors/base16-materia.vim	/^let s:gui0A = "FFCC00"$/;"	v
+s:gui0A	vim/colors/base16-monokai.vim	/^let s:gui0A = "f4bf75"$/;"	v
+s:gui0A	vim/colors/material.vim	/^let s:gui0A = "CDD3DE"$/;"	v
+s:gui0B	vim/colors/base16-materia.vim	/^let s:gui0B = "8BD649"$/;"	v
+s:gui0B	vim/colors/base16-monokai.vim	/^let s:gui0B = "a6e22e"$/;"	v
+s:gui0B	vim/colors/material.vim	/^let s:gui0B = "EC5F67"$/;"	v
+s:gui0C	vim/colors/base16-materia.vim	/^let s:gui0C = "80CBC4"$/;"	v
+s:gui0C	vim/colors/base16-monokai.vim	/^let s:gui0C = "a1efe4"$/;"	v
+s:gui0C	vim/colors/material.vim	/^let s:gui0C = "F1E655"$/;"	v
+s:gui0D	vim/colors/base16-materia.vim	/^let s:gui0D = "89DDFF"$/;"	v
+s:gui0D	vim/colors/base16-monokai.vim	/^let s:gui0D = "66d9ef"$/;"	v
+s:gui0D	vim/colors/material.vim	/^let s:gui0D = "F77669"$/;"	v
+s:gui0E	vim/colors/base16-materia.vim	/^let s:gui0E = "82AAFF"$/;"	v
+s:gui0E	vim/colors/base16-monokai.vim	/^let s:gui0E = "ae81ff"$/;"	v
+s:gui0E	vim/colors/material.vim	/^let s:gui0E = "F8E71C"$/;"	v
+s:gui0F	vim/colors/base16-materia.vim	/^let s:gui0F = "EC5F67"$/;"	v
+s:gui0F	vim/colors/base16-monokai.vim	/^let s:gui0F = "cc6633"$/;"	v
+s:gui0F	vim/colors/material.vim	/^let s:gui0F = "FFFFFF"$/;"	v
+s:gui_background	vim/colors/hybrid.vim	/^  let s:gui_background = "#1d1f21"$/;"	v
+s:gui_background	vim/colors/hybrid.vim	/^  let s:gui_background = "#232c31"$/;"	v
+s:gui_comment	vim/colors/hybrid.vim	/^  let s:gui_comment    = "#6c7a80"$/;"	v
+s:gui_comment	vim/colors/hybrid.vim	/^  let s:gui_comment    = "#707880"$/;"	v
+s:gui_line	vim/colors/hybrid.vim	/^  let s:gui_line       = "#282a2e"$/;"	v
+s:gui_line	vim/colors/hybrid.vim	/^  let s:gui_line       = "#2d3c46"$/;"	v
+s:gui_selection	vim/colors/hybrid.vim	/^  let s:gui_selection  = "#373b41"$/;"	v
+s:gui_selection	vim/colors/hybrid.vim	/^  let s:gui_selection  = "#425059"$/;"	v
+s:hash_match	vim/autoload/plug.vim	/^function! s:hash_match(a, b)$/;"	f
+s:i	vim/colors/hybrid.vim	/^let s:i      = ",italic"$/;"	v
+s:infer_properties	vim/autoload/plug.vim	/^function! s:infer_properties(name, repo)$/;"	f
+s:install	vim/autoload/plug.vim	/^function! s:install(force, names)$/;"	f
+s:is_local_plug	vim/autoload/plug.vim	/^  function! s:is_local_plug(repo)$/;"	f
+s:is_managed	vim/autoload/plug.vim	/^function! s:is_managed(name)$/;"	f
+s:is_preview_window_open	vim/autoload/plug.vim	/^function! s:is_preview_window_open()$/;"	f
+s:is_updated	vim/autoload/plug.vim	/^function! s:is_updated(dir)$/;"	f
+s:is_win	vim/autoload/plug.vim	/^let s:is_win = has('win32') || has('win64')$/;"	v
+s:job_abort	vim/autoload/plug.vim	/^function! s:job_abort()$/;"	f
+s:job_cb	vim/autoload/plug.vim	/^function! s:job_cb(fn, job, ch, data)$/;"	f
+s:job_exit_cb	vim/autoload/plug.vim	/^function! s:job_exit_cb(self, data) abort$/;"	f
+s:job_out_cb	vim/autoload/plug.vim	/^function! s:job_out_cb(self, data) abort$/;"	f
+s:last_non_empty_line	vim/autoload/plug.vim	/^function! s:last_non_empty_line(lines)$/;"	f
+s:last_rtp	vim/autoload/plug.vim	/^let s:last_rtp  = s:escrtp(get(s:split_rtp(), -1, ''))$/;"	v
+s:lastline	vim/autoload/plug.vim	/^function! s:lastline(msg)$/;"	f
+s:lines	vim/autoload/plug.vim	/^function! s:lines(msg)$/;"	f
+s:load_plugin	vim/autoload/plug.vim	/^function! s:load_plugin(spec)$/;"	f
+s:loaded	vim/autoload/plug.vim	/^let s:loaded = get(s:, 'loaded', {})$/;"	v
+s:loaded_names	vim/autoload/plug.vim	/^function! s:loaded_names()$/;"	f
+s:lod	vim/autoload/plug.vim	/^function! s:lod(names, types, ...)$/;"	f
+s:lod_cmd	vim/autoload/plug.vim	/^function! s:lod_cmd(cmd, bang, l1, l2, args, names)$/;"	f
+s:lod_ft	vim/autoload/plug.vim	/^function! s:lod_ft(pat, names)$/;"	f
+s:lod_map	vim/autoload/plug.vim	/^function! s:lod_map(map, names, with_prefix, prefix)$/;"	f
+s:log	vim/autoload/plug.vim	/^function! s:log(bullet, name, lines)$/;"	f
+s:log4	vim/autoload/plug.vim	/^function! s:log4(name, msg)$/;"	f
+s:logpos	vim/autoload/plug.vim	/^function! s:logpos(name)$/;"	f
+s:lpad	vim/autoload/plug.vim	/^function! s:lpad(str, len)$/;"	f
+s:mac_gui	vim/autoload/plug.vim	/^let s:mac_gui = has('gui_macvim') && has('gui_running')$/;"	v
+s:me	vim/autoload/plug.vim	/^let s:me = resolve(expand('<sfile>:p'))$/;"	v
+s:mintgreen	vim/colors/wwdc16.vim	/^let s:mintgreen   = ["#95c76f", 11]$/;"	v
+s:molokai_original	vim/colors/molokai.vim	/^	let s:molokai_original = 0$/;"	v
+s:molokai_original	vim/colors/molokai.vim	/^	let s:molokai_original = g:molokai_original$/;"	v
+s:n	vim/colors/hybrid.vim	/^let s:n      = "NONE"$/;"	v
+s:names	vim/autoload/plug.vim	/^function! s:names(...)$/;"	f
+s:new_window	vim/autoload/plug.vim	/^function! s:new_window()$/;"	f
+s:none	vim/colors/hybrid.vim	/^let s:none   = "NONE"$/;"	v
+s:none	vim/colors/wwdc16.vim	/^let s:none         = ["NONE", "NONE"]$/;"	v
+s:nvim	vim/autoload/plug.vim	/^let s:nvim = has('nvim-0.2') || (has('nvim') && exists('*jobwait') && !s:is_win)$/;"	v
+s:nvim_cb	vim/autoload/plug.vim	/^function! s:nvim_cb(job_id, data, event) dict abort$/;"	f
+s:orange	vim/colors/wwdc16.vim	/^let s:orange      = ["#d28e5d", 3]$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette = {'gui' : {} , 'cterm' : {}}$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.addbg      = { 'dark' : "65"               , 'light' : "194" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.addfg      = { 'dark' : "193"              , 'light' : "22"  }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.aqua       = { 'dark' : s:cterm_aqua       , 'light' : "23"  }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.background = { 'dark' : "234"              , 'light' : "254" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.blue       = { 'dark' : s:cterm_blue       , 'light' : "17"  }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.changebg   = { 'dark' : "60"               , 'light' : "189" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.changefg   = { 'dark' : "189"              , 'light' : "53"  }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.comment    = { 'dark' : s:cterm_comment    , 'light' : "59"  }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.darkblue   = { 'dark' : "17"               , 'light' : "194" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.darkcolumn = { 'dark' : "234"              , 'light' : "244" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.darkcyan   = { 'dark' : "24"               , 'light' : "22"  }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.darkpurple = { 'dark' : "53"               , 'light' : "53"  }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.darkred    = { 'dark' : "52"               , 'light' : "189" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.delbg      = { 'dark' : s:cterm_delbg      , 'light' : "224" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.foreground = { 'dark' : s:cterm_foreground , 'light' : "16"  }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.green      = { 'dark' : s:cterm_green      , 'light' : "22"  }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.line       = { 'dark' : s:cterm_line       , 'light' : "252" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.orange     = { 'dark' : s:cterm_orange     , 'light' : "94"  }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.purple     = { 'dark' : s:cterm_purple     , 'light' : "53"  }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.red        = { 'dark' : s:cterm_red        , 'light' : "52"  }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.selection  = { 'dark' : s:cterm_selection  , 'light' : "250" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.window     = { 'dark' : "236"              , 'light' : "247" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.cterm.yellow     = { 'dark' : s:cterm_yellow     , 'light' : "58"  }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.addbg      = { 'dark' : "#5F875F"        , 'light' : "#d7ffd7" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.addfg      = { 'dark' : "#d7ffaf"        , 'light' : "#005f00" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.aqua       = { 'dark' : "#8abeb7"        , 'light' : "#005f5f" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.background = { 'dark' : s:gui_background , 'light' : "#e4e4e4" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.blue       = { 'dark' : "#81a2be"        , 'light' : "#00005f" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.changebg   = { 'dark' : "#5F5F87"        , 'light' : "#d7d7ff" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.changefg   = { 'dark' : "#d7d7ff"        , 'light' : "#5f005f" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.comment    = { 'dark' : s:gui_comment    , 'light' : "#5f5f5f" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.darkblue   = { 'dark' : "#00005f"        , 'light' : "#d7ffd7" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.darkcolumn = { 'dark' : "#1c1c1c"        , 'light' : "#808080" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.darkcyan   = { 'dark' : "#005f5f"        , 'light' : "#005f00" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.darkpurple = { 'dark' : "#5f005f"        , 'light' : "#5f005f" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.darkred    = { 'dark' : "#5f0000"        , 'light' : "#d7d7ff" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.delbg      = { 'dark' : "#cc6666"        , 'light' : "#ffd7d7" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.foreground = { 'dark' : "#c5c8c6"        , 'light' : "#000000" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.green      = { 'dark' : "#b5bd68"        , 'light' : "#005f00" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.line       = { 'dark' : s:gui_line       , 'light' : "#d0d0d0" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.orange     = { 'dark' : "#de935f"        , 'light' : "#875f00" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.purple     = { 'dark' : "#b294bb"        , 'light' : "#5f005f" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.red        = { 'dark' : "#cc6666"        , 'light' : "#5f0000" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.selection  = { 'dark' : s:gui_selection  , 'light' : "#bcbcbc" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.window     = { 'dark' : "#303030"        , 'light' : "#9e9e9e" }$/;"	v
+s:palette	vim/colors/hybrid.vim	/^let s:palette.gui.yellow     = { 'dark' : "#f0c674"        , 'light' : "#5f5f00" }$/;"	v
+s:parse_options	vim/autoload/plug.vim	/^function! s:parse_options(arg)$/;"	f
+s:path	vim/autoload/plug.vim	/^  function! s:path(path)$/;"	f
+s:plug_buf	vim/autoload/plug.vim	/^let s:plug_buf = get(s:, 'plug_buf', -1)$/;"	v
+s:plug_src	vim/autoload/plug.vim	/^let s:plug_src = 'https:\/\/github.com\/junegunn\/vim-plug.git'$/;"	v
+s:plug_tab	vim/autoload/plug.vim	/^let s:plug_tab = get(s:, 'plug_tab', -1)$/;"	v
+s:plug_window_exists	vim/autoload/plug.vim	/^function! s:plug_window_exists()$/;"	f
+s:prepare	vim/autoload/plug.vim	/^function! s:prepare(...)$/;"	f
+s:preview_commit	vim/autoload/plug.vim	/^function! s:preview_commit()$/;"	f
+s:progress_bar	vim/autoload/plug.vim	/^function! s:progress_bar(line, bar, total)$/;"	f
+s:progress_opt	vim/autoload/plug.vim	/^function! s:progress_opt(base)$/;"	f
+s:purple	vim/colors/wwdc16.vim	/^let s:purple      = ["#8485ce", 13]$/;"	v
+s:r	vim/colors/hybrid.vim	/^let s:r      = ",reverse"$/;"	v
+s:reap	vim/autoload/plug.vim	/^function! s:reap(name)$/;"	f
+s:red	vim/colors/wwdc16.vim	/^let s:red         = ["#dc3c3c", 1]$/;"	v
+s:regress_bar	vim/autoload/plug.vim	/^function! s:regress_bar()$/;"	f
+s:reload_plugins	vim/autoload/plug.vim	/^function! s:reload_plugins()$/;"	f
+s:remove_rtp	vim/autoload/plug.vim	/^function! s:remove_rtp()$/;"	f
+s:remove_triggers	vim/autoload/plug.vim	/^function! s:remove_triggers(name)$/;"	f
+s:reorg_rtp	vim/autoload/plug.vim	/^function! s:reorg_rtp()$/;"	f
+s:retry	vim/autoload/plug.vim	/^function! s:retry()$/;"	f
+s:revert	vim/autoload/plug.vim	/^function! s:revert()$/;"	f
+s:rm_rf	vim/autoload/plug.vim	/^function! s:rm_rf(dir)$/;"	f
+s:rtp	vim/autoload/plug.vim	/^  function! s:rtp(spec)$/;"	f
+s:s	vim/colors/hybrid.vim	/^let s:s      = ",standout"$/;"	v
+s:section	vim/autoload/plug.vim	/^function! s:section(flags)$/;"	f
+s:shellesc	vim/autoload/plug.vim	/^function! s:shellesc(arg)$/;"	f
+s:shellesc_cmd	vim/autoload/plug.vim	/^function! s:shellesc_cmd(arg)$/;"	f
+s:snapshot	vim/autoload/plug.vim	/^function! s:snapshot(force, ...) abort$/;"	f
+s:source	vim/autoload/plug.vim	/^function! s:source(from, ...)$/;"	f
+s:spawn	vim/autoload/plug.vim	/^function! s:spawn(name, cmd, opts)$/;"	f
+s:split_rtp	vim/autoload/plug.vim	/^function! s:split_rtp()$/;"	f
+s:status	vim/autoload/plug.vim	/^function! s:status()$/;"	f
+s:status_load	vim/autoload/plug.vim	/^function! s:status_load(lnum)$/;"	f
+s:status_update	vim/autoload/plug.vim	/^function! s:status_update() range$/;"	f
+s:style	vim/colors/hybrid.vim	/^let s:style = &background$/;"	v
+s:switch_in	vim/autoload/plug.vim	/^function! s:switch_in()$/;"	f
+s:switch_out	vim/autoload/plug.vim	/^function! s:switch_out(...)$/;"	f
+s:syntax	vim/autoload/plug.vim	/^function! s:syntax()$/;"	f
+s:syntax_accent	vim/colors/two-firewatch.vim	/^    let s:syntax_accent           = '447EBB'$/;"	v
+s:syntax_accent	vim/colors/two-firewatch.vim	/^    let s:syntax_accent           = 'ff8b52'$/;"	v
+s:syntax_bg	vim/colors/two-firewatch.vim	/^    let s:syntax_bg               = '282c34'$/;"	v
+s:syntax_bg	vim/colors/two-firewatch.vim	/^    let s:syntax_bg               = 'FAF8F5'$/;"	v
+s:syntax_color_added	vim/colors/two-firewatch.vim	/^    let s:syntax_color_added    = '43d08a'$/;"	v
+s:syntax_color_modified	vim/colors/two-firewatch.vim	/^    let s:syntax_color_modified = 'e0c285'$/;"	v
+s:syntax_color_removed	vim/colors/two-firewatch.vim	/^    let s:syntax_color_removed  = 'e05252'$/;"	v
+s:syntax_color_renamed	vim/colors/two-firewatch.vim	/^    let s:syntax_color_renamed  = '33a0ff'$/;"	v
+s:syntax_cursor_line	vim/colors/two-firewatch.vim	/^    let s:syntax_cursor_line      = '2c323c'$/;"	v
+s:syntax_cursor_line	vim/colors/two-firewatch.vim	/^    let s:syntax_cursor_line      = 'F3EFE7'$/;"	v
+s:syntax_fg	vim/colors/two-firewatch.vim	/^    let s:syntax_fg               = 'abb2bf' " s:uno_2$/;"	v
+s:syntax_fg	vim/colors/two-firewatch.vim	/^    let s:syntax_fg               = s:uno_2$/;"	v
+s:syntax_fold_bg	vim/colors/two-firewatch.vim	/^    let s:syntax_fold_bg          = '5c6370'$/;"	v
+s:syntax_fold_bg	vim/colors/two-firewatch.vim	/^    let s:syntax_fold_bg          = 'd1cec7'$/;"	v
+s:syntax_gutter	vim/colors/two-firewatch.vim	/^    let s:syntax_gutter           = '636d83'$/;"	v
+s:syntax_gutter	vim/colors/two-firewatch.vim	/^    let s:syntax_gutter           = 'EAE1D2'$/;"	v
+s:syntax_selection	vim/colors/two-firewatch.vim	/^    let s:syntax_selection        = '3e4452'$/;"	v
+s:syntax_selection	vim/colors/two-firewatch.vim	/^    let s:syntax_selection        = 'E5DDCB'$/;"	v
+s:system	vim/autoload/plug.vim	/^function! s:system(cmd, ...)$/;"	f
+s:system_chomp	vim/autoload/plug.vim	/^function! s:system_chomp(...)$/;"	f
+s:t_none	vim/colors/hybrid.vim	/^let s:t_none = "NONE"$/;"	v
+s:tick	vim/autoload/plug.vim	/^function! s:tick()$/;"	f
+s:to_a	vim/autoload/plug.vim	/^function! s:to_a(v)$/;"	f
+s:to_s	vim/autoload/plug.vim	/^function! s:to_s(v)$/;"	f
+s:triggers	vim/autoload/plug.vim	/^let s:triggers = get(s:, 'triggers', {})$/;"	v
+s:trim	vim/autoload/plug.vim	/^function! s:trim(str)$/;"	f
+s:u	vim/colors/hybrid.vim	/^let s:u      = ",underline"$/;"	v
+s:uno_1	vim/colors/two-firewatch.vim	/^    let s:uno_1 = '2d2006'$/;"	v
+s:uno_1	vim/colors/two-firewatch.vim	/^    let s:uno_1 = 'd6e9ff'$/;"	v
+s:uno_2	vim/colors/two-firewatch.vim	/^    let s:uno_2 = '896724'$/;"	v
+s:uno_2	vim/colors/two-firewatch.vim	/^    let s:uno_2 = '91c1f8'$/;"	v
+s:uno_3	vim/colors/two-firewatch.vim	/^    let s:uno_3 = '6e88a6'$/;"	v
+s:uno_3	vim/colors/two-firewatch.vim	/^    let s:uno_3 = 'B29762'$/;"	v
+s:uno_4	vim/colors/two-firewatch.vim	/^    let s:uno_4 = '55606d'$/;"	v
+s:uno_4	vim/colors/two-firewatch.vim	/^    let s:uno_4 = 'B6ad9a'$/;"	v
+s:update	vim/autoload/plug.vim	/^function! s:update(force, names)$/;"	f
+s:update_finish	vim/autoload/plug.vim	/^function! s:update_finish()$/;"	f
+s:update_impl	vim/autoload/plug.vim	/^function! s:update_impl(pull, force, args) abort$/;"	f
+s:update_python	vim/autoload/plug.vim	/^function! s:update_python()$/;"	f
+s:update_ruby	vim/autoload/plug.vim	/^function! s:update_ruby()$/;"	f
+s:update_vim	vim/autoload/plug.vim	/^function! s:update_vim()$/;"	f
+s:upgrade	vim/autoload/plug.vim	/^function! s:upgrade()$/;"	f
+s:upgrade_specs	vim/autoload/plug.vim	/^function! s:upgrade_specs()$/;"	f
+s:version_requirement	vim/autoload/plug.vim	/^function! s:version_requirement(val, min)$/;"	f
+s:vim8	vim/autoload/plug.vim	/^let s:vim8 = has('patch-8.0.0039') && exists('*job_start')$/;"	v
+s:warn	vim/autoload/plug.vim	/^function! s:warn(cmd, msg)$/;"	f
+s:white	vim/colors/wwdc16.vim	/^let s:white       = ["#ffffff", 15]$/;"	v
+s:with_cd	vim/autoload/plug.vim	/^function! s:with_cd(cmd, dir)$/;"	f
+semi	eslintrc.json	/^    "semi": [$/;"	a	object:rules
+semi-spacing	eslintrc.json	/^    "semi-spacing": [$/;"	a	object:rules
+sourceType	eslintrc.json	/^    "sourceType": "module",$/;"	s	object:parserOptions
+space-before-blocks	eslintrc.json	/^    "space-before-blocks": 2,$/;"	n	object:rules
+space-before-function-paren	eslintrc.json	/^    "space-before-function-paren": 2,$/;"	n	object:rules
+spellcheck	vimrc	/^augroup spellcheck$/;"	a
+yoda	eslintrc.json	/^    "yoda": 2,$/;"	n	object:rules
+z=	vimrc	/^nnoremap z= :call FzfSpell()<CR>$/;"	m

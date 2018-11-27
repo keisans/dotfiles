@@ -11,10 +11,13 @@ COMPLETION_WAITING_DOTS="true"
 # Add completions to the fpath
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:$HOME/Library/Python/3.5/bin:$HOME/dotfiles/bin"
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
+
+# Vagrant
+export VAGRANT_USE_VAGRANT_TRIGGERS="true"
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
@@ -48,12 +51,12 @@ fbr() {
 #export NVM_DIR="${HOME}/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-autoload -U add-zsh-hook
-load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
+# autoload -U add-zsh-hook
+# load-nvmrc() {
+#   if [[ -f .nvmrc && -r .nvmrc ]]; then
+#     nvm use
+#   fi
+# }
+# add-zsh-hook chpwd load-nvmrc
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

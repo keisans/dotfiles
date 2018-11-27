@@ -8,6 +8,15 @@ alias l='ls -al'
 # VIM
 alias vim='nvim'
 
+if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+  if [ -x "$(command -v nvr)" ]; then
+    alias nvim='nvr'
+  else 
+    alias nvim='echo "NO NESTING!"'
+  fi
+fi
+
+
 # Config editing
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
