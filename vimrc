@@ -21,6 +21,9 @@ Plug 'tpope/vim-vinegar'
 "tags
 Plug 'ludovicchabant/vim-gutentags'
 
+"vimwiki
+Plug 'vimwiki/vimwiki'
+
 "edit plugins
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
@@ -173,20 +176,6 @@ nnoremap <C-H> <C-W><C-H>
 
 " dismiss preview
 nnoremap <C-x> <C-W>z
-
-" Resize the splits
-" Maximize width (window-width)
-nnoremap <Leader>ww <C-W>|
-" Equalize splits (window-equal)
-nnoremap <Leader>we <C-W>=
-" Maximize height (window...it's just in line with the others)
-nnoremap <Leader>wr <C-W>_
-" Close current window (window-quit) safer than :q
-nnoremap <Leader>wq :clo<CR>
-
-"buffer traversal shortcuts
-" New buffer
-"Traversing buffers
 
 " Remap U to <C-R> because U is dumb
 nnoremap U <C-R>
@@ -386,3 +375,8 @@ nnoremap <leader>j :call LanguageClient_contextMenu()<CR>
 nnoremap gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <leader>x :call LanguageClient_textDocument_hover()<CR>
 nnoremap <leader>lf :call LanguageClient_textDocument_documentSymbol()<CR>
+
+
+"**** VIMWIKI *****************************************
+
+

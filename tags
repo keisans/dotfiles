@@ -44,10 +44,6 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	vimrc	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$/;"	v
 <Leader>m	vimrc	/^nnoremap <Leader>m :<C-u>Tags<CR>$/;"	m
 <Leader>p	vimrc	/^nnoremap <Leader>p :<C-u>History<CR>$/;"	m
 <Leader>sv	vimrc	/^nnoremap <Leader>sv :<C-u>source $MYVIMRC<CR>$/;"	m
-<Leader>we	vimrc	/^nnoremap <Leader>we <C-W>=$/;"	m
-<Leader>wq	vimrc	/^nnoremap <Leader>wq :clo<CR>$/;"	m
-<Leader>wr	vimrc	/^nnoremap <Leader>wr <C-W>_$/;"	m
-<Leader>ww	vimrc	/^nnoremap <Leader>ww <C-W>|$/;"	m
 <Leader>y	vimrc	/^nnoremap <Leader>y :<C-u>call VC_vim_card()<CR>$/;"	m
 <c-x><c-f>	vimrc	/^imap <c-x><c-f> <Plug>(fzf-complete-path)$/;"	m
 <c-x><c-j>	vimrc	/^imap <c-x><c-j> <Plug>(fzf-complete-file-ag)$/;"	m
@@ -98,6 +94,7 @@ PlugUpgrade	vim/autoload/plug.vim	/^  command! -nargs=0 -bar PlugUpgrade if s:up
 Q	vimrc	/^cnoremap Q q$/;"	m
 R	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> R  :call <SID>retry()<cr>$/;"	m
 S	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> S  :PlugStatus<cr>$/;"	m
+SessionLoad	vim/sessions/timeline.vim	/^let SessionLoad = 1$/;"	v
 SwitchCase	eslintrc.json	/^      {"SwitchCase": 1}$/;"	n	object:rules.indent.2
 U	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> U  :call <SID>status_update()<cr>$/;"	m
 U	vim/autoload/plug.vim	/^  xnoremap <silent> <buffer> U  :call <SID>status_update()<cr>$/;"	m
@@ -445,6 +442,10 @@ s:job_abort	vim/autoload/plug.vim	/^function! s:job_abort()$/;"	f
 s:job_cb	vim/autoload/plug.vim	/^function! s:job_cb(fn, job, ch, data)$/;"	f
 s:job_exit_cb	vim/autoload/plug.vim	/^function! s:job_exit_cb(self, data) abort$/;"	f
 s:job_out_cb	vim/autoload/plug.vim	/^function! s:job_out_cb(self, data) abort$/;"	f
+s:l	vim/sessions/timeline.vim	/^let s:l = 18 - ((5 * winheight(0) + 13) \/ 27)$/;"	v
+s:l	vim/sessions/timeline.vim	/^let s:l = 275 - ((1 * winheight(0) + 13) \/ 27)$/;"	v
+s:l	vim/sessions/timeline.vim	/^let s:l = 32 - ((15 * winheight(0) + 13) \/ 27)$/;"	v
+s:l	vim/sessions/timeline.vim	/^let s:l = 69 - ((15 * winheight(0) + 13) \/ 27)$/;"	v
 s:last_non_empty_line	vim/autoload/plug.vim	/^function! s:last_non_empty_line(lines)$/;"	f
 s:last_rtp	vim/autoload/plug.vim	/^let s:last_rtp  = s:escrtp(get(s:split_rtp(), -1, ''))$/;"	v
 s:lastline	vim/autoload/plug.vim	/^function! s:lastline(msg)$/;"	f
@@ -548,6 +549,7 @@ s:section	vim/autoload/plug.vim	/^function! s:section(flags)$/;"	f
 s:shellesc	vim/autoload/plug.vim	/^function! s:shellesc(arg)$/;"	f
 s:shellesc_cmd	vim/autoload/plug.vim	/^function! s:shellesc_cmd(arg)$/;"	f
 s:snapshot	vim/autoload/plug.vim	/^function! s:snapshot(force, ...) abort$/;"	f
+s:so_save	vim/sessions/timeline.vim	/^let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0$/;"	v
 s:source	vim/autoload/plug.vim	/^function! s:source(from, ...)$/;"	f
 s:spawn	vim/autoload/plug.vim	/^function! s:spawn(name, cmd, opts)$/;"	f
 s:split_rtp	vim/autoload/plug.vim	/^function! s:split_rtp()$/;"	f
@@ -557,6 +559,7 @@ s:status_update	vim/autoload/plug.vim	/^function! s:status_update() range$/;"	f
 s:style	vim/colors/hybrid.vim	/^let s:style = &background$/;"	v
 s:switch_in	vim/autoload/plug.vim	/^function! s:switch_in()$/;"	f
 s:switch_out	vim/autoload/plug.vim	/^function! s:switch_out(...)$/;"	f
+s:sx	vim/sessions/timeline.vim	/^let s:sx = expand("<sfile>:p:r")."x.vim"$/;"	v
 s:syntax	vim/autoload/plug.vim	/^function! s:syntax()$/;"	f
 s:syntax_accent	vim/colors/two-firewatch.vim	/^    let s:syntax_accent           = '447EBB'$/;"	v
 s:syntax_accent	vim/colors/two-firewatch.vim	/^    let s:syntax_accent           = 'ff8b52'$/;"	v
@@ -605,6 +608,7 @@ s:version_requirement	vim/autoload/plug.vim	/^function! s:version_requirement(va
 s:vim8	vim/autoload/plug.vim	/^let s:vim8 = has('patch-8.0.0039') && exists('*job_start')$/;"	v
 s:warn	vim/autoload/plug.vim	/^function! s:warn(cmd, msg)$/;"	f
 s:white	vim/colors/wwdc16.vim	/^let s:white       = ["#ffffff", 15]$/;"	v
+s:wipebuf	vim/sessions/timeline.vim	/^  let s:wipebuf = bufnr('%')$/;"	v
 s:with_cd	vim/autoload/plug.vim	/^function! s:with_cd(cmd, dir)$/;"	f
 semi	eslintrc.json	/^    "semi": [$/;"	a	object:rules
 semi-spacing	eslintrc.json	/^    "semi-spacing": [$/;"	a	object:rules
