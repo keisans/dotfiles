@@ -8,6 +8,8 @@ zstyle ':prezto:load' pmodule\
   'directory' \
   'spectrum' \
   'utility' \
+  'syntax-highlighting'\
+  'autosuggestions'\
   'completion' \
   'prompt'
 

@@ -21,7 +21,8 @@
 	untracked = cyan
 [user]
 	name = Ryan Struhl
-	email= rwstruhl@gmail.com
+	email = rstruhl@brightcove.com
+  signingkey = E512C78ADEEFA526
 [github]
 	user = keisans
 [alias]

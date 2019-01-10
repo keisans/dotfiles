@@ -120,9 +120,11 @@ set smartcase
 set exrc
 set secure
 
+set noswapfile
+
 "Prevent swp and undo file clutter
-set backupdir=~/.vim/backups
-set directory=~/.vim/swap
+set backupdir=~/.vim/backup
+set undodir=~/.vim/undo
 
 " Set the dictionary to the std dict
 set dictionary=/usr/share/dict/words
@@ -157,7 +159,7 @@ if has("nvim")
   set background=dark
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   let g:python_host_prog = '/usr/bin/python'
-  let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.5/bin/python3'
+  let g:python3_host_prog = '/usr/local/bin/python3'
 endif
 
 "****** SHORTCUTS AND KEYBOARD ************************
@@ -296,7 +298,13 @@ let g:ale_set_quickfix = 0
 
 let g:ale_linter_aliases = {'javascript.jsx': 'javascript'}
 
-let g:ale_linters = { 'javascript': [ 'eslint' ] }
+let g:ale_linters = { 
+\  'javascript': [ 'eslint' ],
+\  'typescript': [ 'tsserver' ]
+\}
+
+nmap <silent> <Leader>e <Plug>(ale_previous_wrap)
+nmap <silent> <Leader>r <Plug>(ale_next_wrap)
 
 ""******* DELIMITMATE *********************************
 let delimitMate_expand_space = 1

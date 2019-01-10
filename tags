@@ -4,7 +4,7 @@
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
-!_TAG_PROGRAM_VERSION	0.0.0	/9d90f51/
+!_TAG_PROGRAM_VERSION	0.0.0	/b60a7b9/
 $NVIM_TUI_ENABLE_TRUE_COLOR	vimrc	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$/;"	v
 /	vimrc	/^map \/  <Plug>(incsearch-forward)$/;"	m
 0	eslintrc.json	/^      0$/;"	n	array:rules.no-console
@@ -37,12 +37,14 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	vimrc	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$/;"	v
 <Leader>b	vimrc	/^nnoremap <Leader>b :<C-u>Buffers<CR>$/;"	m
 <Leader>c	vimrc	/^nnoremap <Leader>c :<C-u>Colors<CR>$/;"	m
 <Leader>df	vimrc	/^nnoremap <Leader>df :<C-u>only<CR>$/;"	m
+<Leader>e	vimrc	/^nmap <silent> <Leader>e <Plug>(ale_previous_wrap)$/;"	m
 <Leader>ev	vimrc	/^nnoremap <Leader>ev :<C-u>vsplit $MYVIMRC<CR>$/;"	m
 <Leader>f	vimrc	/^nnoremap <Leader>f :<C-u>Ag<CR>$/;"	m
 <Leader>gc	vimrc	/^nnoremap <Leader>gc :Gcommit<CR>$/;"	m
 <Leader>gs	vimrc	/^nnoremap <Leader>gs :Gstatus<CR>$/;"	m
 <Leader>m	vimrc	/^nnoremap <Leader>m :<C-u>Tags<CR>$/;"	m
 <Leader>p	vimrc	/^nnoremap <Leader>p :<C-u>History<CR>$/;"	m
+<Leader>r	vimrc	/^nmap <silent> <Leader>r <Plug>(ale_next_wrap)$/;"	m
 <Leader>sv	vimrc	/^nnoremap <Leader>sv :<C-u>source $MYVIMRC<CR>$/;"	m
 <Leader>y	vimrc	/^nnoremap <Leader>y :<C-u>call VC_vim_card()<CR>$/;"	m
 <c-x><c-f>	vimrc	/^imap <c-x><c-f> <Plug>(fzf-complete-path)$/;"	m
@@ -77,6 +79,7 @@ DarkTheme	vimrc	/^function! DarkTheme () abort$/;"	f
 FzfSpell	vimrc	/^function! FzfSpell()$/;"	f
 FzfSpellSink	vimrc	/^function! FzfSpellSink(word)$/;"	f
 HLNext	vimrc	/^function! HLNext (blinktime) abort$/;"	f
+Installation	README.md	/^## Installation$/;"	s
 L	vim/autoload/plug.vim	/^    nnoremap <silent> <buffer> L :call <SID>status_load(line('.'))<cr>$/;"	m
 L	vim/autoload/plug.vim	/^    xnoremap <silent> <buffer> L :call <SID>status_load(line('.'))<cr>$/;"	m
 Light	vimrc	/^command! Light :call LightTheme()<CR>$/;"	c
@@ -102,6 +105,7 @@ U	vimrc	/^nnoremap U <C-R>$/;"	m
 VC_vim_card	vim/plugin/vimcard.vim	/^function! VC_vim_card(...)$/;"	f
 W	vimrc	/^cnoremap W w$/;"	m
 WQ	vimrc	/^cnoremap WQ wq$/;"	m
+Warning	README.md	/^## Warning$/;"	s
 Wq	vimrc	/^cnoremap Wq wq$/;"	m
 X	vim/autoload/plug.vim	/^    nnoremap <silent> <buffer> X :call <SID>revert()<cr>$/;"	m
 X	vim/colors/two-firewatch.vim	/^  fun <SID>X(group, fg, bg, attr)$/;"	f
@@ -121,6 +125,7 @@ dd	vim/autoload/plug.vim	/^      nmap     <silent> <buffer> dd d_$/;"	m
 ddescribe	eslintrc.json	/^    "ddescribe": false,$/;"	b	object:globals
 delimitMate_expand_cr	vimrc	/^let delimitMate_expand_cr = 1$/;"	v
 delimitMate_expand_space	vimrc	/^let delimitMate_expand_space = 1$/;"	v
+dotfiles	README.md	/^# dotfiles$/;"	c
 ecmaFeatures	eslintrc.json	/^    "ecmaFeatures": {$/;"	o	object:parserOptions
 ecmaVersion	eslintrc.json	/^    "ecmaVersion": 6,$/;"	n	object:parserOptions
 env	eslintrc.json	/^  "env": {$/;"	o
@@ -142,7 +147,7 @@ g:airline_theme	vimrc	/^let g:airline_theme = 'one'$/;"	v
 g:ale_javascript_eslint_executable	vimrc	/^let g:ale_javascript_eslint_executable = 'eslint_d'$/;"	v
 g:ale_javascript_eslint_use_global	vimrc	/^let g:ale_javascript_eslint_use_global = 1$/;"	v
 g:ale_linter_aliases	vimrc	/^let g:ale_linter_aliases = {'javascript.jsx': 'javascript'}$/;"	v
-g:ale_linters	vimrc	/^let g:ale_linters = { 'javascript': [ 'eslint' ] }$/;"	v
+g:ale_linters	vimrc	/^let g:ale_linters = { $/;"	v
 g:ale_set_quickfix	vimrc	/^let g:ale_set_quickfix = 0$/;"	v
 g:colors_name	vim/colors/base16-materia.vim	/^let g:colors_name = "base16-materia"$/;"	v
 g:colors_name	vim/colors/base16-monokai.vim	/^let g:colors_name = "base16-monokai"$/;"	v
@@ -165,7 +170,7 @@ g:plugs	vim/autoload/plug.vim	/^    let g:plugs[name] = spec$/;"	v
 g:plugs	vim/autoload/plug.vim	/^  let g:plugs = {}$/;"	v
 g:plugs_order	vim/autoload/plug.vim	/^  let g:plugs_order = []$/;"	v
 g:plugs_order	vim/autoload/plug.vim	/^  let g:plugs_order = get(g:, 'plugs_order', keys(g:plugs))$/;"	v
-g:python3_host_prog	vimrc	/^  let g:python3_host_prog = '\/Library\/Frameworks\/Python.framework\/Versions\/3.5\/bin\/python/;"	v
+g:python3_host_prog	vimrc	/^  let g:python3_host_prog = '\/usr\/local\/bin\/python3'$/;"	v
 g:python_host_prog	vimrc	/^  let g:python_host_prog = '\/usr\/bin\/python'$/;"	v
 g:two_firewatch_italics	vim/colors/two-firewatch.vim	/^  let g:two_firewatch_italics = 0$/;"	v
 ga	vimrc	/^nnoremap ga =i{$/;"	m
