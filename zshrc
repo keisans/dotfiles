@@ -7,6 +7,10 @@ alias cat='bat'
 #Use neovim
 alias vim='nvim'
 
+# Git
+alias conflicts='git ls-files --unmerged | cut -f2 | uniq'
+alias vmerge='conflicts | xargs vim'
+
 # Prevent neovim terminal nesting
 if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
   if [ -x "$(command -v nvr)" ]; then
@@ -49,6 +53,9 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Load in z
 . `brew --prefix`/etc/profile.d/z.sh
+
+# Frei0r needs this for some reason
+export FREI0R_PATH="/usr/local/lib/frei0r-1"
 
 #**** FZF ***************
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

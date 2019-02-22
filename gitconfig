@@ -23,6 +23,8 @@
 	name = Ryan Struhl
 	email = rstruhl@brightcove.com
   signingkey = E512C78ADEEFA526
+[commit]
+  gpgsign = true
 [github]
 	user = keisans
 [alias]
