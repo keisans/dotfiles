@@ -4,7 +4,7 @@
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
-!_TAG_PROGRAM_VERSION	0.0.0	/b60a7b9/
+!_TAG_PROGRAM_VERSION	0.0.0	/affa2f7/
 $NVIM_TUI_ENABLE_TRUE_COLOR	vimrc	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$/;"	v
 /	vimrc	/^map \/  <Plug>(incsearch-forward)$/;"	m
 0	eslintrc.json	/^      0$/;"	n	array:rules.no-console
@@ -79,6 +79,7 @@ DarkTheme	vimrc	/^function! DarkTheme () abort$/;"	f
 FzfSpell	vimrc	/^function! FzfSpell()$/;"	f
 FzfSpellSink	vimrc	/^function! FzfSpellSink(word)$/;"	f
 HLNext	vimrc	/^function! HLNext (blinktime) abort$/;"	f
+HiCheck	vimrc	/^command! HiCheck :call SynStack()<CR>$/;"	c
 Installation	README.md	/^## Installation$/;"	s
 L	vim/autoload/plug.vim	/^    nnoremap <silent> <buffer> L :call <SID>status_load(line('.'))<cr>$/;"	m
 L	vim/autoload/plug.vim	/^    xnoremap <silent> <buffer> L :call <SID>status_load(line('.'))<cr>$/;"	m
@@ -99,6 +100,7 @@ R	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> R  :call <SID>retry()<cr>
 S	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> S  :PlugStatus<cr>$/;"	m
 SessionLoad	vim/sessions/timeline.vim	/^let SessionLoad = 1$/;"	v
 SwitchCase	eslintrc.json	/^      {"SwitchCase": 1}$/;"	n	object:rules.indent.2
+SynStack	vimrc	/^function! SynStack()$/;"	f
 U	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> U  :call <SID>status_update()<cr>$/;"	m
 U	vim/autoload/plug.vim	/^  xnoremap <silent> <buffer> U  :call <SID>status_update()<cr>$/;"	m
 U	vimrc	/^nnoremap U <C-R>$/;"	m

@@ -21,8 +21,8 @@
 	untracked = cyan
 [user]
 	name = Ryan Struhl
-	email = rstruhl@brightcove.com
-  signingkey = E512C78ADEEFA526
+	email = ryan.struhl@robinpowered.com
+  signingkey = 6734E5872DA41DBB
 [commit]
   gpgsign = true
 [github]

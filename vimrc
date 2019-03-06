@@ -1,4 +1,5 @@
 "******** INIT *******************************
+"
 "kill vi compatability and make vim useful
 if &compatible
   set nocompatible
@@ -133,7 +134,7 @@ set dictionary=/usr/share/dict/words
 "set colors
 set t_Co=256
 set background=dark
-colorscheme luna-term
+colorscheme lucius
 "Turn on syntax hilighting
 if !exists("g:syntax_on")
   syntax enable
@@ -160,6 +161,7 @@ if has("nvim")
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   let g:python_host_prog = '/usr/bin/python'
   let g:python3_host_prog = '/usr/local/bin/python3'
+
 endif
 
 "****** SHORTCUTS AND KEYBOARD ************************
@@ -239,6 +241,16 @@ function! HLNext (blinktime) abort
   redraw
 endfunction
 
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  let l:s = synID(line('.'), col('.'), 1)
+  echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+endfunc
+
+command! HiCheck :call SynStack()<CR>
+
 function! LightTheme () abort
   colorscheme lucius
   set background=light
@@ -265,6 +277,9 @@ endfunction
 
 nnoremap z= :call FzfSpell()<CR>
 
+"****** ITALICS **************************************
+  highlight Todo gui=italic
+  highlight Comment gui=italic
 
 "****** FUGITIVE **************************************
 nnoremap <Leader>gs :Gstatus<CR>
@@ -386,5 +401,3 @@ nnoremap <leader>lf :call LanguageClient_textDocument_documentSymbol()<CR>
 
 
 "**** VIMWIKI *****************************************
-
-
