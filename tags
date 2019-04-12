@@ -72,6 +72,12 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	vimrc	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$/;"	v
 <s-tab>	vimrc	/^  inoremap <expr><s-tab> pumvisible() ? "\\<C-p>" : "\\<S-TAB>"$/;"	m
 <tab>	vimrc	/^  inoremap <expr><tab> pumvisible() ? "\\<C-n>" : "\\<TAB>"$/;"	m
 ?	vimrc	/^map ?  <Plug>(incsearch-backward)$/;"	m
+AnonymousFunctionfa8579db0100	bin/nhwiki/nhwiki.js	/^  .then(function (res) {$/;"	f
+AnonymousFunctionfa8579db0200	bin/nhwiki/nhwiki.js	/^  .then(function(data) {$/;"	f
+AnonymousFunctionfa8579db0300	bin/nhwiki/nhwiki.js	/^    var options = data.query.search.map(function(entry){$/;"	f	function:AnonymousFunctionfa8579db0200
+AnonymousFunctionfa8579db0400	bin/nhwiki/nhwiki.js	/^  .then(function(answer){$/;"	f
+AnonymousFunctionfa8579db0500	bin/nhwiki/nhwiki.js	/^  .then(function(response) {$/;"	f
+AnonymousFunctionfa8579db0600	bin/nhwiki/nhwiki.js	/^    cp.exec(`echo ${escapeShell(response.data.parse.text["*"])} | lynx -dump -stdin`, function(e/;"	f
 Card	vimrc	/^command! -nargs=? Card :call VC_vim_card(<f-args>)$/;"	c
 D	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> D  :PlugDiff<cr>$/;"	m
 Dark	vimrc	/^command! Dark :call DarkTheme()<CR>$/;"	c
@@ -114,29 +120,45 @@ X	vim/colors/two-firewatch.vim	/^  fun <SID>X(group, fg, bg, attr)$/;"	f
 [[	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> [[ :silent! call <SID>section('b')<cr>$/;"	m
 \\	vimrc	/^nnoremap <silent> \\ :<C-u>nohlsearch<CR>$/;"	m
 ]]	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> ]] :silent! call <SID>section('')<cr>$/;"	m
+action	bin/nhwiki/nhwiki.js	/^      action: 'parse',$/;"	p	class:AnonymousFunctionfa8579db0400.parseOpts
+action	bin/nhwiki/nhwiki.js	/^  action: 'query',$/;"	p	class:program.version.usage.option.parse
 after	eslintrc.json	/^      {"before": false, "after": true}$/;"	b	object:rules.semi-spacing.1
 arrowFunctions	eslintrc.json	/^      "arrowFunctions": true,$/;"	b	object:parserOptions.ecmaFeatures
+author	bin/nhwiki/package.json	/^  "author": "",$/;"	s
+axios	bin/nhwiki/nhwiki.js	/^var axios = require('axios');$/;"	v
+axios	bin/nhwiki/package.json	/^    "axios": "^0.18.0",$/;"	s	object:dependencies
+basePath	bin/nhwiki/nhwiki.js	/^var basePath = 'https:\/\/nethackwiki.com\/w\/api.php?';$/;"	v
 before	eslintrc.json	/^      {"before": false, "after": true}$/;"	b	object:rules.semi-spacing.1
+bin	bin/nhwiki/package.json	/^  "bin": ".\/nhwiki.js",$/;"	s
 browser	eslintrc.json	/^    "browser": true,$/;"	b	object:env
 color	vim/colors/two-firewatch.vim	/^  fun <SID>color(r, g, b)$/;"	f
 colors_name	vim/colors/wwdc16.vim	/^let colors_name = 'wwdc16'$/;"	v
+commander	bin/nhwiki/package.json	/^    "commander": "^2.19.0",$/;"	s	object:dependencies
 commonjs	eslintrc.json	/^    "commonjs": true,$/;"	b	object:env
+cp	bin/nhwiki/nhwiki.js	/^var cp = require('child_process');$/;"	v
+create_detached_session	bin/tat.sh	/^create_detached_session() {$/;"	f
+create_if_needed_and_attach	bin/tat.sh	/^create_if_needed_and_attach() {$/;"	f
 d	vim/autoload/plug.vim	/^      nnoremap <silent> <buffer> d :set opfunc=<sid>delete_op<cr>g@$/;"	m
 d	vim/autoload/plug.vim	/^      xnoremap <silent> <buffer> d :<c-u>call <sid>delete_op(visualmode(), 1)<cr>$/;"	m
 dd	vim/autoload/plug.vim	/^      nmap     <silent> <buffer> dd d_$/;"	m
 ddescribe	eslintrc.json	/^    "ddescribe": false,$/;"	b	object:globals
 delimitMate_expand_cr	vimrc	/^let delimitMate_expand_cr = 1$/;"	v
 delimitMate_expand_space	vimrc	/^let delimitMate_expand_space = 1$/;"	v
+dependencies	bin/nhwiki/package.json	/^  "dependencies": {$/;"	o
+description	bin/nhwiki/package.json	/^  "description": "",$/;"	s
 dotfiles	README.md	/^# dotfiles$/;"	c
 ecmaFeatures	eslintrc.json	/^    "ecmaFeatures": {$/;"	o	object:parserOptions
 ecmaVersion	eslintrc.json	/^    "ecmaVersion": 6,$/;"	n	object:parserOptions
 env	eslintrc.json	/^  "env": {$/;"	o
 es6	eslintrc.json	/^    "es6": true,$/;"	b	object:env
+escapeShell	bin/nhwiki/nhwiki.js	/^var escapeShell = function(cmd) {$/;"	f
 experimentalObjectRestSpread	eslintrc.json	/^      "experimentalObjectRestSpread": true,$/;"	b	object:parserOptions.ecmaFeatures
 extends	eslintrc.json	/^  "extends": ["eslint:recommended", "plugin:react\/recommended"],$/;"	a
 fg	tmux.conf	/^set -g window-active-style 'fg=colour250,bg=black'$/;"	k
 fg	tmux.conf	/^set -g window-style 'fg=colour247,bg=colour236'$/;"	k
 filetypedetect	vim/autoload/plug.vim	/^        augroup filetypedetect$/;"	a
+format	bin/nhwiki/nhwiki.js	/^      format: 'json',$/;"	p	class:AnonymousFunctionfa8579db0400.parseOpts
+format	bin/nhwiki/nhwiki.js	/^  format: 'json',$/;"	p	class:program.version.usage.option.parse
 g/	vimrc	/^map g\/ <Plug>(incsearch-stay)$/;"	m
 g:LanguageClient_serverCommands	vimrc	/^let g:LanguageClient_serverCommands = {$/;"	v
 g:_plug_bang	vim/autoload/plug.vim	/^    let g:_plug_bang = (s:is_win && has('gui_running') ? 'silent ' : '').'!'.escape(cmd, '#!%')$/;"	v
@@ -191,16 +213,23 @@ hi	vim/colors/base16-monokai.vim	/^fun <sid>hi(group, guifg, guibg, ctermfg, cte
 hi	vim/colors/material.vim	/^fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr)$/;"	f
 iit	eslintrc.json	/^    "iit": false$/;"	b	object:globals
 indent	eslintrc.json	/^    "indent": [$/;"	a	object:rules
+inquirer	bin/nhwiki/nhwiki.js	/^var inquirer = require('inquirer');$/;"	v
+inquirer	bin/nhwiki/package.json	/^    "inquirer": "^6.2.2",$/;"	s	object:dependencies
 jasmine	eslintrc.json	/^    "jasmine": true,$/;"	b	object:env
 jk	vimrc	/^inoremap jk <Esc>$/;"	m
 jsx	eslintrc.json	/^      "jsx": true,$/;"	b	object:parserOptions.ecmaFeatures
 keyword-spacing	eslintrc.json	/^    "keyword-spacing": 2,$/;"	n	object:rules
+license	bin/nhwiki/package.json	/^  "license": "ISC",$/;"	s
+limit	bin/nhwiki/nhwiki.js	/^  limit: 10$/;"	p	class:program.version.usage.option.parse
 linebreak-style	eslintrc.json	/^    "linebreak-style": [$/;"	a	object:rules
+list	bin/nhwiki/nhwiki.js	/^  list: 'search',$/;"	p	class:program.version.usage.option.parse
 loaded_vim_card	vim/plugin/vimcard.vim	/^let loaded_vim_card = 1$/;"	v
+main	bin/nhwiki/package.json	/^  "main": "nhwiki.js",$/;"	s
 mapleader	vimrc	/^let mapleader = ","$/;"	v
 max	eslintrc.json	/^      {"max": 1}$/;"	n	object:rules.no-multiple-empty-lines.1
 modules	eslintrc.json	/^      "modules": true$/;"	b	object:parserOptions.ecmaFeatures
 n	vimrc	/^nnoremap <silent> n n:call HLNext(0.1)<cr>$/;"	m
+name	bin/nhwiki/package.json	/^  "name": "nhwiki",$/;"	s
 no-console	eslintrc.json	/^    "no-console": [$/;"	a	object:rules
 no-duplicate-imports	eslintrc.json	/^    "no-duplicate-imports": 2,$/;"	n	object:rules
 no-multiple-empty-lines	eslintrc.json	/^    "no-multiple-empty-lines": [$/;"	a	object:rules
@@ -208,7 +237,11 @@ no-undef-init	eslintrc.json	/^    "no-undef-init": 2,$/;"	n	object:rules
 no-undefined	eslintrc.json	/^    "no-undefined": 2,$/;"	n	object:rules
 no-useless-constructor	eslintrc.json	/^    "no-useless-constructor": 2,$/;"	n	object:rules
 node	eslintrc.json	/^    "node": true$/;"	b	object:env
+not_in_tmux	bin/tat.sh	/^not_in_tmux() {$/;"	f
 o	vim/autoload/plug.vim	/^    nnoremap <silent> <buffer> o    :silent! call <SID>preview_commit()<cr>$/;"	m
+page	bin/nhwiki/nhwiki.js	/^      page: answer.page,$/;"	p	class:AnonymousFunctionfa8579db0400.parseOpts
+parse	bin/nhwiki/nhwiki.js	/^program$/;"	c	class:program.version.usage.option
+parseOpts	bin/nhwiki/nhwiki.js	/^    var parseOpts = {$/;"	c	class:AnonymousFunctionfa8579db0400
 parserOptions	eslintrc.json	/^  "parserOptions": {$/;"	o
 plug#	vim/autoload/plug.vim	/^function! plug#(repo, ...)$/;"	f
 plug#begin	vim/autoload/plug.vim	/^function! plug#begin(...)$/;"	f
@@ -216,13 +249,18 @@ plug#end	vim/autoload/plug.vim	/^function! plug#end()$/;"	f
 plug#helptags	vim/autoload/plug.vim	/^function! plug#helptags()$/;"	f
 plug#load	vim/autoload/plug.vim	/^function! plug#load(...)$/;"	f
 plugins	eslintrc.json	/^  "plugins": [$/;"	a
+program	bin/nhwiki/nhwiki.js	/^var program = require('commander');$/;"	v
+prompt	bin/nhwiki/nhwiki.js	/^var prompt = inquirer.prompt;$/;"	v
 q	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> q  :if b:plug_preview==1<bar>pc<bar>endif<bar>bd<cr>$/;"	m
 q	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> q :q<cr>$/;"	m
+qs	bin/nhwiki/nhwiki.js	/^var qs = require('qs');$/;"	v
+qs	bin/nhwiki/package.json	/^    "qs": "^6.6.0"$/;"	s	object:dependencies
 quotes	eslintrc.json	/^    "quotes": [$/;"	a	object:rules
 react/jsx-no-duplicate-props	eslintrc.json	/^    "react\/jsx-no-duplicate-props": 2,$/;"	n	object:rules
 react/jsx-pascal-case	eslintrc.json	/^    "react\/jsx-pascal-case": 2,$/;"	n	object:rules
 react/no-danger	eslintrc.json	/^    "react\/no-danger": "off"$/;"	s	object:rules
 react/no-direct-mutation-state	eslintrc.json	/^    "react\/no-direct-mutation-state": "off",$/;"	s	object:rules
+redirects	bin/nhwiki/nhwiki.js	/^      redirects: true$/;"	p	class:AnonymousFunctionfa8579db0400.parseOpts
 rgb	vim/colors/two-firewatch.vim	/^  fun <SID>rgb(rgb)$/;"	f
 rgb_color	vim/colors/two-firewatch.vim	/^  fun <SID>rgb_color(x, y, z)$/;"	f
 rgb_level	vim/colors/two-firewatch.vim	/^  fun <SID>rgb_level(n)$/;"	f
@@ -622,11 +660,15 @@ s:warn	vim/autoload/plug.vim	/^function! s:warn(cmd, msg)$/;"	f
 s:white	vim/colors/wwdc16.vim	/^let s:white       = ["#ffffff", 15]$/;"	v
 s:wipebuf	vim/sessions/timeline.vim	/^  let s:wipebuf = bufnr('%')$/;"	v
 s:with_cd	vim/autoload/plug.vim	/^function! s:with_cd(cmd, dir)$/;"	f
+scripts	bin/nhwiki/package.json	/^  "scripts": {$/;"	o
 semi	eslintrc.json	/^    "semi": [$/;"	a	object:rules
 semi-spacing	eslintrc.json	/^    "semi-spacing": [$/;"	a	object:rules
+session_exists	bin/tat.sh	/^session_exists() {$/;"	f
 sourceType	eslintrc.json	/^    "sourceType": "module",$/;"	s	object:parserOptions
 space-before-blocks	eslintrc.json	/^    "space-before-blocks": 2,$/;"	n	object:rules
 space-before-function-paren	eslintrc.json	/^    "space-before-function-paren": 2,$/;"	n	object:rules
 spellcheck	vimrc	/^augroup spellcheck$/;"	a
+test	bin/nhwiki/package.json	/^    "test": "echo \\"Error: no test specified\\" && exit 1"$/;"	s	object:scripts
+version	bin/nhwiki/package.json	/^  "version": "1.0.0",$/;"	s
 yoda	eslintrc.json	/^    "yoda": 2,$/;"	n	object:rules
 z=	vimrc	/^nnoremap z= :call FzfSpell()<CR>$/;"	m

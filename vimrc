@@ -1,10 +1,5 @@
 "******** INIT *******************************
 "
-"kill vi compatability and make vim useful
-if &compatible
-  set nocompatible
-endif
-
 silent! if plug#begin('~/.vim/bundle')
 "style plugins
 Plug 'vim-airline/vim-airline'
@@ -14,7 +9,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'ryanoasis/vim-devicons'
 
 "nav plugins
-Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-vinegar'
@@ -30,23 +25,16 @@ Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
 Plug 'jamessan/vim-gnupg'
 Plug 'wellle/targets.vim'
-
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " syntax plugins
 Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
 Plug 'HerringtonDarkholme/yats.vim' | Plug 'ianks/vim-tsx'
 Plug 'jparise/vim-graphql'
-"Plug 'mhartington/nvim-typescript'
 
-" LSP
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+" Language Services
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " Format plugin
 Plug 'sbdchd/neoformat'
@@ -88,7 +76,6 @@ set autoindent
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set smarttab
 set expandtab
 
 "allow mouse?
