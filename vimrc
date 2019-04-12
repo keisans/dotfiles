@@ -38,8 +38,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " syntax plugins
 Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
-Plug 'kchmck/vim-coffee-script', { 'for': ['coffeescript', 'coffee'] }
 Plug 'HerringtonDarkholme/yats.vim' | Plug 'ianks/vim-tsx'
+Plug 'jparise/vim-graphql'
 "Plug 'mhartington/nvim-typescript'
 
 " LSP
@@ -54,6 +54,7 @@ Plug 'sbdchd/neoformat'
 "color schemes
 Plug 'GGalizzi/cake-vim'
 Plug 'rakr/vim-one'
+Plug 'cocopon/iceberg.vim'
 "Plug 'lifepillar/vim-solarized8'
 "Plug 'tomasr/molokai'
 "Plug 'chriskempson/vim-tomorrow-theme'
@@ -289,6 +290,7 @@ nnoremap <Leader>gc :Gcommit<CR>
 "enable airline tab bar
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
@@ -309,7 +311,8 @@ let g:airilne#extensions#gutentags#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_javascript_eslint_use_global = 1
-let g:ale_set_quickfix = 0
+let g:ale_set_quickfix = 1
+let g:ale_fix_on_save = 1
 
 let g:ale_linter_aliases = {'javascript.jsx': 'javascript'}
 
@@ -317,6 +320,11 @@ let g:ale_linters = {
 \  'javascript': [ 'eslint' ],
 \  'typescript': [ 'tsserver' ]
 \}
+
+let g:ale_fixers = { 
+\  'javascript': [ 'eslint' ],
+\}
+
 
 nmap <silent> <Leader>e <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>r <Plug>(ale_next_wrap)

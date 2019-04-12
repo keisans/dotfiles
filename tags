@@ -134,6 +134,8 @@ env	eslintrc.json	/^  "env": {$/;"	o
 es6	eslintrc.json	/^    "es6": true,$/;"	b	object:env
 experimentalObjectRestSpread	eslintrc.json	/^      "experimentalObjectRestSpread": true,$/;"	b	object:parserOptions.ecmaFeatures
 extends	eslintrc.json	/^  "extends": ["eslint:recommended", "plugin:react\/recommended"],$/;"	a
+fg	tmux.conf	/^set -g window-active-style 'fg=colour250,bg=black'$/;"	k
+fg	tmux.conf	/^set -g window-style 'fg=colour247,bg=colour236'$/;"	k
 filetypedetect	vim/autoload/plug.vim	/^        augroup filetypedetect$/;"	a
 g/	vimrc	/^map g\/ <Plug>(incsearch-stay)$/;"	m
 g:LanguageClient_serverCommands	vimrc	/^let g:LanguageClient_serverCommands = {$/;"	v
@@ -142,15 +144,18 @@ g:ackprg	vimrc	/^  let g:ackprg = 'ag --vimgrep'$/;"	v
 g:airilne#extensions#gutentags#enabled	vimrc	/^let g:airilne#extensions#gutentags#enabled = 1$/;"	v
 g:airline#extensions#ale#enabled	vimrc	/^let g:airline#extensions#ale#enabled = 1$/;"	v
 g:airline#extensions#tabline#buffer_idx_mode	vimrc	/^let g:airline#extensions#tabline#buffer_idx_mode = 1$/;"	v
+g:airline#extensions#tabline#buffer_nr_show	vimrc	/^let g:airline#extensions#tabline#buffer_nr_show = 1$/;"	v
 g:airline#extensions#tabline#enabled	vimrc	/^let g:airline#extensions#tabline#enabled = 1$/;"	v
 g:airline#extensions#whitespace#mixed_indent_algo	vimrc	/^let g:airline#extensions#whitespace#mixed_indent_algo = 1$/;"	v
 g:airline_powerline_fonts	vimrc	/^let g:airline_powerline_fonts = 1$/;"	v
 g:airline_theme	vimrc	/^let g:airline_theme = 'one'$/;"	v
+g:ale_fix_on_save	vimrc	/^let g:ale_fix_on_save = 1$/;"	v
+g:ale_fixers	vimrc	/^let g:ale_fixers = { $/;"	v
 g:ale_javascript_eslint_executable	vimrc	/^let g:ale_javascript_eslint_executable = 'eslint_d'$/;"	v
 g:ale_javascript_eslint_use_global	vimrc	/^let g:ale_javascript_eslint_use_global = 1$/;"	v
 g:ale_linter_aliases	vimrc	/^let g:ale_linter_aliases = {'javascript.jsx': 'javascript'}$/;"	v
 g:ale_linters	vimrc	/^let g:ale_linters = { $/;"	v
-g:ale_set_quickfix	vimrc	/^let g:ale_set_quickfix = 0$/;"	v
+g:ale_set_quickfix	vimrc	/^let g:ale_set_quickfix = 1$/;"	v
 g:colors_name	vim/colors/base16-materia.vim	/^let g:colors_name = "base16-materia"$/;"	v
 g:colors_name	vim/colors/base16-monokai.vim	/^let g:colors_name = "base16-monokai"$/;"	v
 g:colors_name	vim/colors/hybrid.vim	/^let g:colors_name = "hybrid"$/;"	v

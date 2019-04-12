@@ -8,3 +8,4 @@ tmux/plugins
 tmux/resurrect
 !tpm
 *.log
+node_modules

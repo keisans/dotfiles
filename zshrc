@@ -3,13 +3,18 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Aliases
 alias cd..='cd ..'
 alias l='ls -al'
-alias cat='bat'
+
 #Use neovim
 alias vim='nvim'
 
 # Git
 alias conflicts='git ls-files --unmerged | cut -f2 | uniq'
 alias vmerge='conflicts | xargs vim'
+
+# Extension stuff
+alias lnt='npx eslint --ext .js,.jsx --fix src'
+alias startproxy='sudo local-ssl-proxy --target 4877 --source 443'
+alias appstart='ROBIN_ENV=production npm start'
 
 # Prevent neovim terminal nesting
 if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
@@ -53,9 +58,6 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Load in z
 . `brew --prefix`/etc/profile.d/z.sh
-
-# Frei0r needs this for some reason
-export FREI0R_PATH="/usr/local/lib/frei0r-1"
 
 #**** FZF ***************
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
