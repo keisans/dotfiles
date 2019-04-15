@@ -2,8 +2,9 @@
 "
 silent! if plug#begin('~/.vim/bundle')
 "style plugins
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'haya14busa/incsearch.vim'
 Plug 'ryanoasis/vim-devicons'
@@ -17,9 +18,6 @@ Plug 'tpope/vim-vinegar'
 "tags
 Plug 'ludovicchabant/vim-gutentags'
 
-"vimwiki
-Plug 'vimwiki/vimwiki'
-
 "edit plugins
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
@@ -27,6 +25,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'jamessan/vim-gnupg'
 Plug 'wellle/targets.vim'
+Plug 'unblevable/quick-scope'
+
+" Snippets
+Plug 'SirVer/ultisnips'
 
 " syntax plugins
 Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
@@ -101,6 +103,9 @@ set splitright
 "show command
 set showcmd
 
+"don't show --INSERT-- (covered by lightline)
+set noshowmode
+
 "case match intelligently
 set ignorecase
 set smartcase
@@ -119,6 +124,16 @@ set undodir=~/.vim/undo
 set dictionary=/usr/share/dict/words
 
 "********* COLORS & THEME *******************************
+
+" Quickscope colors
+augroup color_overrides
+  autocmd!
+  autocmd ColorScheme * highlight QuickScopePrimary guifg='#ff9a00' gui=underline ctermfg=155 cterm=underline
+  autocmd ColorScheme * highlight QuickScopeSecondary guifg='#00a2ff' gui=underline ctermfg=81 cterm=underline
+  autocmd ColorScheme * highlight Todo gui=italic
+  autocmd ColorScheme * highlight Comment gui=italic
+augroup END
+
 "set colors
 set t_Co=256
 set background=dark
@@ -202,11 +217,21 @@ if has('nvim')
   tnoremap <C-H> <C-\><C-N><C-W><C-H>
 endif
 
+"****** FOLDS ****************************************
+nnoremap <silent> <Leader><Space> za
+vnoremap <Space> zf
+set foldlevelstart=99
+
 "****** AUTOCMDS *** *********************************
 augroup spellcheck
   autocmd!
   autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
   autocmd FileType gitcommit setlocal spell spelllang=en_us
+augroup END
+
+augroup folds
+  autocmd!
+  autocmd FileType javascript,javascript.jsx,typescript,typescript.tsx setlocal foldmethod=syntax
 augroup END
 
 "****** ABBREVIATIONS *********************************
@@ -229,7 +254,7 @@ function! HLNext (blinktime) abort
   redraw
 endfunction
 
-function! SynStack()
+function! SynStack() abort
   if !exists("*synstack")
     return
   endif
@@ -242,7 +267,6 @@ command! HiCheck :call SynStack()<CR>
 function! LightTheme () abort
   colorscheme lucius
   set background=light
-  AirlineTheme papercolor
 endfunction
 
 function! DarkTheme () abort
@@ -254,45 +278,58 @@ endfunction
 command! Light :call LightTheme()<CR>
 command! Dark :call DarkTheme()<CR>
 
-function! FzfSpellSink(word)
+function! FzfSpellSink(word) abort
   exe 'normal! "_ciw'.a:word
 endfunction
 
-function! FzfSpell()
+function! FzfSpell() abort
   let suggestions = spellsuggest(expand("<cword>"))
   return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
 endfunction
 
 nnoremap z= :call FzfSpell()<CR>
 
-"****** ITALICS **************************************
-  highlight Todo gui=italic
-  highlight Comment gui=italic
+""***** AIRLINE *****************************************
+""enable airline tab bar
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#buffer_idx_mode = 1
+"let g:airline#extensions#tabline#buffer_nr_show = 1
+"nmap <leader>1 <Plug>AirlineSelectTab1
+"nmap <leader>2 <Plug>AirlineSelectTab2
+"nmap <leader>3 <Plug>AirlineSelectTab3
+"nmap <leader>4 <Plug>AirlineSelectTab4
+"nmap <leader>5 <Plug>AirlineSelectTab5
+"nmap <leader>6 <Plug>AirlineSelectTab6
+"nmap <leader>7 <Plug>AirlineSelectTab7
+"nmap <leader>8 <Plug>AirlineSelectTab8
+"nmap <leader>9 <Plug>AirlineSelectTab9
+"nmap <leader>- <Plug>AirlineSelectPrevTab
+"nmap <leader>= <Plug>AirlineSelectNextTab
+"let g:airline_powerline_fonts = 1
+"let g:airline#extensions#whitespace#mixed_indent_algo = 1
+"let g:airline_theme = 'one'
+"let g:airilne#extensions#gutentags#enabled = 1
 
-"****** FUGITIVE **************************************
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gc :Gcommit<CR>
+"***** LIGHTLINE *****************************************
+let g:lightline = {
+  \ 'colorscheme' : 'one',
+  \ 'active': {
+  \   'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'filename', 'modified']]
+  \   },
+  \ 'component_function': {
+  \   'gitbranch': 'fugitive#head',
+  \   'filetype': 'IconFiletype',
+  \   'fileformat': 'IconFileformat'
+  \   }
+  \ }
 
-"***** AIRLINE *****************************************
-"enable airline tab bar
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-nmap <leader>- <Plug>AirlineSelectPrevTab
-nmap <leader>= <Plug>AirlineSelectNextTab
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#whitespace#mixed_indent_algo = 1
-let g:airline_theme = 'one'
-let g:airilne#extensions#gutentags#enabled = 1
+function! IconFiletype() abort
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : '') : ''
+endfunction
+
+function! IconFileformat() abort
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
 
 "******** ALE ********************************************
 let g:airline#extensions#ale#enabled = 1
@@ -330,10 +367,10 @@ nnoremap <Leader>P :<C-u>Files<CR>
 nnoremap <Leader>p :<C-u>History<CR>
 nnoremap <Leader>b :<C-u>Buffers<CR>
 nnoremap <Leader>c :<C-u>Colors<CR>
-nnoremap <Leader>f :<C-u>Ag<CR>
+nnoremap <Leader>f :<C-u>Rg<CR>
 nnoremap <Leader>m :<C-u>Tags<CR>
 
-nnoremap <Leader><Space> :silent execute "Ag " . expand("<cword>")<CR>
+nnoremap <Leader>. :silent execute "Rg " . expand("<cword>")<CR>
 
 nmap <leader><tab> <Plug>(fzf-maps-n)
 xmap <leader><tab> <Plug>(fzf-maps-x)
@@ -369,30 +406,54 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 "**** DEOPLETE ******************************************
-if has("nvim")
-  let g:deoplete#enable_at_startup = 1
-  autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-  inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<TAB>"
-  inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-endif
+" if has("nvim")
+"   let g:deoplete#enable_at_startup = 1
+"   autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+"   inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<TAB>"
+"   inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+" endif
 
-"**** NEOSNIPPETS *******************************************
-imap <C-k>  <Plug>(neosnippet_expand_or_jump)
-
-"**** TYPESCRIPT *********************************************
-"let g:nvim_typescript#type_info_on_hold=1
 
 "**** LANGUAGE-SERVER *****************************************
-let g:LanguageClient_serverCommands = {
-      \ 'javascript': ['javascript-typescript-stdio'],
-      \ 'javascript.jsx': ['javascript-typescript-stdio'],
-      \ 'typescript': ['javascript-typescript-stdio'],
-      \ 'typescript.tsx': ['javascript-typescript-stdio'],
-      \ }
-nnoremap <leader>j :call LanguageClient_contextMenu()<CR>
-nnoremap gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <leader>x :call LanguageClient_textDocument_hover()<CR>
-nnoremap <leader>lf :call LanguageClient_textDocument_documentSymbol()<CR>
+" let g:LanguageClient_serverCommands = {
+"       \ 'javascript': ['javascript-typescript-stdio'],
+"       \ 'javascript.jsx': ['javascript-typescript-stdio'],
+"       \ 'typescript': ['javascript-typescript-stdio'],
+"       \ 'typescript.tsx': ['javascript-typescript-stdio'],
+"       \ }
+" nnoremap <leader>j :call LanguageClient_contextMenu()<CR>
+" nnoremap gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <leader>x :call LanguageClient_textDocument_hover()<CR>
+" nnoremap <leader>lf :call LanguageClient_textDocument_documentSymbol()<CR>
 
+"**** COC ****************************************************
+inoremap <expr><tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<tab>" :
+      \ coc#refresh()
+inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-"**** VIMWIKI *****************************************
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+nmap <silent> <leader>j :call CocActionAsync('doHover')<CR>
+
+augroup coc
+  autocmd!
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup END
+
+"**** ULTISNIPS **************************************
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/Ultisnips']
+
+"**** QUICKSCOPE **************************************
+let g:qs_max_chars=120

@@ -29,48 +29,36 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	vimrc	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$/;"	v
 <C-K>	vimrc	/^nnoremap <C-K> <C-W><C-K>$/;"	m
 <C-L>	vimrc	/^imap <C-L> <Plug>delimitMateS-Tab$/;"	m
 <C-L>	vimrc	/^nnoremap <C-L> <C-W><C-L>$/;"	m
-<C-k>	vimrc	/^imap <C-k>  <Plug>(neosnippet_expand_or_jump)$/;"	m
 <C-p>	vimrc	/^nnoremap <C-p> :<C-u>GFiles<CR>$/;"	m
 <C-x>	vimrc	/^nnoremap <C-x> <C-W>z$/;"	m
-<Leader><Space>	vimrc	/^nnoremap <Leader><Space> :silent execute "Ag " . expand("<cword>")<CR>$/;"	m
+<Leader>.	vimrc	/^nnoremap <Leader>. :silent execute "Rg " . expand("<cword>")<CR>$/;"	m
+<Leader><Space>	vimrc	/^nnoremap <silent> <Leader><Space> za$/;"	m
 <Leader>P	vimrc	/^nnoremap <Leader>P :<C-u>Files<CR>$/;"	m
 <Leader>b	vimrc	/^nnoremap <Leader>b :<C-u>Buffers<CR>$/;"	m
 <Leader>c	vimrc	/^nnoremap <Leader>c :<C-u>Colors<CR>$/;"	m
 <Leader>df	vimrc	/^nnoremap <Leader>df :<C-u>only<CR>$/;"	m
 <Leader>e	vimrc	/^nmap <silent> <Leader>e <Plug>(ale_previous_wrap)$/;"	m
 <Leader>ev	vimrc	/^nnoremap <Leader>ev :<C-u>vsplit $MYVIMRC<CR>$/;"	m
-<Leader>f	vimrc	/^nnoremap <Leader>f :<C-u>Ag<CR>$/;"	m
-<Leader>gc	vimrc	/^nnoremap <Leader>gc :Gcommit<CR>$/;"	m
-<Leader>gs	vimrc	/^nnoremap <Leader>gs :Gstatus<CR>$/;"	m
+<Leader>f	vimrc	/^nnoremap <Leader>f :<C-u>Rg<CR>$/;"	m
 <Leader>m	vimrc	/^nnoremap <Leader>m :<C-u>Tags<CR>$/;"	m
 <Leader>p	vimrc	/^nnoremap <Leader>p :<C-u>History<CR>$/;"	m
 <Leader>r	vimrc	/^nmap <silent> <Leader>r <Plug>(ale_next_wrap)$/;"	m
 <Leader>sv	vimrc	/^nnoremap <Leader>sv :<C-u>source $MYVIMRC<CR>$/;"	m
 <Leader>y	vimrc	/^nnoremap <Leader>y :<C-u>call VC_vim_card()<CR>$/;"	m
+<Space>	vimrc	/^vnoremap <Space> zf$/;"	m
 <c-x><c-f>	vimrc	/^imap <c-x><c-f> <Plug>(fzf-complete-path)$/;"	m
 <c-x><c-j>	vimrc	/^imap <c-x><c-j> <Plug>(fzf-complete-file-ag)$/;"	m
 <c-x><c-k>	vimrc	/^imap <c-x><c-k> <Plug>(fzf-complete-word)$/;"	m
 <c-x><c-l>	vimrc	/^imap <c-x><c-l> <Plug>(fzf-complete-line)$/;"	m
 <cr>	vim/autoload/plug.vim	/^    nnoremap <silent> <buffer> <cr> :silent! call <SID>preview_commit()<cr>$/;"	m
-<leader>-	vimrc	/^nmap <leader>- <Plug>AirlineSelectPrevTab$/;"	m
-<leader>1	vimrc	/^nmap <leader>1 <Plug>AirlineSelectTab1$/;"	m
-<leader>2	vimrc	/^nmap <leader>2 <Plug>AirlineSelectTab2$/;"	m
-<leader>3	vimrc	/^nmap <leader>3 <Plug>AirlineSelectTab3$/;"	m
-<leader>4	vimrc	/^nmap <leader>4 <Plug>AirlineSelectTab4$/;"	m
-<leader>5	vimrc	/^nmap <leader>5 <Plug>AirlineSelectTab5$/;"	m
-<leader>6	vimrc	/^nmap <leader>6 <Plug>AirlineSelectTab6$/;"	m
-<leader>7	vimrc	/^nmap <leader>7 <Plug>AirlineSelectTab7$/;"	m
-<leader>8	vimrc	/^nmap <leader>8 <Plug>AirlineSelectTab8$/;"	m
-<leader>9	vimrc	/^nmap <leader>9 <Plug>AirlineSelectTab9$/;"	m
 <leader><tab>	vimrc	/^nmap <leader><tab> <Plug>(fzf-maps-n)$/;"	m
 <leader><tab>	vimrc	/^omap <leader><tab> <Plug>(fzf-maps-o)$/;"	m
 <leader><tab>	vimrc	/^xmap <leader><tab> <Plug>(fzf-maps-x)$/;"	m
-<leader>=	vimrc	/^nmap <leader>= <Plug>AirlineSelectNextTab$/;"	m
-<leader>j	vimrc	/^nnoremap <leader>j :call LanguageClient_contextMenu()<CR>$/;"	m
-<leader>lf	vimrc	/^nnoremap <leader>lf :call LanguageClient_textDocument_documentSymbol()<CR>$/;"	m
-<leader>x	vimrc	/^nnoremap <leader>x :call LanguageClient_textDocument_hover()<CR>$/;"	m
-<s-tab>	vimrc	/^  inoremap <expr><s-tab> pumvisible() ? "\\<C-p>" : "\\<S-TAB>"$/;"	m
-<tab>	vimrc	/^  inoremap <expr><tab> pumvisible() ? "\\<C-n>" : "\\<TAB>"$/;"	m
+<leader>gd	vimrc	/^nmap <leader>gd <Plug>(coc-definition)$/;"	m
+<leader>gr	vimrc	/^nmap <leader>gr <Plug>(coc-references)$/;"	m
+<leader>j	vimrc	/^nmap <silent> <leader>j :call CocActionAsync('doHover')<CR>$/;"	m
+<s-tab>	vimrc	/^inoremap <expr><s-tab> pumvisible() ? "\\<C-p>" : "\\<C-h>"$/;"	m
+<tab>	vimrc	/^inoremap <expr><tab>$/;"	m
 ?	vimrc	/^map ?  <Plug>(incsearch-backward)$/;"	m
 AnonymousFunctionfa8579db0100	bin/nhwiki/nhwiki.js	/^  .then(function (res) {$/;"	f
 AnonymousFunctionfa8579db0200	bin/nhwiki/nhwiki.js	/^  .then(function(data) {$/;"	f
@@ -82,10 +70,12 @@ Card	vimrc	/^command! -nargs=? Card :call VC_vim_card(<f-args>)$/;"	c
 D	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> D  :PlugDiff<cr>$/;"	m
 Dark	vimrc	/^command! Dark :call DarkTheme()<CR>$/;"	c
 DarkTheme	vimrc	/^function! DarkTheme () abort$/;"	f
-FzfSpell	vimrc	/^function! FzfSpell()$/;"	f
-FzfSpellSink	vimrc	/^function! FzfSpellSink(word)$/;"	f
+FzfSpell	vimrc	/^function! FzfSpell() abort$/;"	f
+FzfSpellSink	vimrc	/^function! FzfSpellSink(word) abort$/;"	f
 HLNext	vimrc	/^function! HLNext (blinktime) abort$/;"	f
 HiCheck	vimrc	/^command! HiCheck :call SynStack()<CR>$/;"	c
+IconFileformat	vimrc	/^function! IconFileformat() abort$/;"	f
+IconFiletype	vimrc	/^function! IconFiletype() abort$/;"	f
 Installation	README.md	/^## Installation$/;"	s
 L	vim/autoload/plug.vim	/^    nnoremap <silent> <buffer> L :call <SID>status_load(line('.'))<cr>$/;"	m
 L	vim/autoload/plug.vim	/^    xnoremap <silent> <buffer> L :call <SID>status_load(line('.'))<cr>$/;"	m
@@ -106,7 +96,7 @@ R	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> R  :call <SID>retry()<cr>
 S	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> S  :PlugStatus<cr>$/;"	m
 SessionLoad	vim/sessions/timeline.vim	/^let SessionLoad = 1$/;"	v
 SwitchCase	eslintrc.json	/^      {"SwitchCase": 1}$/;"	n	object:rules.indent.2
-SynStack	vimrc	/^function! SynStack()$/;"	f
+SynStack	vimrc	/^function! SynStack() abort$/;"	f
 U	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> U  :call <SID>status_update()<cr>$/;"	m
 U	vim/autoload/plug.vim	/^  xnoremap <silent> <buffer> U  :call <SID>status_update()<cr>$/;"	m
 U	vimrc	/^nnoremap U <C-R>$/;"	m
@@ -118,8 +108,10 @@ Wq	vimrc	/^cnoremap Wq wq$/;"	m
 X	vim/autoload/plug.vim	/^    nnoremap <silent> <buffer> X :call <SID>revert()<cr>$/;"	m
 X	vim/colors/two-firewatch.vim	/^  fun <SID>X(group, fg, bg, attr)$/;"	f
 [[	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> [[ :silent! call <SID>section('b')<cr>$/;"	m
+[c	vimrc	/^nmap <silent> [c <Plug>(coc-diagnostic-prev)$/;"	m
 \\	vimrc	/^nnoremap <silent> \\ :<C-u>nohlsearch<CR>$/;"	m
 ]]	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> ]] :silent! call <SID>section('')<cr>$/;"	m
+]c	vimrc	/^nmap <silent> ]c <Plug>(coc-diagnostic-next)$/;"	m
 action	bin/nhwiki/nhwiki.js	/^      action: 'parse',$/;"	p	class:AnonymousFunctionfa8579db0400.parseOpts
 action	bin/nhwiki/nhwiki.js	/^  action: 'query',$/;"	p	class:program.version.usage.option.parse
 after	eslintrc.json	/^      {"before": false, "after": true}$/;"	b	object:rules.semi-spacing.1
@@ -131,7 +123,9 @@ basePath	bin/nhwiki/nhwiki.js	/^var basePath = 'https:\/\/nethackwiki.com\/w\/ap
 before	eslintrc.json	/^      {"before": false, "after": true}$/;"	b	object:rules.semi-spacing.1
 bin	bin/nhwiki/package.json	/^  "bin": ".\/nhwiki.js",$/;"	s
 browser	eslintrc.json	/^    "browser": true,$/;"	b	object:env
+coc	vimrc	/^augroup coc$/;"	a
 color	vim/colors/two-firewatch.vim	/^  fun <SID>color(r, g, b)$/;"	f
+color_overrides	vimrc	/^augroup color_overrides$/;"	a
 colors_name	vim/colors/wwdc16.vim	/^let colors_name = 'wwdc16'$/;"	v
 commander	bin/nhwiki/package.json	/^    "commander": "^2.19.0",$/;"	s	object:dependencies
 commonjs	eslintrc.json	/^    "commonjs": true,$/;"	b	object:env
@@ -157,20 +151,16 @@ extends	eslintrc.json	/^  "extends": ["eslint:recommended", "plugin:react\/recom
 fg	tmux.conf	/^set -g window-active-style 'fg=colour250,bg=black'$/;"	k
 fg	tmux.conf	/^set -g window-style 'fg=colour247,bg=colour236'$/;"	k
 filetypedetect	vim/autoload/plug.vim	/^        augroup filetypedetect$/;"	a
+folds	vimrc	/^augroup folds$/;"	a
 format	bin/nhwiki/nhwiki.js	/^      format: 'json',$/;"	p	class:AnonymousFunctionfa8579db0400.parseOpts
 format	bin/nhwiki/nhwiki.js	/^  format: 'json',$/;"	p	class:program.version.usage.option.parse
 g/	vimrc	/^map g\/ <Plug>(incsearch-stay)$/;"	m
-g:LanguageClient_serverCommands	vimrc	/^let g:LanguageClient_serverCommands = {$/;"	v
+g:UltiSnipsEditSplit	vimrc	/^let g:UltiSnipsEditSplit="vertical"$/;"	v
+g:UltiSnipsExpandTrigger	vimrc	/^let g:UltiSnipsExpandTrigger="<c-j>"$/;"	v
+g:UltiSnipsSnippetDirectories	vimrc	/^let g:UltiSnipsSnippetDirectories=[$HOME.'\/.vim\/Ultisnips']$/;"	v
 g:_plug_bang	vim/autoload/plug.vim	/^    let g:_plug_bang = (s:is_win && has('gui_running') ? 'silent ' : '').'!'.escape(cmd, '#!%')$/;"	v
 g:ackprg	vimrc	/^  let g:ackprg = 'ag --vimgrep'$/;"	v
-g:airilne#extensions#gutentags#enabled	vimrc	/^let g:airilne#extensions#gutentags#enabled = 1$/;"	v
 g:airline#extensions#ale#enabled	vimrc	/^let g:airline#extensions#ale#enabled = 1$/;"	v
-g:airline#extensions#tabline#buffer_idx_mode	vimrc	/^let g:airline#extensions#tabline#buffer_idx_mode = 1$/;"	v
-g:airline#extensions#tabline#buffer_nr_show	vimrc	/^let g:airline#extensions#tabline#buffer_nr_show = 1$/;"	v
-g:airline#extensions#tabline#enabled	vimrc	/^let g:airline#extensions#tabline#enabled = 1$/;"	v
-g:airline#extensions#whitespace#mixed_indent_algo	vimrc	/^let g:airline#extensions#whitespace#mixed_indent_algo = 1$/;"	v
-g:airline_powerline_fonts	vimrc	/^let g:airline_powerline_fonts = 1$/;"	v
-g:airline_theme	vimrc	/^let g:airline_theme = 'one'$/;"	v
 g:ale_fix_on_save	vimrc	/^let g:ale_fix_on_save = 1$/;"	v
 g:ale_fixers	vimrc	/^let g:ale_fixers = { $/;"	v
 g:ale_javascript_eslint_executable	vimrc	/^let g:ale_javascript_eslint_executable = 'eslint_d'$/;"	v
@@ -186,12 +176,12 @@ g:colors_name	vim/colors/luna.vim	/^let g:colors_name = "luna"$/;"	v
 g:colors_name	vim/colors/material.vim	/^let g:colors_name = "material-theme"$/;"	v
 g:colors_name	vim/colors/molokai.vim	/^let g:colors_name="molokai"$/;"	v
 g:colors_name	vim/colors/two-firewatch.vim	/^let g:colors_name = 'two-firewatch'$/;"	v
-g:deoplete#enable_at_startup	vimrc	/^  let g:deoplete#enable_at_startup = 1$/;"	v
 g:fzf_buffers_jump	vimrc	/^let g:fzf_buffers_jump = 1$/;"	v
 g:fzf_layout	vimrc	/^let g:fzf_layout = {'window': '15split enew'}$/;"	v
 g:gutentags_ctags_exclude	vimrc	/^let g:gutentags_ctags_exclude = ['package-lock.json']$/;"	v
 g:gutentags_file_list_command	vimrc	/^let g:gutentags_file_list_command = {$/;"	v
 g:jsx_ext_required	vimrc	/^let g:jsx_ext_required = 0$/;"	v
+g:lightline	vimrc	/^let g:lightline = {$/;"	v
 g:loaded_plug	vim/autoload/plug.vim	/^let g:loaded_plug = 1$/;"	v
 g:mapleader	vimrc	/^let g:mapleader = ","$/;"	v
 g:plug_home	vim/autoload/plug.vim	/^  let g:plug_home = home$/;"	v
@@ -201,9 +191,9 @@ g:plugs_order	vim/autoload/plug.vim	/^  let g:plugs_order = []$/;"	v
 g:plugs_order	vim/autoload/plug.vim	/^  let g:plugs_order = get(g:, 'plugs_order', keys(g:plugs))$/;"	v
 g:python3_host_prog	vimrc	/^  let g:python3_host_prog = '\/usr\/local\/bin\/python3'$/;"	v
 g:python_host_prog	vimrc	/^  let g:python_host_prog = '\/usr\/bin\/python'$/;"	v
+g:qs_max_chars	vimrc	/^let g:qs_max_chars=120$/;"	v
 g:two_firewatch_italics	vim/colors/two-firewatch.vim	/^  let g:two_firewatch_italics = 0$/;"	v
 ga	vimrc	/^nnoremap ga =i{$/;"	m
-gd	vimrc	/^nnoremap gd :call LanguageClient#textDocument_definition()<CR>$/;"	m
 globals	eslintrc.json	/^  "globals": {$/;"	o
 grey_color	vim/colors/two-firewatch.vim	/^  fun <SID>grey_color(n)$/;"	f
 grey_level	vim/colors/two-firewatch.vim	/^  fun <SID>grey_level(n)$/;"	f
@@ -286,6 +276,7 @@ s:blue	vim/colors/wwdc16.vim	/^let s:blue        = ["#4670d8", 4]$/;"	v
 s:bluegreen	vim/colors/wwdc16.vim	/^let s:bluegreen   = ["#00aba5", 6]$/;"	v
 s:build_prim	vim/colors/hybrid.vim	/^function! s:build_prim(hi_elem, field)$/;"	f
 s:c	vim/colors/hybrid.vim	/^let s:c      = ",undercurl"$/;"	v
+s:check_back_space	vimrc	/^function! s:check_back_space() abort$/;"	f
 s:check_ruby	vim/autoload/plug.vim	/^function! s:check_ruby()$/;"	f
 s:checkout	vim/autoload/plug.vim	/^function! s:checkout(spec)$/;"	f
 s:chsh	vim/autoload/plug.vim	/^function! s:chsh(swap)$/;"	f
