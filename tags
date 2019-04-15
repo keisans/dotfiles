@@ -29,6 +29,7 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	vimrc	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$/;"	v
 <C-K>	vimrc	/^nnoremap <C-K> <C-W><C-K>$/;"	m
 <C-L>	vimrc	/^imap <C-L> <Plug>delimitMateS-Tab$/;"	m
 <C-L>	vimrc	/^nnoremap <C-L> <C-W><C-L>$/;"	m
+<C-j>	vimrc	/^imap <C-j> <Plug>(coc-snippets-expand-jump)$/;"	m
 <C-p>	vimrc	/^nnoremap <C-p> :<C-u>GFiles<CR>$/;"	m
 <C-x>	vimrc	/^nnoremap <C-x> <C-W>z$/;"	m
 <Leader>.	vimrc	/^nnoremap <Leader>. :silent execute "Rg " . expand("<cword>")<CR>$/;"	m
@@ -124,6 +125,7 @@ before	eslintrc.json	/^      {"before": false, "after": true}$/;"	b	object:rules
 bin	bin/nhwiki/package.json	/^  "bin": ".\/nhwiki.js",$/;"	s
 browser	eslintrc.json	/^    "browser": true,$/;"	b	object:env
 coc	vimrc	/^augroup coc$/;"	a
+cocCommands	vimrc	/^augroup cocCommands$/;"	a
 color	vim/colors/two-firewatch.vim	/^  fun <SID>color(r, g, b)$/;"	f
 color_overrides	vimrc	/^augroup color_overrides$/;"	a
 colors_name	vim/colors/wwdc16.vim	/^let colors_name = 'wwdc16'$/;"	v
@@ -155,9 +157,6 @@ folds	vimrc	/^augroup folds$/;"	a
 format	bin/nhwiki/nhwiki.js	/^      format: 'json',$/;"	p	class:AnonymousFunctionfa8579db0400.parseOpts
 format	bin/nhwiki/nhwiki.js	/^  format: 'json',$/;"	p	class:program.version.usage.option.parse
 g/	vimrc	/^map g\/ <Plug>(incsearch-stay)$/;"	m
-g:UltiSnipsEditSplit	vimrc	/^let g:UltiSnipsEditSplit="vertical"$/;"	v
-g:UltiSnipsExpandTrigger	vimrc	/^let g:UltiSnipsExpandTrigger="<C-j>"$/;"	v
-g:UltiSnipsSnippetDirectories	vimrc	/^let g:UltiSnipsSnippetDirectories=[$HOME.'\/.vim\/UltiSnips']$/;"	v
 g:_plug_bang	vim/autoload/plug.vim	/^    let g:_plug_bang = (s:is_win && has('gui_running') ? 'silent ' : '').'!'.escape(cmd, '#!%')$/;"	v
 g:ackprg	vimrc	/^  let g:ackprg = 'ag --vimgrep'$/;"	v
 g:airline#extensions#ale#enabled	vimrc	/^let g:airline#extensions#ale#enabled = 1$/;"	v
