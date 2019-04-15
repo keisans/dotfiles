@@ -1,0 +1,43 @@
+snippet ir "Import React"
+import React from 'react';
+endsnippet
+
+snippet fc "Function component"
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const ${1} = () => {
+	return (
+		${2}
+	)
+};
+
+$1.propTypes = {${3}};
+
+export default $1;
+endsnippet
+
+snippet cc "Class Component"
+import React from 'react';
+import PropTypes from 'prop-types';
+
+class ${1} extends React.Component {
+	static propTypes = {};
+
+	render() {
+		return (
+			${2}
+		) 
+	}
+}
+
+export default $1;
+endsnippet
+
+snippet ren "React render"
+render () {
+	return (
+		<div />
+	)
+}
+endsnippet

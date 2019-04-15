@@ -156,8 +156,8 @@ format	bin/nhwiki/nhwiki.js	/^      format: 'json',$/;"	p	class:AnonymousFunctio
 format	bin/nhwiki/nhwiki.js	/^  format: 'json',$/;"	p	class:program.version.usage.option.parse
 g/	vimrc	/^map g\/ <Plug>(incsearch-stay)$/;"	m
 g:UltiSnipsEditSplit	vimrc	/^let g:UltiSnipsEditSplit="vertical"$/;"	v
-g:UltiSnipsExpandTrigger	vimrc	/^let g:UltiSnipsExpandTrigger="<c-j>"$/;"	v
-g:UltiSnipsSnippetDirectories	vimrc	/^let g:UltiSnipsSnippetDirectories=[$HOME.'\/.vim\/Ultisnips']$/;"	v
+g:UltiSnipsExpandTrigger	vimrc	/^let g:UltiSnipsExpandTrigger="<C-j>"$/;"	v
+g:UltiSnipsSnippetDirectories	vimrc	/^let g:UltiSnipsSnippetDirectories=[$HOME.'\/.vim\/UltiSnips']$/;"	v
 g:_plug_bang	vim/autoload/plug.vim	/^    let g:_plug_bang = (s:is_win && has('gui_running') ? 'silent ' : '').'!'.escape(cmd, '#!%')$/;"	v
 g:ackprg	vimrc	/^  let g:ackprg = 'ag --vimgrep'$/;"	v
 g:airline#extensions#ale#enabled	vimrc	/^let g:airline#extensions#ale#enabled = 1$/;"	v
@@ -192,6 +192,7 @@ g:plugs_order	vim/autoload/plug.vim	/^  let g:plugs_order = get(g:, 'plugs_order
 g:python3_host_prog	vimrc	/^  let g:python3_host_prog = '\/usr\/local\/bin\/python3'$/;"	v
 g:python_host_prog	vimrc	/^  let g:python_host_prog = '\/usr\/bin\/python'$/;"	v
 g:qs_max_chars	vimrc	/^let g:qs_max_chars=120$/;"	v
+g:snips_author	vimrc	/^  let g:snips_author="@keisans"$/;"	v
 g:two_firewatch_italics	vim/colors/two-firewatch.vim	/^  let g:two_firewatch_italics = 0$/;"	v
 ga	vimrc	/^nnoremap ga =i{$/;"	m
 globals	eslintrc.json	/^  "globals": {$/;"	o

@@ -27,9 +27,6 @@ Plug 'jamessan/vim-gnupg'
 Plug 'wellle/targets.vim'
 Plug 'unblevable/quick-scope'
 
-" Snippets
-Plug 'SirVer/ultisnips'
-
 " syntax plugins
 Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
 Plug 'HerringtonDarkholme/yats.vim' | Plug 'ianks/vim-tsx'
@@ -450,10 +447,14 @@ augroup coc
   autocmd CursorHold * silent call CocActionAsync('highlight')
 augroup END
 
-"**** ULTISNIPS **************************************
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/Ultisnips']
-
 "**** QUICKSCOPE **************************************
 let g:qs_max_chars=120
+
+"**** ULTISNIPS **************************************
+let g:UltiSnipsExpandTrigger="<C-j>"
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+"Meee
+if !exists("g:snips_author")
+  let g:snips_author="@keisans"
+endif
