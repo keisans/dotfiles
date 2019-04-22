@@ -7,6 +7,9 @@
 !_TAG_PROGRAM_VERSION	0.0.0	/affa2f7/
 $NVIM_TUI_ENABLE_TRUE_COLOR	vimrc	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$/;"	v
 /	vimrc	/^map \/  <Plug>(incsearch-forward)$/;"	m
+0	coc-settings.json	/^    "javascriptreact": ["javascript"],$/;"	s	array:snippets.extends.javascriptreact
+0	coc-settings.json	/^    "typescript": ["javascript"]$/;"	s	array:snippets.extends.typescript
+0	coc-settings.json	/^  "snippets.ultisnips.directories": ["~\/.vim\/UltiSnips"],$/;"	s	array:snippets.ultisnips.directories
 0	eslintrc.json	/^      0$/;"	n	array:rules.no-console
 0	eslintrc.json	/^      1,$/;"	n	array:rules.semi-spacing
 0	eslintrc.json	/^      2,$/;"	n	array:rules.indent
@@ -45,7 +48,6 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	vimrc	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$/;"	v
 <Leader>p	vimrc	/^nnoremap <Leader>p :<C-u>History<CR>$/;"	m
 <Leader>r	vimrc	/^nmap <silent> <Leader>r <Plug>(ale_next_wrap)$/;"	m
 <Leader>sv	vimrc	/^nnoremap <Leader>sv :<C-u>source $MYVIMRC<CR>$/;"	m
-<Leader>y	vimrc	/^nnoremap <Leader>y :<C-u>call VC_vim_card()<CR>$/;"	m
 <Space>	vimrc	/^vnoremap <Space> zf$/;"	m
 <c-x><c-f>	vimrc	/^imap <c-x><c-f> <Plug>(fzf-complete-path)$/;"	m
 <c-x><c-j>	vimrc	/^imap <c-x><c-j> <Plug>(fzf-complete-file-ag)$/;"	m
@@ -67,7 +69,6 @@ AnonymousFunctionfa8579db0300	bin/nhwiki/nhwiki.js	/^    var options = data.quer
 AnonymousFunctionfa8579db0400	bin/nhwiki/nhwiki.js	/^  .then(function(answer){$/;"	f
 AnonymousFunctionfa8579db0500	bin/nhwiki/nhwiki.js	/^  .then(function(response) {$/;"	f
 AnonymousFunctionfa8579db0600	bin/nhwiki/nhwiki.js	/^    cp.exec(`echo ${escapeShell(response.data.parse.text["*"])} | lynx -dump -stdin`, function(e/;"	f
-Card	vimrc	/^command! -nargs=? Card :call VC_vim_card(<f-args>)$/;"	c
 D	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> D  :PlugDiff<cr>$/;"	m
 Dark	vimrc	/^command! Dark :call DarkTheme()<CR>$/;"	c
 DarkTheme	vimrc	/^function! DarkTheme () abort$/;"	f
@@ -206,6 +207,7 @@ indent	eslintrc.json	/^    "indent": [$/;"	a	object:rules
 inquirer	bin/nhwiki/nhwiki.js	/^var inquirer = require('inquirer');$/;"	v
 inquirer	bin/nhwiki/package.json	/^    "inquirer": "^6.2.2",$/;"	s	object:dependencies
 jasmine	eslintrc.json	/^    "jasmine": true,$/;"	b	object:env
+javascriptreact	coc-settings.json	/^    "javascriptreact": ["javascript"],$/;"	a	object:snippets.extends
 jk	vimrc	/^inoremap jk <Esc>$/;"	m
 jsx	eslintrc.json	/^      "jsx": true,$/;"	b	object:parserOptions.ecmaFeatures
 keyword-spacing	eslintrc.json	/^    "keyword-spacing": 2,$/;"	n	object:rules
@@ -655,11 +657,16 @@ scripts	bin/nhwiki/package.json	/^  "scripts": {$/;"	o
 semi	eslintrc.json	/^    "semi": [$/;"	a	object:rules
 semi-spacing	eslintrc.json	/^    "semi-spacing": [$/;"	a	object:rules
 session_exists	bin/tat.sh	/^session_exists() {$/;"	f
+snippets.extends	coc-settings.json	/^  "snippets.extends": {$/;"	o
+snippets.ultisnips.directories	coc-settings.json	/^  "snippets.ultisnips.directories": ["~\/.vim\/UltiSnips"],$/;"	a
 sourceType	eslintrc.json	/^    "sourceType": "module",$/;"	s	object:parserOptions
 space-before-blocks	eslintrc.json	/^    "space-before-blocks": 2,$/;"	n	object:rules
 space-before-function-paren	eslintrc.json	/^    "space-before-function-paren": 2,$/;"	n	object:rules
 spellcheck	vimrc	/^augroup spellcheck$/;"	a
+suggest.echodocSupport	coc-settings.json	/^  "suggest.echodocSupport": true,$/;"	b
+suggest.maxCompleteItemCount	coc-settings.json	/^  "suggest.maxCompleteItemCount": 20,$/;"	n
 test	bin/nhwiki/package.json	/^    "test": "echo \\"Error: no test specified\\" && exit 1"$/;"	s	object:scripts
+typescript	coc-settings.json	/^    "typescript": ["javascript"]$/;"	a	object:snippets.extends
 version	bin/nhwiki/package.json	/^  "version": "1.0.0",$/;"	s
 yoda	eslintrc.json	/^    "yoda": 2,$/;"	n	object:rules
 z=	vimrc	/^nnoremap z= :call FzfSpell()<CR>$/;"	m

@@ -2,8 +2,6 @@
 "
 silent! if plug#begin('~/.vim/bundle')
 "style plugins
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'haya14busa/incsearch.vim'
@@ -14,6 +12,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-vinegar'
+Plug 'google/vim-searchindex'
 
 "tags
 Plug 'ludovicchabant/vim-gutentags'
@@ -35,21 +34,11 @@ Plug 'jparise/vim-graphql'
 " Language Services
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
-" Format plugin
-Plug 'sbdchd/neoformat'
-
 "color schemes
 Plug 'GGalizzi/cake-vim'
 Plug 'rakr/vim-one'
 Plug 'cocopon/iceberg.vim'
-"Plug 'lifepillar/vim-solarized8'
-"Plug 'tomasr/molokai'
-"Plug 'chriskempson/vim-tomorrow-theme'
-"Plug 'jnurmine/Zenburn'
 Plug 'jonathanfilip/vim-lucius'
-"Plug 'altercation/vim-colors-solarized'
-"Plug 'danilo-augusto/vim-afterglow'
-"Plug 'mhartington/oceanic-next'
 
 "linting
 Plug 'w0rp/ale'
@@ -234,9 +223,6 @@ augroup END
 "****** ABBREVIATIONS *********************************
 
 "****** FUNCTIONS *************************************
-
-nnoremap <Leader>y :<C-u>call VC_vim_card()<CR>
-command! -nargs=? Card :call VC_vim_card(<f-args>)
 
 " Damian Conway's Die Blinkënmatchen: highlight matches
 nnoremap <silent> n n:call HLNext(0.1)<cr>
