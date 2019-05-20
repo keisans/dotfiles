@@ -6,7 +6,6 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/affa2f7/
 $NVIM_TUI_ENABLE_TRUE_COLOR	vimrc	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$/;"	v
-/	vimrc	/^map \/  <Plug>(incsearch-forward)$/;"	m
 0	coc-settings.json	/^    "javascriptreact": ["javascript"],$/;"	s	array:snippets.extends.javascriptreact
 0	coc-settings.json	/^    "typescript": ["javascript"]$/;"	s	array:snippets.extends.typescript
 0	coc-settings.json	/^  "snippets.ultisnips.directories": ["~\/.vim\/UltiSnips"],$/;"	s	array:snippets.ultisnips.directories
@@ -62,7 +61,6 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	vimrc	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$/;"	v
 <leader>j	vimrc	/^nmap <silent> <leader>j :call CocActionAsync('doHover')<CR>$/;"	m
 <s-tab>	vimrc	/^inoremap <expr><s-tab> pumvisible() ? "\\<C-p>" : "\\<C-h>"$/;"	m
 <tab>	vimrc	/^inoremap <expr><tab>$/;"	m
-?	vimrc	/^map ?  <Plug>(incsearch-backward)$/;"	m
 AnonymousFunctionfa8579db0100	bin/nhwiki/nhwiki.js	/^  .then(function (res) {$/;"	f
 AnonymousFunctionfa8579db0200	bin/nhwiki/nhwiki.js	/^  .then(function(data) {$/;"	f
 AnonymousFunctionfa8579db0300	bin/nhwiki/nhwiki.js	/^    var options = data.query.search.map(function(entry){$/;"	f	function:AnonymousFunctionfa8579db0200
@@ -110,10 +108,8 @@ Wq	vimrc	/^cnoremap Wq wq$/;"	m
 X	vim/autoload/plug.vim	/^    nnoremap <silent> <buffer> X :call <SID>revert()<cr>$/;"	m
 X	vim/colors/two-firewatch.vim	/^  fun <SID>X(group, fg, bg, attr)$/;"	f
 [[	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> [[ :silent! call <SID>section('b')<cr>$/;"	m
-[c	vimrc	/^nmap <silent> [c <Plug>(coc-diagnostic-prev)$/;"	m
 \\	vimrc	/^nnoremap <silent> \\ :<C-u>nohlsearch<CR>$/;"	m
 ]]	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> ]] :silent! call <SID>section('')<cr>$/;"	m
-]c	vimrc	/^nmap <silent> ]c <Plug>(coc-diagnostic-next)$/;"	m
 action	bin/nhwiki/nhwiki.js	/^      action: 'parse',$/;"	p	class:AnonymousFunctionfa8579db0400.parseOpts
 action	bin/nhwiki/nhwiki.js	/^  action: 'query',$/;"	p	class:program.version.usage.option.parse
 after	eslintrc.json	/^      {"before": false, "after": true}$/;"	b	object:rules.semi-spacing.1
@@ -126,7 +122,7 @@ before	eslintrc.json	/^      {"before": false, "after": true}$/;"	b	object:rules
 bin	bin/nhwiki/package.json	/^  "bin": ".\/nhwiki.js",$/;"	s
 browser	eslintrc.json	/^    "browser": true,$/;"	b	object:env
 coc	vimrc	/^augroup coc$/;"	a
-cocCommands	vimrc	/^augroup cocCommands$/;"	a
+cocStatusCommands	vimrc	/^augroup cocStatusCommands$/;"	a
 color	vim/colors/two-firewatch.vim	/^  fun <SID>color(r, g, b)$/;"	f
 color_overrides	vimrc	/^augroup color_overrides$/;"	a
 colors_name	vim/colors/wwdc16.vim	/^let colors_name = 'wwdc16'$/;"	v
@@ -157,7 +153,6 @@ filetypedetect	vim/autoload/plug.vim	/^        augroup filetypedetect$/;"	a
 folds	vimrc	/^augroup folds$/;"	a
 format	bin/nhwiki/nhwiki.js	/^      format: 'json',$/;"	p	class:AnonymousFunctionfa8579db0400.parseOpts
 format	bin/nhwiki/nhwiki.js	/^  format: 'json',$/;"	p	class:program.version.usage.option.parse
-g/	vimrc	/^map g\/ <Plug>(incsearch-stay)$/;"	m
 g:_plug_bang	vim/autoload/plug.vim	/^    let g:_plug_bang = (s:is_win && has('gui_running') ? 'silent ' : '').'!'.escape(cmd, '#!%')$/;"	v
 g:ackprg	vimrc	/^  let g:ackprg = 'ag --vimgrep'$/;"	v
 g:airline#extensions#ale#enabled	vimrc	/^let g:airline#extensions#ale#enabled = 1$/;"	v
@@ -178,6 +173,11 @@ g:colors_name	vim/colors/molokai.vim	/^let g:colors_name="molokai"$/;"	v
 g:colors_name	vim/colors/two-firewatch.vim	/^let g:colors_name = 'two-firewatch'$/;"	v
 g:fzf_buffers_jump	vimrc	/^let g:fzf_buffers_jump = 1$/;"	v
 g:fzf_layout	vimrc	/^let g:fzf_layout = {'window': '15split enew'}$/;"	v
+g:gitgutter_sign_added	vimrc	/^let g:gitgutter_sign_added = '+'$/;"	v
+g:gitgutter_sign_modified	vimrc	/^let g:gitgutter_sign_modified = '>'$/;"	v
+g:gitgutter_sign_modified_removed	vimrc	/^let g:gitgutter_sign_modified_removed = '<'$/;"	v
+g:gitgutter_sign_removed	vimrc	/^let g:gitgutter_sign_removed = '-'$/;"	v
+g:gitgutter_sign_removed_first_line	vimrc	/^let g:gitgutter_sign_removed_first_line = '^'$/;"	v
 g:gutentags_ctags_exclude	vimrc	/^let g:gutentags_ctags_exclude = ['package-lock.json']$/;"	v
 g:gutentags_file_list_command	vimrc	/^let g:gutentags_file_list_command = {$/;"	v
 g:jsx_ext_required	vimrc	/^let g:jsx_ext_required = 0$/;"	v
@@ -669,4 +669,3 @@ test	bin/nhwiki/package.json	/^    "test": "echo \\"Error: no test specified\\" 
 typescript	coc-settings.json	/^    "typescript": ["javascript"]$/;"	a	object:snippets.extends
 version	bin/nhwiki/package.json	/^  "version": "1.0.0",$/;"	s
 yoda	eslintrc.json	/^    "yoda": 2,$/;"	n	object:rules
-z=	vimrc	/^nnoremap z= :call FzfSpell()<CR>$/;"	m

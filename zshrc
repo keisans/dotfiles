@@ -16,6 +16,11 @@ alias lnt='npx eslint --ext .js,.jsx --fix src'
 alias startproxy='sudo local-ssl-proxy --target 4877 --source 443'
 alias appstart='ROBIN_ENV=production npm start'
 
+function pr {
+  git fetch upstream pull/$1/head:$2
+  git checkout $2
+}
+
 # Prevent neovim terminal nesting
 if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
   if [ -x "$(command -v nvr)" ]; then

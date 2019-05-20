@@ -4,7 +4,6 @@ silent! if plug#begin('~/.vim/bundle')
 "style plugins
 Plug 'itchyny/lightline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'haya14busa/incsearch.vim'
 Plug 'ryanoasis/vim-devicons'
 
 "nav plugins
@@ -45,6 +44,8 @@ Plug 'w0rp/ale'
 
 "git
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-rhubarb'
 call plug#end()
 endif
 
@@ -108,6 +109,9 @@ set undodir=~/.vim/undo
 
 " Set the dictionary to the std dict
 set dictionary=/usr/share/dict/words
+
+" Set the update time to 250ms
+set updatetime=250
 
 "********* COLORS & THEME *******************************
 
@@ -270,7 +274,7 @@ function! FzfSpell() abort
   return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
 endfunction
 
-nnoremap z= :call FzfSpell()<CR>
+"nnoremap z= :call FzfSpell()<CR>
 
 "***** LIGHTLINE *****************************************
 let g:lightline = {
@@ -294,7 +298,7 @@ function! IconFileformat() abort
   return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 
-augroup cocCommands
+augroup cocStatusCommands
   autocmd!
   autocmd User CocDiagnosticChange call lightline#update
 augroup END
@@ -368,11 +372,6 @@ let g:gutentags_file_list_command = {
 
 let g:gutentags_ctags_exclude = ['package-lock.json']
 
-"**** INCSEARCH ********************************************
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
 "**** DEOPLETE ******************************************
 " if has("nvim")
 "   let g:deoplete#enable_at_startup = 1
@@ -406,9 +405,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1] =~# '\s'
 endfunction
 
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
-
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 nmap <silent> <leader>j :call CocActionAsync('doHover')<CR>
@@ -427,3 +423,11 @@ let g:qs_max_chars=120
 if !exists("g:snips_author")
   let g:snips_author="@keisans"
 endif
+
+"**** GITGUTTER ********************************************
+" Use fontawesome icons as signs
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = '<'
