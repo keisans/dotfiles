@@ -663,6 +663,8 @@ sourceType	eslintrc.json	/^    "sourceType": "module",$/;"	s	object:parserOption
 space-before-blocks	eslintrc.json	/^    "space-before-blocks": 2,$/;"	n	object:rules
 space-before-function-paren	eslintrc.json	/^    "space-before-function-paren": 2,$/;"	n	object:rules
 spellcheck	vimrc	/^augroup spellcheck$/;"	a
+style fg	tmux.conf	/^set -g pane-active-border-style fg=colour236,bg=colour250$/;"	k
+style fg	tmux.conf	/^set -g pane-border-style fg=colour235,bg=colour238$/;"	k
 suggest.echodocSupport	coc-settings.json	/^  "suggest.echodocSupport": true,$/;"	b
 suggest.maxCompleteItemCount	coc-settings.json	/^  "suggest.maxCompleteItemCount": 20,$/;"	n
 test	bin/nhwiki/package.json	/^    "test": "echo \\"Error: no test specified\\" && exit 1"$/;"	s	object:scripts

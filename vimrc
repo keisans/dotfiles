@@ -16,6 +16,9 @@ Plug 'google/vim-searchindex'
 "tags
 Plug 'ludovicchabant/vim-gutentags'
 
+"vimwiki
+Plug 'vimwiki/vimwiki'
+
 "edit plugins
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
