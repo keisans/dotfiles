@@ -22,8 +22,8 @@
 	untracked = cyan
 [user]
 	name = Ryan Struhl
-	email = ryan.struhl@robinpowered.com
-  signingkey = 6734E5872DA41DBB
+	email = rwstruhl@gmail.com
+  signingkey = 38543D56D21D38BB
 [commit]
   gpgsign = true
 	template = /Users/ryanstruhl/.stCommitMsg

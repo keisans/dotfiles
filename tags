@@ -4,7 +4,7 @@
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
-!_TAG_PROGRAM_VERSION	0.0.0	/affa2f7/
+!_TAG_PROGRAM_VERSION	0.0.0	/e0d8b8d/
 $NVIM_TUI_ENABLE_TRUE_COLOR	vimrc	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$/;"	v
 0	coc-settings.json	/^    "javascriptreact": ["javascript"],$/;"	s	array:snippets.extends.javascriptreact
 0	coc-settings.json	/^    "typescript": ["javascript"]$/;"	s	array:snippets.extends.typescript
@@ -76,7 +76,6 @@ HLNext	vimrc	/^function! HLNext (blinktime) abort$/;"	f
 HiCheck	vimrc	/^command! HiCheck :call SynStack()<CR>$/;"	c
 IconFileformat	vimrc	/^function! IconFileformat() abort$/;"	f
 IconFiletype	vimrc	/^function! IconFiletype() abort$/;"	f
-Installation	README.md	/^## Installation$/;"	s
 L	vim/autoload/plug.vim	/^    nnoremap <silent> <buffer> L :call <SID>status_load(line('.'))<cr>$/;"	m
 L	vim/autoload/plug.vim	/^    xnoremap <silent> <buffer> L :call <SID>status_load(line('.'))<cr>$/;"	m
 Light	vimrc	/^command! Light :call LightTheme()<CR>$/;"	c
@@ -103,7 +102,6 @@ U	vimrc	/^nnoremap U <C-R>$/;"	m
 VC_vim_card	vim/plugin/vimcard.vim	/^function! VC_vim_card(...)$/;"	f
 W	vimrc	/^cnoremap W w$/;"	m
 WQ	vimrc	/^cnoremap WQ wq$/;"	m
-Warning	README.md	/^## Warning$/;"	s
 Wq	vimrc	/^cnoremap Wq wq$/;"	m
 X	vim/autoload/plug.vim	/^    nnoremap <silent> <buffer> X :call <SID>revert()<cr>$/;"	m
 X	vim/colors/two-firewatch.vim	/^  fun <SID>X(group, fg, bg, attr)$/;"	f
@@ -139,7 +137,6 @@ delimitMate_expand_cr	vimrc	/^let delimitMate_expand_cr = 1$/;"	v
 delimitMate_expand_space	vimrc	/^let delimitMate_expand_space = 1$/;"	v
 dependencies	bin/nhwiki/package.json	/^  "dependencies": {$/;"	o
 description	bin/nhwiki/package.json	/^  "description": "",$/;"	s
-dotfiles	README.md	/^# dotfiles$/;"	c
 ecmaFeatures	eslintrc.json	/^    "ecmaFeatures": {$/;"	o	object:parserOptions
 ecmaVersion	eslintrc.json	/^    "ecmaVersion": 6,$/;"	n	object:parserOptions
 env	eslintrc.json	/^  "env": {$/;"	o
