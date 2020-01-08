@@ -1,21 +1,21 @@
 "******** INIT *******************************
-"kill vi compatability and make vim useful
+""kill vi compatability and make vim useful
 set nocompatible
 
 silent! if plug#begin('~/.vim/bundle')
-"style plugins
+""style plugins
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'haya14busa/incsearch.vim'
 
-"nav plugins
+""nav plugins
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-vinegar'
 
-"edit plugins
+""edit plugins
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
@@ -29,7 +29,7 @@ function! DoRemote(arg)
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
-" syntax plugins
+"" syntax plugins
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
 Plug 'kchmck/vim-coffee-script'
@@ -38,7 +38,7 @@ Plug 'mhartington/nvim-typescript'
 Plug 'carlitux/deoplete-ternjs'
 
 
-"color schemes
+""color schemes
 Plug 'GGalizzi/cake-vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'tomasr/molokai'
@@ -49,12 +49,13 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'rakr/vim-one'
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'mhartington/oceanic-next'
+Plug 'notpratheek/vim-luna'
 
-"linting
+""linting
 "Plug 'scrooloose/syntastic'
 Plug 'w0rp/ale'
 
-"git
+""git
 Plug 'tpope/vim-fugitive'
 call plug#end()
 endif
@@ -129,12 +130,19 @@ set laststatus=2
 
 "set truecolor if available
 if has("nvim")
-  set termguicolors
-  colorscheme one
+  colorscheme luna-term
   set background=dark
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   let g:python_host_prog = '/usr/bin/python'
-  let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.5/bin/python3'
+  if has ('unix')
+    let s:uname = system('uname -a')
+    if s:uname == 'Darwin'
+      let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.5/bin/python3'
+      set termguicolors
+      let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    else
+      let g:python3_host_prog = '/usr/bin/python3'
+    endif
+  endif
 endif
 
 "****** SHORTCUTS AND KEYBOARD ************************
@@ -228,7 +236,7 @@ function! LightTheme ()
 endfunction
 
 function! DarkTheme ()
-  colorscheme one
+  colorscheme luna-term
   set background=dark
   AirlineTheme one
 endfunction
