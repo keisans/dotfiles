@@ -27,11 +27,15 @@ Plug 'tpope/vim-commentary'
 Plug 'jamessan/vim-gnupg'
 Plug 'wellle/targets.vim'
 Plug 'unblevable/quick-scope'
+Plug 'kkoomen/vim-doge'
+Plug 'junegunn/vim-easy-align'
 
 " syntax plugins
 Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
 Plug 'HerringtonDarkholme/yats.vim' | Plug 'ianks/vim-tsx'
 Plug 'jparise/vim-graphql'
+Plug 'jxnblk/vim-mdx-js'
+Plug 'plasticboy/vim-markdown'
 
 " Language Services
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
@@ -181,10 +185,10 @@ nnoremap <C-x> <C-W>z
 nnoremap U <C-R>
 
 " Because I'm bad with the shift key
-cnoremap WQ wq
-cnoremap Wq wq
-cnoremap W w
-cnoremap Q q
+command WQ wq
+command Wq wq
+command W w
+command Q q
 
 " Manage vim
 nnoremap <Leader>ev :<C-u>vsplit $MYVIMRC<CR>
@@ -210,6 +214,9 @@ if has('nvim')
   tnoremap <C-H> <C-\><C-N><C-W><C-H>
 endif
 
+" Hack to support <C-l> in netrw
+nnoremap <C-R> <Plug>NetrwRefresh
+
 "****** FOLDS ****************************************
 nnoremap <silent> <Leader><Space> za
 vnoremap <Space> zf
@@ -218,7 +225,6 @@ set foldlevelstart=99
 "****** AUTOCMDS *** *********************************
 augroup spellcheck
   autocmd!
-  autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
   autocmd FileType gitcommit setlocal spell spelllang=en_us
 augroup END
 
@@ -226,6 +232,14 @@ augroup folds
   autocmd!
   autocmd FileType javascript,javascript.jsx,typescript,typescript.tsx setlocal foldmethod=syntax
 augroup END
+
+augroup markdown
+  autocmd!
+  autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+  autocmd BufRead,BufNewFile *.md setlocal colorcolumn=80
+  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+augroup END
+
 
 "****** ABBREVIATIONS *********************************
 
@@ -434,3 +448,13 @@ let g:gitgutter_sign_modified = '>'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = '<'
+
+
+"**** DOGE ********************************************
+let g:doge_mapping = '<Leader>d'
+let g:doge_mapping_comment_jump_forward = '<Leader>vf'
+let g:doge_mapping_comment_jump_backward = '<Leader>vb'
+
+"**** EASY ALIGN **************************************
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)

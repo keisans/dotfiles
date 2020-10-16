@@ -31,6 +31,7 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	vimrc	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$/;"	v
 <C-K>	vimrc	/^nnoremap <C-K> <C-W><C-K>$/;"	m
 <C-L>	vimrc	/^imap <C-L> <Plug>delimitMateS-Tab$/;"	m
 <C-L>	vimrc	/^nnoremap <C-L> <C-W><C-L>$/;"	m
+<C-R>	vimrc	/^nnoremap <C-R> <Plug>NetrwRefresh$/;"	m
 <C-j>	vimrc	/^imap <C-j> <Plug>(coc-snippets-expand-jump)$/;"	m
 <C-p>	vimrc	/^nnoremap <C-p> :<C-u>GFiles<CR>$/;"	m
 <C-x>	vimrc	/^nnoremap <C-x> <C-W>z$/;"	m
@@ -91,7 +92,7 @@ PlugSnapshot	vim/autoload/plug.vim	/^  command! -nargs=? -bar -bang -complete=fi
 PlugStatus	vim/autoload/plug.vim	/^  command! -nargs=0 -bar PlugStatus  call s:status()$/;"	c
 PlugUpdate	vim/autoload/plug.vim	/^  command! -nargs=* -bar -bang -complete=customlist,s:names PlugUpdate  call s:update(<bang>0, [/;"	c
 PlugUpgrade	vim/autoload/plug.vim	/^  command! -nargs=0 -bar PlugUpgrade if s:upgrade() | execute 'source' s:esc(s:me) | endif$/;"	c
-Q	vimrc	/^cnoremap Q q$/;"	m
+Q	vimrc	/^command Q q$/;"	c
 R	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> R  :call <SID>retry()<cr>$/;"	m
 S	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> S  :PlugStatus<cr>$/;"	m
 SessionLoad	vim/sessions/timeline.vim	/^let SessionLoad = 1$/;"	v
@@ -101,10 +102,10 @@ U	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> U  :call <SID>status_upda
 U	vim/autoload/plug.vim	/^  xnoremap <silent> <buffer> U  :call <SID>status_update()<cr>$/;"	m
 U	vimrc	/^nnoremap U <C-R>$/;"	m
 VC_vim_card	vim/plugin/vimcard.vim	/^function! VC_vim_card(...)$/;"	f
-W	vimrc	/^cnoremap W w$/;"	m
-WQ	vimrc	/^cnoremap WQ wq$/;"	m
+W	vimrc	/^command W w$/;"	c
+WQ	vimrc	/^command WQ wq$/;"	c
 Warning	README.md	/^## Warning$/;"	s
-Wq	vimrc	/^cnoremap Wq wq$/;"	m
+Wq	vimrc	/^command Wq wq$/;"	c
 X	vim/autoload/plug.vim	/^    nnoremap <silent> <buffer> X :call <SID>revert()<cr>$/;"	m
 X	vim/colors/two-firewatch.vim	/^  fun <SID>X(group, fg, bg, attr)$/;"	f
 [[	vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> [[ :silent! call <SID>section('b')<cr>$/;"	m
@@ -171,6 +172,9 @@ g:colors_name	vim/colors/luna.vim	/^let g:colors_name = "luna"$/;"	v
 g:colors_name	vim/colors/material.vim	/^let g:colors_name = "material-theme"$/;"	v
 g:colors_name	vim/colors/molokai.vim	/^let g:colors_name="molokai"$/;"	v
 g:colors_name	vim/colors/two-firewatch.vim	/^let g:colors_name = 'two-firewatch'$/;"	v
+g:doge_mapping	vimrc	/^let g:doge_mapping = '<Leader>d'$/;"	v
+g:doge_mapping_comment_jump_backward	vimrc	/^let g:doge_mapping_comment_jump_backward = '<Leader>vb'$/;"	v
+g:doge_mapping_comment_jump_forward	vimrc	/^let g:doge_mapping_comment_jump_forward = '<Leader>vf'$/;"	v
 g:fzf_buffers_jump	vimrc	/^let g:fzf_buffers_jump = 1$/;"	v
 g:fzf_layout	vimrc	/^let g:fzf_layout = {'window': '15split enew'}$/;"	v
 g:gitgutter_sign_added	vimrc	/^let g:gitgutter_sign_added = '+'$/;"	v
@@ -194,7 +198,9 @@ g:python_host_prog	vimrc	/^  let g:python_host_prog = '\/usr\/bin\/python'$/;"	v
 g:qs_max_chars	vimrc	/^let g:qs_max_chars=120$/;"	v
 g:snips_author	vimrc	/^  let g:snips_author="@keisans"$/;"	v
 g:two_firewatch_italics	vim/colors/two-firewatch.vim	/^  let g:two_firewatch_italics = 0$/;"	v
+ga	vimrc	/^nmap ga <Plug>(EasyAlign)$/;"	m
 ga	vimrc	/^nnoremap ga =i{$/;"	m
+ga	vimrc	/^xmap ga <Plug>(EasyAlign)$/;"	m
 globals	eslintrc.json	/^  "globals": {$/;"	o
 grey_color	vim/colors/two-firewatch.vim	/^  fun <SID>grey_color(n)$/;"	f
 grey_level	vim/colors/two-firewatch.vim	/^  fun <SID>grey_level(n)$/;"	f
@@ -218,6 +224,7 @@ list	bin/nhwiki/nhwiki.js	/^  list: 'search',$/;"	p	class:program.version.usage.
 loaded_vim_card	vim/plugin/vimcard.vim	/^let loaded_vim_card = 1$/;"	v
 main	bin/nhwiki/package.json	/^  "main": "nhwiki.js",$/;"	s
 mapleader	vimrc	/^let mapleader = ","$/;"	v
+markdown	vimrc	/^augroup markdown$/;"	a
 max	eslintrc.json	/^      {"max": 1}$/;"	n	object:rules.no-multiple-empty-lines.1
 modules	eslintrc.json	/^      "modules": true$/;"	b	object:parserOptions.ecmaFeatures
 n	vimrc	/^nnoremap <silent> n n:call HLNext(0.1)<cr>$/;"	m
