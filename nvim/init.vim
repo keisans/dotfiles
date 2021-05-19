@@ -13,6 +13,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
+" tree sitter syntax etc
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " general editing
 Plug 'Raimondi/delimitMate'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -114,6 +117,8 @@ inoremap jk <Esc>
 " netrw refresh hack
 nnoremap <C-R> <Plug>NetrwRefresh
 
+nnoremap <Leader><Space> za
+
 " ***** COLOR ******************************************
 set t_Co=256
 
@@ -122,7 +127,6 @@ if has('nvim')
 endif
 
 colorscheme tokyonight
-
 
 " ***** FZF ********************************************
 
@@ -191,3 +195,17 @@ let g:completion_chain_complete_list = [
     \{'mode': '<c-p>'},
     \{'mode': '<c-n>'}
 \]
+
+" ***** TREE SITTER **************************************
+
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true,
+  },
+}
+EOF
+
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
