@@ -17,16 +17,15 @@ Plug 'mileszs/ack.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " general editing
-Plug 'Raimondi/delimitMate'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
 Plug 'folke/which-key.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'
+Plug 'folke/lsp-colors.nvim'
 
 " Completion
 Plug 'nvim-lua/completion-nvim'
-Plug 'aca/completion-tabnine', { 'do': './install.sh' }
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -105,6 +104,9 @@ if has('nvim')
   tnoremap <C-L> <C-\><C-N><C-W><C-L>
 endif
 
+" Hide search sometimes
+nnoremap <silent> \ :nohlsearch<CR>
+
 " I'm really bad at not holding shift
 command WQ wq
 command Wq wq
@@ -157,7 +159,7 @@ nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
 nnoremap <leader>xd <cmd>TroubleToggle lsp_document_diagnostics<cr>
 nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
-nnoremap gR <cmd>TroubleToggle lsp_references<cr>
+nnoremap <leader>xr <cmd>TroubleToggle lsp_references<cr>
 
 " Which key config
 lua << EOF
@@ -173,7 +175,8 @@ lua << EOF
   }
 EOF
 
-nnoremap <leader>t <cmd>TodoTrouble<cr>
+" Todo trouble should be with the rest of the trouble commands
+nnoremap <leader>xt <cmd>TodoTrouble<cr>
 
 " ***** Lightline *****************************************
 let g:lightline = {'colorscheme': 'tokyonight'}
@@ -190,8 +193,10 @@ set completeopt=menuone,noinsert,noselect
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
+let g:completion_matching_strategy = ['exact', 'substring', 'fuzzy']
+
 let g:completion_chain_complete_list = [
-    \{'complete_items': ['lsp', 'snippet', 'tabnine']},
+    \{'complete_items': ['lsp', 'snippet']},
     \{'mode': '<c-p>'},
     \{'mode': '<c-n>'}
 \]
@@ -207,5 +212,8 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+" ***** General LSP stuff *********************************
+
+nnoremap <Leader>j <Cmd>lua vim.lsp.buf.hover()<cr>
+nnoremap <Leader>d <Cmd>lua vim.lsp.buf.definition()<cr>
+
