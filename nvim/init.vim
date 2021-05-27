@@ -7,11 +7,12 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-commentary'
 
 " navigational plugins
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " tree sitter syntax etc
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -22,10 +23,6 @@ Plug 'folke/trouble.nvim'
 Plug 'folke/which-key.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'
-Plug 'folke/lsp-colors.nvim'
-
-" Completion
-Plug 'nvim-lua/completion-nvim'
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -42,6 +39,10 @@ Plug 'itchyny/lightline.vim'
 
 " lsp support
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+Plug 'folke/lsp-colors.nvim'
+Plug 'nvim-lua/lsp-status.nvim'
+
 call plug#end()
 
 " lua requires
@@ -130,29 +131,47 @@ endif
 
 colorscheme tokyonight
 
-" ***** FZF ********************************************
+" " ***** FZF ********************************************
 
-nnoremap <C-p> :<C-u>GFiles<CR>
-nnoremap <Leader>P :<C-u>Files<CR>
-nnoremap <Leader>p :<C-u>History<CR>
-nnoremap <Leader>b :<C-u>Buffers<CR>
-nnoremap <Leader>c :<C-u>Colors<CR>
-nnoremap <Leader>f :<C-u>Rg<CR>
+" nnoremap <C-p> :<C-u>GFiles<CR>
+" nnoremap <Leader>P :<C-u>Files<CR>
+" nnoremap <Leader>p :<C-u>History<CR>
+" nnoremap <Leader>b :<C-u>Buffers<CR>
+" nnoremap <Leader>c :<C-u>Colors<CR>
+" nnoremap <Leader>f :<C-u>Rg<CR>
 
-nnoremap <Leader>. :silent execute "Rg " . expand("<cword>")<CR>
+" nnoremap <Leader>. :silent execute "Rg " . expand("<cword>")<CR>
 
-" ***** ACK **********************************************
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
+" " ***** ACK **********************************************
+" if executable('ag')
+"   let g:ackprg = 'ag --vimgrep'
+" endif
+
+" ***** Telescope ***************************************
+nnoremap <C-p> <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <Leader>b <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <Leader>f <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <Leader>. <cmd>lua require('telescope.builtin').grep_string()<cr>
+nnoremap <Leader>c <cmd>lua require('telescope.builtin').colorscheme()<cr>
+nnoremap <Leader>p <cmd>lua require('telescope.builtin').oldfiles()<cr>
+nnoremap <Leader>d <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>
+nnoremap <Leader>gl <cmd>lua require('telescope.builtin').loclist()<cr>
+nnoremap <Leader>gr <cmd>lua require('telescope.builtin').lsp_references()<cr>
+nnoremap <Leader>gd <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
+nnoremap <Leader>gt <cmd>lua require('telescope.builtin').treesitter()<cr>
+nnoremap <Leader>gp <cmd>lua require('telescope.builtin').planets()<cr>
+nnoremap <Leader>ga <cmd>lua require('telescope.builtin').tags()<cr>
+nnoremap <Leader>gq <cmd>lua require('telescope.builtin').registers()<cr>
 
 " ***** FOLKE plugins ***********************************
+
 " Trouble config
 lua << EOF
   require("trouble").setup {
     -- use default config for now
   }
 EOF
+
 " Trouble mappings
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
 nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
@@ -179,7 +198,26 @@ EOF
 nnoremap <leader>xt <cmd>TodoTrouble<cr>
 
 " ***** Lightline *****************************************
-let g:lightline = {'colorscheme': 'tokyonight'}
+let g:lightline = {
+  \ 'colorscheme': 'tokyonight',
+  \ 'active': {
+  \   'right': [ [ 'lineinfo' ],
+  \              [ 'percent', 'lspstatus' ],
+  \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+  \ },
+  \ 'component_function': {
+  \   'lspstatus': 'LspStatus',
+  \ },
+  \ }
+
+
+
+function! LspStatus() abort
+  if luaeval('#vim.lsp.buf_get_clients() > 0')
+    return luaeval("require('lsp-status').status()")
+  endif
+  return ''
+endfunction
 
 " ***** Completion ****************************************
 autocmd BufEnter * lua require'completion'.on_attach()
