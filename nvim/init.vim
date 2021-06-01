@@ -16,6 +16,7 @@ Plug 'nvim-telescope/telescope.nvim'
 
 " tree sitter syntax etc
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 " general editing
 Plug 'kyazdani42/nvim-web-devicons'
@@ -247,6 +248,26 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
   },
+  textobjects = {
+    select = {
+      enable = true,
+      keymaps = {
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+      },
+    },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["<leader>a"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["<leader>A"] = "@parameter.inner",
+      },
+    },
+  },
 }
 EOF
 
@@ -254,4 +275,5 @@ EOF
 
 nnoremap <Leader>j <Cmd>lua vim.lsp.buf.hover()<cr>
 nnoremap <Leader>d <Cmd>lua vim.lsp.buf.definition()<cr>
-
+nnoremap <Leader>m <Cmd>lua vim.lsp.buf.code_action()<cr>
+vnoremap <Leader>m <Cmd>lua vim.lsp.buf.range_code_action()<cr>
