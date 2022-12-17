@@ -26,7 +26,6 @@ Plug 'folke/todo-comments.nvim'
 
 " Completion
 Plug 'nvim-lua/completion-nvim'
-Plug 'aca/completion-tabnine', { 'do': './install.sh' }
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -151,6 +150,7 @@ lua << EOF
     -- use default config for now
   }
 EOF
+
 " Trouble mappings
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
 nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
@@ -191,7 +191,7 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
 let g:completion_chain_complete_list = [
-    \{'complete_items': ['lsp', 'snippet', 'tabnine']},
+    \{'complete_items': ['lsp', 'snippet']},
     \{'mode': '<c-p>'},
     \{'mode': '<c-n>'}
 \]
@@ -200,12 +200,9 @@ let g:completion_chain_complete_list = [
 
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
+  ensure_installed = {"c", "lua", "rust", "go", "graphql", "glsl", "bash", "css", "json", "markdown", "regex", "scss", "solidity", "sql", "swift", "toml", "html", "javascript", "typescript", "vim", "yaml", "tsx", "php", "kotlin", "dart", "cpp"},
   highlight = {
     enable = true,
   },
 }
 EOF
-
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
