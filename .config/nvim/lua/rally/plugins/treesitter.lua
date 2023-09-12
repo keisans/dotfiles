@@ -9,6 +9,7 @@ return {
   config = function()
 	  require("nvim-treesitter.configs").setup {
 		  ensure_installed = {"css", "html", "javascript", "typescript", "tsx", "lua", "rust", "graphql" },
+      auto_install = false,
 		  highlight = {
 			  enable = true,
 		  },

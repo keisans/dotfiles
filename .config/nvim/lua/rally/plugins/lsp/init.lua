@@ -16,6 +16,9 @@ return {
     local onAttach = function(client, bufnr)
       opt.buffer = bufnr
 
+      -- Turn off semantic highlighting
+      client.server_capabilities.semanticTokensProvider = nil
+
       opt.desc = "Go to definition"
       keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opt)
 
@@ -44,10 +47,10 @@ return {
       keymap.set("n", "<leader>d",vim.diagnostic.open_float, opt)
 
       opt.desc = "Next Diagnostic"
-      keymap.set("n", "[d", vim.diagnostic.goto_next, opt)
+      keymap.set("n", "]d", vim.diagnostic.goto_next, opt)
 
       opt.desc = "Previous Diagnostic"
-      keymap.set("n", "]d", vim.diagnostic.goto_prev, opt)
+      keymap.set("n", "[d", vim.diagnostic.goto_prev, opt)
 
       opt.desc = "LSP hover"
       keymap.set("n", "<leader>j", vim.lsp.buf.hover, opt)
