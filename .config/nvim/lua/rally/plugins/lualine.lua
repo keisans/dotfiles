@@ -8,8 +8,27 @@ return {
     return {
       options = {
         theme = "auto",
-        globalstatus = true,
-      }
+        globalstatus = false,
+      },
+      winbar = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {'filename', function()
+          return require('nvim-navic').get_location()
+        end},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {}
+      },
+      inactive_winbar = {
+        lualine_a = {},
+        lualine_b = {'filename'},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {}
+      },
+      extensions = { 'fugitive', 'quickfix' }
     }
   end
 }

@@ -26,7 +26,8 @@ return {
       ensure_installed = {
         "prettierd",
         "eslint_d",
-      }
+      },
+      automatic_installation = true,
     })
   end
 }

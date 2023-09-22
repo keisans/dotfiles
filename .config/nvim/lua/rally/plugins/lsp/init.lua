@@ -4,11 +4,12 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "folke/neodev.nvim", config = true },
+    { "SmiteshP/nvim-navic" },
   },
   config = function()
     local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
-    local neodev = require("neodev")
+    local navic = require("nvim-navic")
 
     local keymap = vim.keymap
     local opt = { noremap = true, silent = true }
@@ -18,6 +19,9 @@ return {
 
       -- Turn off semantic highlighting
       client.server_capabilities.semanticTokensProvider = nil
+
+      -- Attach navic to buffer
+      navic.attach(client, bufnr)
 
       opt.desc = "Go to definition"
       keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opt)
