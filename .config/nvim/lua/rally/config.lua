@@ -5,7 +5,7 @@ local opt = vim.opt
 
 -- General
 opt.number = true
-opt.relativenumber = true
+-- opt.relativenumber = true
 
 -- Indentation
 opt.tabstop = 2

@@ -1,10 +1,10 @@
 return {
   -- Nvim treesitter setup
-  { 
-  "nvim-treesitter/nvim-treesitter", 
-  build = ":TSUpdate", 
-  dependencies = { 
-    "nvim-treesitter/nvim-treesitter-textobjects" 
+  {
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter-textobjects"
   },
   config = function()
 	  require("nvim-treesitter.configs").setup {
@@ -17,25 +17,26 @@ return {
         enable = true,
       },
       -- not sure about using this yet. Using <c-s> for completion
-      -- incremental_selection = {
-      --   enable = true,
-      --   keymaps = {
-      --     init_selection = "<c-space>",
-      --     node_incremental = "<c-space>",
-      --     scope_incremental = "<c-s>",
-      --     node_decremental = "<c-z>",
-      --   },
-      -- },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<leader><space>",
+          node_incremental = "<leader><space>",
+          scope_incremental = false,
+          node_decremental = "<bs>",
+        },
+      },
       textobjects = {
         select = {
           enable = true,
+          lookahead = true,
           keymaps = {
             ["aa"] = "@parameter.outer",
             ["ia"] = "@parameter.inner",
-            ["af"] = "@function.outer",
-            ["if"] = "@function.inner",
-            ["ac"] = "@class.outer",
-            ["ic"] = "@class.inner",
+            ["ai"] = { query = "@conditional.outer", desc = "Select outer part of a conditional" },
+            ["ii"] = { query = "@conditional.inner", desc = "Select inner part of a conditional" },
+            ["al"] = { query = "@loop.outer", desc = "Select outer part of a loop" },
+            ["il"] = { query = "@loop.inner", desc = "Select outer part of a loop" },
           },
         },
         swap = {

@@ -32,6 +32,16 @@ vim.api.nvim_set_keymap("v", "K", ":m '<-2<CR>gv=gv", {noremap = true, desc = "M
 vim.api.nvim_set_keymap("n", "<leader>bn", "<cmd>bn<cr>", {noremap = true, desc = "Next buffer"})
 vim.api.nvim_set_keymap("n", "<leader>bp", "<cmd>bp<cr>", {noremap = true, desc = "Previous buffer"})
 
+-- Quickfix navigation
+vim.api.nvim_set_keymap("n", "<leader>cc", "<cmd>copen<cr>", {noremap = true, desc = "Open quickfix"})
+vim.api.nvim_set_keymap("n", "<leader>cx", "<cmd>cclose<cr>", {noremap = true, desc = "Close quickfix"})
+vim.api.nvim_set_keymap("n", "<leader>cn", "<cmd>cnext<cr>", {noremap = true, desc = "Next quickfix"})
+vim.api.nvim_set_keymap("n", "<leader>cp", "<cmd>cprev<cr>", {noremap = true, desc = "Previous quickfix"})
+vim.api.nvim_set_keymap("n", "<leader>cr", "<cmd>cfirst<cr>", {noremap = true, desc = "First quickfix"})
+vim.api.nvim_set_keymap("n", "<leader>cf", "<cmd>clast<cr>", {noremap = true, desc = "Last quickfix"})
+vim.api.nvim_set_keymap("n", "<leader>cj", "<cmd>colder<cr>", {noremap = true, desc = "Older quickfix"})
+vim.api.nvim_set_keymap("n", "<leader>ck", "<cmd>cnewer<cr>", {noremap = true, desc = "Newer quickfix"})
+
 -- Help with shift keys
 vim.api.nvim_create_user_command("WQ", "wq", {bang = false})
 vim.api.nvim_create_user_command("Wq", "wq", {bang = false})
