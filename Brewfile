@@ -44,13 +44,3 @@ cask "font-sauce-code-pro-nerd-font"
 # NGrok
 cask "ngrok"
 
-# VSCode plugins ##############
-vscode "christian-kohler.npm-intellisense"
-vscode "dbaeumer.vscode-eslint"
-vscode "ecmel.vscode-html-css"
-vscode "esbenp.prettier-vscode"
-vscode "GitHub.copilot"
-vscode "ms-vsliveshare.vsliveshare"
-vscode "Prisma.prisma"
-vscode "rust-lang.rust-analyzer"
-vscode "vscodevim.vim"
