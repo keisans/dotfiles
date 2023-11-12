@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/Users/ryanstruhl/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/ryanstruhl/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -119,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/ryanstruhl/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["rose-pine"] = {
+    loaded = true,
+    path = "/Users/ryanstruhl/.local/share/nvim/site/pack/packer/start/rose-pine",
+    url = "https://github.com/rose-pine/neovim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/ryanstruhl/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -144,14 +154,39 @@ _G.packer_plugins = {
     path = "/Users/ryanstruhl/.local/share/nvim/site/pack/packer/start/vim-repeat",
     url = "https://github.com/tpope/vim-repeat"
   },
+  ["vim-startuptime"] = {
+    commands = { "StartupTime" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/ryanstruhl/.local/share/nvim/site/pack/packer/opt/vim-startuptime",
+    url = "https://github.com/dstein64/vim-startuptime"
+  },
   ["vim-vinegar"] = {
     loaded = true,
     path = "/Users/ryanstruhl/.local/share/nvim/site/pack/packer/start/vim-vinegar",
     url = "https://github.com/tpope/vim-vinegar"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/Users/ryanstruhl/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'StartupTime', function(cmdargs)
+          require('packer.load')({'vim-startuptime'}, { cmd = 'StartupTime', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-startuptime'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('StartupTime ', 'cmdline')
+      end})
+time([[Defining lazy-load commands]], false)
+
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

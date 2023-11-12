@@ -17,6 +17,11 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use {
+    "dstein64/vim-startuptime",
+    cmd = "StartupTime"
+  }
+
   -- Treesitter
   use ({
     'nvim-treesitter/nvim-treesitter',
@@ -33,6 +38,7 @@ return require('packer').startup(function(use)
   -- Completion
   use {
     "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
     "hrsh7th/nvim-cmp"
   }
 
@@ -40,7 +46,19 @@ return require('packer').startup(function(use)
   use {
     "cocopon/iceberg.vim",
     "jonathanfilip/vim-lucius",
-    "folke/tokyonight.nvim"
+    "folke/tokyonight.nvim",
   }
+
+  -- Rose pine needs to be loaded on its own for some reason
+  use({
+    'rose-pine/neovim',
+    as = 'rose-pine',
+  })
+
+  -- Which key
+  use({
+    "folke/which-key.nvim"
+  })
+
 
 end)

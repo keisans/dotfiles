@@ -1,7 +1,7 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
 
-  ensure_installed = {"tsserver", "eslint", "sumneko_lua", "rust_analyzer"}
+  ensure_installed = {"tsserver", "eslint", "rust_analyzer"}
 
 })
 
@@ -22,12 +22,12 @@ require("lspconfig").tsserver.setup {
   capabilities = capabilities
 }
 
-require("lspconfig").eslint.setup {
+require("lspconfig").denols.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
 
-require("lspconfig").sumneko_lua.setup {
+require("lspconfig").eslint.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
